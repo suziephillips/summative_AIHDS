@@ -1,0 +1,13 @@
+name: env_aihds
+channels:
+  - conda-forge
+  - bioconda
+  - defaults
+dependencies:
+  - python=3.9
+  - pandas=1.5.3
+  - numpy=1.24.0
+  - scikit-learn=1.2.0
+  - r-base=4.2
+  - r-tidyverse
+prefix: /user/work/va24397/miniforge3/envs/env_aihds
