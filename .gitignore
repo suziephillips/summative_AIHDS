@@ -1,0 +1,30 @@
+# --------------------------------------------------
+# Project directories and files Git will not track
+# ---------------------------------------------------
+
+### Ignore all data files ###
+data/
+
+### Except for these specific files below ###
+
+# Keep placeholders so other collaborators know this directory exists
+!data/.keep  
+!data/raw/.keep 
+!data/clean/.keep
+
+# Keep directory descriptive documentation 
+!data/raw/README.md
+!data/clean/README.md
+
+### Ignore any results produced ###
+results/
+
+### Ignore Logs produced ###
+logs/
+
+### Ignore R based project files ###
+.Rhistory
+.RData
+
+### Ignore temporary R plot file ###
+Rplots.pdf
