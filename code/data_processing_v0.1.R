@@ -16,7 +16,6 @@ library(tidyverse)
 library(ggplot2)
 library(dplyr)
 library(caret)
-#library(RANN)
 library(VIM)
 
 
@@ -28,7 +27,6 @@ setwd("C:/Users/phil0068/DataNow/Home/MASTERS/AI_in_HDS/Summative")
 
 cl1 <- read.csv("Data/Raw/clinical1.csv")
 cl2 <- read.csv("Data/Raw/clinical2.csv")
-#rna <- read.csv("Data/Raw/rnaseq.txt")
 rna <- read.delim("Data/Raw/rnaseq.txt", header = TRUE)
 
 
@@ -207,7 +205,7 @@ cl2c <- cl2c |>
 
 #remove vars similar to target to omit data leakage
 cl2d <- cl2c |>
-  select(-c(Date.of.Death,Date.of.Last.Known.Alive,CT.Date,end_date,Survival.Status,Time.to.Death..days.,Days.between.CT.and.surgery))
+  select(-c(Date.of.Death,Date.of.Last.Known.Alive,CT.Date,end_date,Survival.Status,Time.to.Death..days.,Days.between.CT.and.surgery,Date.of.Recurrence,PET.Date))
 
 #check distribution of continuous vars
 #ggplot(cl2d, aes(x = Age)) + geom_histogram(bins = 30) #reasonable
@@ -312,142 +310,32 @@ cl2d_rna2_na_70 <- cl2d_rna2_na_summary |>
 
 #clinical1 use cl1b - no variables to remove
 #clinical2
-cl2f <- cl2d |> select(-c(Date.of.Recurrence, recur_loc_num))
+cl2f <- cl2d |> select(-c(recur_loc_num))
 #clinical and rna combined
-cl2_rna_2 <- cl2d_rna2 |> select(-c(Date.of.Recurrence, recur_loc_num))
+cl2_rna_2 <- cl2d_rna2 |> select(-c(recur_loc_num))
+
+#### remove pts with missing target ####
+
+cl1_final<- cl1b |> filter(!is.na(status_3y))
+cl2_final<- cl2f |> filter(!is.na(status_3y))
+cl2_rna_final<- cl2_rna_2 |> filter(!is.na(status_3y))
 
 
 ########### Split data into Train and Test ###########
 
 #need to split all data (all splits need to be the same), stratified by the target:
-#derived - no missingness approaches:          cl1c, cl2e, cl2e_rna4, 
-#derived - remove 70% missingness features:    cl1b, cl2f, cl2_rna_2
-
-#data which is censored before 3 years will have NA for status_3y, and so will be randomly assigned into the split data
-
-###################################################
-# cl1c - clinical 1 no missing approaches applied # 
-###################################################
-
-# Split data into two groups
-cl1_trgt_knwn <- cl1c |> filter(status_3y == 0 | status_3y == 1)
-cl1_trgt_unknwn <- cl1c |> filter(is.na(status_3y))
-
-# Stratified split for known cases (80/20)
-set.seed(123)
-cl1_knwn_indices <- createDataPartition(cl1_trgt_knwn$status_3y, p = 0.8, list = FALSE)
-cl1_train_knwn <- cl1_trgt_knwn[cl1_knwn_indices, ]
-cl1_test_knwn <- cl1_trgt_knwn[-cl1_knwn_indices, ]
-
-# Random split for censored cases (80/20)
-set.seed(123)  #same seed for reproducibility
-cl1_unknwn_indices <- sample(seq_len(nrow(cl1_trgt_unknwn)), size = 0.8 * nrow(cl1_trgt_unknwn))
-cl1_train_unknwn <- cl1_trgt_unknwn[cl1_unknwn_indices, ]
-cl1_test_unknwn <- cl1_trgt_unknwn[-cl1_unknwn_indices, ]
-
-# Combine back together
-cl1_train <- bind_rows(cl1_train_knwn, cl1_train_unknwn)
-cl1_test <- bind_rows(cl1_test_knwn, cl1_test_unknwn)
-
-#Verify proportions
-cat("Train set size:", nrow(cl1_train), "\n")
-cat("Test set size:", nrow(cl1_test), "\n")
-cat("Proportion of events in train:", 
-    mean(cl1_train$status_3y == 1, na.rm = TRUE), "\n")
-cat("Proportion of events in test:", 
-    mean(cl1_test$status_3y == 1, na.rm = TRUE), "\n")
-#happy
-
-###################################################
-# cl2e - clinical 2 no missing approaches applied # 
-###################################################
-
-# Split data into two groups
-cl2_trgt_knwn <- cl2e |> filter(status_3y == 0 | status_3y == 1)
-cl2_trgt_unknwn <- cl2e |> filter(is.na(status_3y))
-
-# Stratified split for known cases (80/20)
-set.seed(123)
-cl2_knwn_indices <- createDataPartition(cl2_trgt_knwn$status_3y, p = 0.8, list = FALSE)
-cl2_train_knwn <- cl2_trgt_knwn[cl2_knwn_indices, ]
-cl2_test_knwn <- cl2_trgt_knwn[-cl2_knwn_indices, ]
-
-# Random split for censored cases (80/20)
-set.seed(123)  #same seed for reproducibility
-cl2_unknwn_indices <- sample(seq_len(nrow(cl2_trgt_unknwn)), size = 0.8 * nrow(cl2_trgt_unknwn))
-cl2_train_unknwn <- cl2_trgt_unknwn[cl2_unknwn_indices, ]
-cl2_test_unknwn <- cl2_trgt_unknwn[-cl2_unknwn_indices, ]
-
-# Combine back together
-cl2_train <- bind_rows(cl2_train_knwn, cl2_train_unknwn)
-cl2_test <- bind_rows(cl2_test_knwn, cl2_test_unknwn)
-
-#Verify proportions
-cat("Train set size:", nrow(cl2_train), "\n")
-cat("Test set size:", nrow(cl2_test), "\n")
-cat("Proportion of events in train:", 
-    mean(cl2_train$status_3y == 1, na.rm = TRUE), "\n")
-cat("Proportion of events in test:", 
-    mean(cl2_test$status_3y == 1, na.rm = TRUE), "\n")
-#happy
-
-########################################################################
-# cl2e_rna4 - clinical2 and genetic data no missing approaches applied # 
-########################################################################
-
-# Split data into two groups
-cl_rna_trgt_knwn <- cl2e_rna4 |> filter(status_3y == 0 | status_3y == 1)
-cl_rna_trgt_unknwn <- cl2e_rna4 |> filter(is.na(status_3y))
-
-# Stratified split for known cases (80/20)
-set.seed(123)
-cl_rna_knwn_indices <- createDataPartition(cl_rna_trgt_knwn$status_3y, p = 0.8, list = FALSE)
-cl_rna_train_knwn <- cl_rna_trgt_knwn[cl_rna_knwn_indices, ]
-cl_rna_test_knwn <- cl_rna_trgt_knwn[-cl_rna_knwn_indices, ]
-
-# Random split for censored cases (80/20)
-set.seed(123)  #same seed for reproducibility
-cl_rna_unknwn_indices <- sample(seq_len(nrow(cl_rna_trgt_unknwn)), size = 0.8 * nrow(cl_rna_trgt_unknwn))
-cl_rna_train_unknwn <- cl_rna_trgt_unknwn[cl_rna_unknwn_indices, ]
-cl_rna_test_unknwn <- cl_rna_trgt_unknwn[-cl_rna_unknwn_indices, ]
-
-# Combine back together
-cl_rna_train <- bind_rows(cl_rna_train_knwn, cl_rna_train_unknwn)
-cl_rna_test <- bind_rows(cl_rna_test_knwn, cl_rna_test_unknwn)
-
-#Verify proportions
-cat("Train set size:", nrow(cl_rna_train), "\n")
-cat("Test set size:", nrow(cl_rna_test), "\n")
-cat("Proportion of events in train:", 
-    mean(cl_rna_train$status_3y == 1, na.rm = TRUE), "\n")
-cat("Proportion of events in test:", 
-    mean(cl_rna_test$status_3y == 1, na.rm = TRUE), "\n")
-#happy
+#derived - remove 70% missingness features:    cl1_final, cl2_final, cl2_rna_final
 
 
 #####################################################
-# cl1b - clinical 1 WITH missing approaches applied # 
+# cl1_final - clinical 1 WITH missing approaches applied # 
 #####################################################
 
-# Split data into two groups
-cl1_m_trgt_knwn <- cl1b |> filter(status_3y == 0 | status_3y == 1)
-cl1_m_trgt_unknwn <- cl1b |> filter(is.na(status_3y))
-
-# Stratified split for known cases (80/20)
 set.seed(123)
-cl1_m_knwn_indices <- createDataPartition(cl1_m_trgt_knwn$status_3y, p = 0.8, list = FALSE)
-cl1_m_train_knwn <- cl1_m_trgt_knwn[cl1_m_knwn_indices, ]
-cl1_m_test_knwn <- cl1_m_trgt_knwn[-cl1_m_knwn_indices, ]
+cl1_m_indices <- createDataPartition(cl1_final$status_3y, p = 0.8, list = FALSE)
 
-# Random split for censored cases (80/20)
-set.seed(123)  #same seed for reproducibility
-cl1_m_unknwn_indices <- sample(seq_len(nrow(cl1_m_trgt_unknwn)), size = 0.8 * nrow(cl1_m_trgt_unknwn))
-cl1_m_train_unknwn <- cl1_m_trgt_unknwn[cl1_m_unknwn_indices, ]
-cl1_m_test_unknwn <- cl1_m_trgt_unknwn[-cl1_m_unknwn_indices, ]
-
-# Combine back together
-cl1_m_train <- bind_rows(cl1_m_train_knwn, cl1_m_train_unknwn)
-cl1_m_test <- bind_rows(cl1_m_test_knwn, cl1_m_test_unknwn)
+cl1_m_train <- cl1_final[cl1_m_indices, ]
+cl1_m_test <- cl1_final[-cl1_m_indices, ]
 
 #Verify proportions
 cat("Train set size:", nrow(cl1_m_train), "\n")
@@ -459,28 +347,14 @@ cat("Proportion of events in test:",
 #happy
 
 #####################################################
-# cl2f - clinical 2 WITH missing approaches applied # 
+# cl2_final - clinical 2 WITH missing approaches applied # 
 #####################################################
 
-# Split data into two groups
-cl2_m_trgt_knwn <- cl2f |> filter(status_3y == 0 | status_3y == 1)
-cl2_m_trgt_unknwn <- cl2f |> filter(is.na(status_3y))
-
-# Stratified split for known cases (80/20)
 set.seed(123)
-cl2_m_knwn_indices <- createDataPartition(cl2_m_trgt_knwn$status_3y, p = 0.8, list = FALSE)
-cl2_m_train_knwn <- cl2_m_trgt_knwn[cl2_m_knwn_indices, ]
-cl2_m_test_knwn <- cl2_m_trgt_knwn[-cl2_m_knwn_indices, ]
+cl2_m_indices <- createDataPartition(cl2_final$status_3y, p = 0.8, list = FALSE)
 
-# Random split for censored cases (80/20)
-set.seed(123)  #same seed for reproducibility
-cl2_m_unknwn_indices <- sample(seq_len(nrow(cl2_m_trgt_unknwn)), size = 0.8 * nrow(cl2_m_trgt_unknwn))
-cl2_m_train_unknwn <- cl2_m_trgt_unknwn[cl2_m_unknwn_indices, ]
-cl2_m_test_unknwn <- cl2_m_trgt_unknwn[-cl2_m_unknwn_indices, ]
-
-# Combine back together
-cl2_m_train <- bind_rows(cl2_m_train_knwn, cl2_m_train_unknwn)
-cl2_m_test <- bind_rows(cl2_m_test_knwn, cl2_m_test_unknwn)
+cl2_m_train <- cl2_final[cl2_m_indices, ]
+cl2_m_test <- cl2_final[-cl2_m_indices, ]
 
 #Verify proportions
 cat("Train set size:", nrow(cl2_m_train), "\n")
@@ -492,78 +366,35 @@ cat("Proportion of events in test:",
 #happy
 
 ##########################################################################
-# cl2_rna_2 - clinical2 and genetic data WITH missing approaches applied # 
+# cl2_rna_final - clinical2 and genetic data WITH missing approaches applied # 
 ##########################################################################
 
-# Split data into two groups
-cl_rna2_trgt_knwn <- cl2_rna_2 |> filter(status_3y == 0 | status_3y == 1)
-cl_rna2_trgt_unknwn <- cl2_rna_2 |> filter(is.na(status_3y))
-
-# Stratified split for known cases (80/20)
 set.seed(123)
-cl_rna2_knwn_indices <- createDataPartition(cl_rna2_trgt_knwn$status_3y, p = 0.8, list = FALSE)
-cl_rna2_train_knwn <- cl_rna2_trgt_knwn[cl_rna2_knwn_indices, ]
-cl_rna2_test_knwn <- cl_rna2_trgt_knwn[-cl_rna2_knwn_indices, ]
+cl2_rna_m_indices <- createDataPartition(cl2_rna_final$status_3y, p = 0.8, list = FALSE)
 
-# Random split for censored cases (80/20)
-set.seed(123)  #same seed for reproducibility
-cl_rna2_unknwn_indices <- sample(seq_len(nrow(cl_rna2_trgt_unknwn)), size = 0.8 * nrow(cl_rna2_trgt_unknwn))
-cl_rna2_train_unknwn <- cl_rna2_trgt_unknwn[cl_rna2_unknwn_indices, ]
-cl_rna2_test_unknwn <- cl_rna2_trgt_unknwn[-cl_rna2_unknwn_indices, ]
-
-# Combine back together
-cl_rna_m_train <- bind_rows(cl_rna2_train_knwn, cl_rna2_train_unknwn)
-cl_rna_m_test <- bind_rows(cl_rna2_test_knwn, cl_rna2_test_unknwn)
+cl2_rna_m_train <- cl2_rna_final[cl2_rna_m_indices, ]
+cl2_rna_m_test <- cl2_rna_final[-cl2_rna_m_indices, ]
 
 #Verify proportions
-cat("Train set size:", nrow(cl_rna_m_train), "\n")
-cat("Test set size:", nrow(cl_rna_m_test), "\n")
+cat("Train set size:", nrow(cl2_rna_m_train), "\n")
+cat("Test set size:", nrow(cl2_rna_m_test), "\n")
 cat("Proportion of events in train:", 
-    mean(cl_rna_m_train$status_3y == 1, na.rm = TRUE), "\n")
+    mean(cl2_rna_m_train$status_3y == 1, na.rm = TRUE), "\n")
 cat("Proportion of events in test:", 
-    mean(cl_rna_m_test$status_3y == 1, na.rm = TRUE), "\n")
+    mean(cl2_rna_m_test$status_3y == 1, na.rm = TRUE), "\n")
 #happy
 
 #save split datasets
-#standardised datasets to use for classic machine learning
-write.csv(cl1_train, "Data/Derived/cl1_train.csv")
-write.csv(cl1_test, "Data/Derived/cl1_test.csv")
-write.csv(cl2_train, "Data/Derived/cl2_train.csv")
-write.csv(cl2_test, "Data/Derived/cl2_test.csv")
-write.csv(cl_rna_train, "Data/Derived/cl2_rna_train.csv")
-write.csv(cl_rna_test, "Data/Derived/cl2_rna_test.csv")
-
-#non standardised, >70% missingness remove datasets used for neural networks
 write.csv(cl1_m_train, "Data/Derived/cl1_m_train.csv")
 write.csv(cl1_m_test, "Data/Derived/cl1_m_test.csv")
 write.csv(cl2_m_train, "Data/Derived/cl2_m_train.csv")
 write.csv(cl2_m_test, "Data/Derived/cl2_m_test.csv")
-write.csv(cl_rna_m_train, "Data/Derived/cl2_rna_m_train.csv")
-write.csv(cl_rna_m_test, "Data/Derived/cl2_rna_m_test.csv")
-
+write.csv(cl2_rna_m_train, "Data/Derived/cl2_rna_m_train.csv")
+write.csv(cl2_rna_m_test, "Data/Derived/cl2_rna_m_test.csv")
 
 
 
 ####Now, apply K-NN (k=3) to the missingness approach datasets: cl1_m, cl2_m, cl2_rna_m
-
-
-#Convert Date columns to numeric (days since origin)
-convert_dates_to_numeric <- function(df) {
-  df[] <- lapply(df, function(col) {
-    if (inherits(col, "Date")) {
-      as.numeric(col)  #Converts to days since 1970-01-01 (standard R origin)
-    } else {
-      col
-    }
-  })
-  return(df)
-}
-
-# Step 2: Apply conversion to your datasets
-cl2_m_train <- convert_dates_to_numeric(cl2_m_train)
-cl2_m_test <- convert_dates_to_numeric(cl2_m_test)
-cl_rna_m_train <- convert_dates_to_numeric(cl_rna_m_train)
-cl_rna_m_test <- convert_dates_to_numeric(cl_rna_m_test)
 
 
 #Impute with kNN (fits on training set, then is applied to both train and test)
@@ -586,11 +417,11 @@ cl2_train_imputed <- cl2_train_imputed_pre[, colnames(cl2_m_train)]
 cl2_test_imputed <- cl2_test_imputed_pre[, colnames(cl2_m_test)]
 
 #Impute clinical 2 anf RNA merged data - not yet run
-cl_rna_train_imputed_pre <- kNN(cl_rna_m_train, k = 3)
-cl_rna_test_imputed_pre <- kNN(cl_rna_m_test, k = 3)
+cl2_rna_train_imputed_pre <- kNN(cl2_rna_m_train, k = 3)
+cl2_rna_test_imputed_pre <- kNN(cl2_rna_m_test, k = 3)
 #Extract only the original columns
-cl_rna_train_imputed <- cl_rna_train_imputed_pre[, colnames(cl_rna_m_train)]
-cl_rna_test_imputed <- cl_rna_test_imputed_pre[, colnames(cl_rna_m_test)]
+cl2_rna_train_imputed <- cl2_rna_train_imputed_pre[, colnames(cl2_rna_m_train)]
+cl2_rna_test_imputed <- cl2_rna_test_imputed_pre[, colnames(cl2_rna_m_test)]
 
 #save imputed datasets
 write.csv(cl1_train_imputed, "Data/Derived/cl1_m_train_imputed.csv")
