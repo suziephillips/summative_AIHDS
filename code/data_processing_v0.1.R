@@ -396,32 +396,32 @@ write.csv(cl2_rna_m_test, "Data/Derived/cl2_rna_m_test.csv")
 
 ####Now, apply K-NN (k=3) to the missingness approach datasets: cl1_m, cl2_m, cl2_rna_m
 
+#remove surv and cens variables so imputation is not based on data leakage.
 
 #Impute with kNN (fits on training set, then is applied to both train and test)
 #these code also centers and scales all data at the same time.
 
 set.seed(123)
-
 #Impute clinical 1 data
-cl1_train_imputed_pre <- kNN(cl1_m_train, k = 3)
-cl1_test_imputed_pre <- kNN(cl1_m_test, k = 3)
-#Extract only the original columns
-cl1_train_imputed <- cl1_train_imputed_pre[, colnames(cl1_m_train)]
-cl1_test_imputed <- cl1_test_imputed_pre[, colnames(cl1_m_test)]
+cl1_train_imputed_pre <- kNN(cl1_m_train[, !names(cl1_m_train) %in% c("surv","cens","surv_3y","cens_3y","status_3y")], k = 3)
+cl1_train_imputed_clean <- cl1_train_imputed_pre[, !grepl("_imp$", names(cl1_train_imputed_pre))]
+cl1_train_imputed <- cbind(cl1_train_imputed_clean,status_3y = cl1_m_train[, "status_3y"])
+
+cl1_test_imputed_pre <- kNN(cl1_m_test[, !names(cl1_m_test) %in% c("surv","cens","surv_3y","cens_3y","status_3y")], k = 3)
+cl1_test_imputed_clean <- cl1_test_imputed_pre[, !grepl("_imp$", names(cl1_test_imputed_pre))]
+cl1_test_imputed <- cbind(cl1_test_imputed_clean,status_3y = cl1_m_test[, "status_3y"])
+
+
 
 #Impute clinical 2 data
-cl2_train_imputed_pre <- kNN(cl2_m_train, k = 3)
-cl2_test_imputed_pre <- kNN(cl2_m_test, k = 3)
-#Extract only the original columns
-cl2_train_imputed <- cl2_train_imputed_pre[, colnames(cl2_m_train)]
-cl2_test_imputed <- cl2_test_imputed_pre[, colnames(cl2_m_test)]
+cl2_train_imputed_pre <- kNN(cl2_m_train[, !names(cl2_m_train) %in% c("surv","cens","surv_3y","cens_3y","status_3y")], k = 3)
+cl2_train_imputed_clean <- cl2_train_imputed_pre[, !grepl("_imp$", names(cl2_train_imputed_pre))]
+cl2_train_imputed <- cbind(cl2_train_imputed_clean,status_3y = cl2_m_train[, "status_3y"])
 
-#Impute clinical 2 anf RNA merged data - not yet run
-cl2_rna_train_imputed_pre <- kNN(cl2_rna_m_train, k = 3)
-cl2_rna_test_imputed_pre <- kNN(cl2_rna_m_test, k = 3)
-#Extract only the original columns
-cl2_rna_train_imputed <- cl2_rna_train_imputed_pre[, colnames(cl2_rna_m_train)]
-cl2_rna_test_imputed <- cl2_rna_test_imputed_pre[, colnames(cl2_rna_m_test)]
+cl2_test_imputed_pre <- kNN(cl2_m_test[, !names(cl2_m_test) %in% c("surv","cens","surv_3y","cens_3y","status_3y")], k = 3)
+cl2_test_imputed_clean <- cl2_test_imputed_pre[, !grepl("_imp$", names(cl2_test_imputed_pre))]
+cl2_test_imputed <- cbind(cl2_test_imputed_clean,status_3y = cl2_m_test[, "status_3y"])
+
 
 #save imputed datasets
 write.csv(cl1_train_imputed, "Data/Derived/cl1_m_train_imputed.csv")
@@ -429,7 +429,21 @@ write.csv(cl1_test_imputed, "Data/Derived/cl1_m_test_imputed.csv")
 write.csv(cl2_train_imputed, "Data/Derived/cl2_m_train_imputed.csv")
 write.csv(cl2_test_imputed, "Data/Derived/cl2_m_test_imputed.csv")
 
-#not yet run
-write.csv(cl_rna_train_imputed, "Data/Derived/cl2_rna_m_train_imputed.csv")
-write.csv(cl_rna_test_imputed, "Data/Derived/cl2_rna_m_test_imputed.csv")
+
+#Impute clinical 2 and RNA merged data 
+#this code did not run overnight so will need to rethink
+#will remove patients without any RNA data and merge on cl2 imputed data
+cl2_rna_m_train2 <- cl2_rna_m_train |> select(-(status_3y:quit_smoke_yr))
+cl2_rna_m_test2 <- cl2_rna_m_test |> select(-(status_3y:quit_smoke_yr))
+
+cl2_rna_train_imputed <- cl2_train_imputed |>
+  full_join(cl2_rna_m_train2, by = "ID") |> 
+  filter(!(is.na(A2M)))
+
+cl2_rna_test_imputed <- cl2_test_imputed |>
+  full_join(cl2_rna_m_test2, by = "ID") |> 
+  filter(!(is.na(A2M)))
+
+write.csv(cl2_rna_train_imputed, "Data/Derived/cl2_rna_m_train_imputed.csv")
+write.csv(cl2_rna_test_imputed, "Data/Derived/cl2_rna_m_test_imputed.csv")
 
