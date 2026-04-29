@@ -1,0 +1,337 @@
+"","ID","status_3y","surv","cens","surv_3y","cens_3y","gender_num","age","hist_num","T_stage","N_stage","M_stage","overall_stage"
+"2","LUNG1-002",1,155,1,155,1,"male",83.8,"squamous cell carcinoma",2,0,0,1
+"4","LUNG1-004",1,141,1,141,1,"male",70.9,"squamous cell carcinoma",2,1,0,2
+"5","LUNG1-005",1,353,1,353,1,"male",80.5,"squamous cell carcinoma",4,2,0,4
+"7","LUNG1-007",1,137,1,137,1,"male",81.5,"squamous cell carcinoma",2,2,0,3
+"8","LUNG1-008",1,77,1,77,1,"male",71.7,"adenocarcinoma",2,2,0,3
+"10","LUNG1-010",0,2119,0,1095,0,"female",71.1,"squamous cell carcinoma",4,3,0,4
+"11","LUNG1-011",1,515,1,515,1,"male",64.3,"squamous cell carcinoma",4,0,0,4
+"13","LUNG1-013",0,3614,1,1095,0,"male",65.4,NA,2,0,0,1
+"14","LUNG1-014",0,1247,1,1095,0,"male",66.8,"squamous cell carcinoma",4,0,0,4
+"16","LUNG1-016",1,101,1,101,1,"male",79.1,NA,2,0,0,1
+"19","LUNG1-019",1,336,1,336,1,"male",74.8,NA,2,0,0,1
+"20","LUNG1-020",1,139,1,139,1,"male",77,NA,2,3,0,4
+"21","LUNG1-021",1,326,1,326,1,"male",54.6,NA,3,3,0,4
+"22","LUNG1-022",1,442,1,442,1,"male",78.6,"squamous cell carcinoma",2,0,0,1
+"23","LUNG1-023",1,245,1,245,1,"male",53.7,NA,3,2,0,3
+"24","LUNG1-024",0,1141,1,1095,0,"female",75.8,"adenocarcinoma",2,0,0,1
+"25","LUNG1-025",0,1883,1,1095,0,"male",68.1,"adenocarcinoma",4,0,0,4
+"26","LUNG1-026",1,25,1,25,1,"male",70.4,"adenocarcinoma",2,3,0,4
+"27","LUNG1-027",0,1972,0,1095,0,"male",70.2,"squamous cell carcinoma",1,0,0,1
+"28","LUNG1-028",1,479,1,479,1,"male",78.7,NA,1,0,0,1
+"29","LUNG1-029",1,257,1,257,1,"female",69,"large cell",2,2,0,3
+"30","LUNG1-030",1,303,1,303,1,"male",62.4,"squamous cell carcinoma",4,0,0,4
+"31","LUNG1-031",1,999,1,999,1,"male",71.7,"squamous cell carcinoma",2,2,0,3
+"32","LUNG1-032",1,543,1,543,1,"male",75.7,"squamous cell carcinoma",2,0,0,1
+"33","LUNG1-033",1,456,1,456,1,"male",70.6,"large cell",4,2,0,4
+"34","LUNG1-034",1,597,1,597,1,"male",55.4,"adenocarcinoma",3,3,0,4
+"35","LUNG1-035",1,98,1,98,1,"male",82.4,"squamous cell carcinoma",2,2,0,3
+"36","LUNG1-036",1,366,1,366,1,"female",54,"large cell",2,2,0,3
+"39","LUNG1-039",1,342,1,342,1,"male",71.4,NA,1,0,0,1
+"40","LUNG1-040",1,558,1,558,1,"female",58.6,"large cell",3,2,0,3
+"41","LUNG1-041",1,136,1,136,1,"female",74.6,"adenocarcinoma",1,0,0,1
+"42","LUNG1-042",1,134,1,134,1,"male",72.1,"squamous cell carcinoma",4,0,0,4
+"43","LUNG1-043",1,183,1,183,1,"male",74.1,"large cell",2,3,0,4
+"45","LUNG1-045",1,1070,1,1070,1,"female",72.7,"squamous cell carcinoma",1,1,0,2
+"48","LUNG1-048",0,4328,0,1095,0,"female",64.8,"large cell",4,0,0,4
+"49","LUNG1-049",0,1670,1,1095,0,"male",80.7,"large cell",1,0,0,1
+"50","LUNG1-050",1,208,1,208,1,"male",53.6,"squamous cell carcinoma",2,2,0,3
+"51","LUNG1-051",1,210,1,210,1,"male",51.7,NA,2,0,0,1
+"52","LUNG1-052",1,73,1,73,1,"male",62.2,"adenocarcinoma",2,2,0,3
+"53","LUNG1-053",1,78,1,78,1,"male",78.7,"squamous cell carcinoma",3,0,0,2
+"54","LUNG1-054",1,1076,1,1076,1,"male",79.2,"squamous cell carcinoma",4,2,0,4
+"55","LUNG1-055",1,192,1,192,1,"male",59.2,"large cell",2,3,0,4
+"57","LUNG1-057",1,98,1,98,1,"male",74.9,NA,2,2,0,3
+"61","LUNG1-061",0,1573,0,1095,0,"male",62.1,"squamous cell carcinoma",2,3,0,4
+"63","LUNG1-063",0,1630,0,1095,0,"female",72.3,"squamous cell carcinoma",3,0,0,2
+"64","LUNG1-064",1,632,1,632,1,"male",78.8,"squamous cell carcinoma",1,1,0,2
+"66","LUNG1-066",1,498,1,498,1,"male",64.2,NA,4,2,0,4
+"67","LUNG1-067",0,1596,0,1095,0,"male",76,NA,1,2,0,3
+"69","LUNG1-069",1,325,1,325,1,"female",56.8,NA,4,0,0,4
+"72","LUNG1-072",1,377,1,377,1,"male",71.5,NA,4,3,3,4
+"73","LUNG1-073",1,287,1,287,1,"male",60.7,"squamous cell carcinoma",2,3,0,4
+"74","LUNG1-074",1,939,1,939,1,"male",55.7,NA,4,0,0,4
+"76","LUNG1-076",0,2481,1,1095,0,"male",70.2,NA,2,2,0,3
+"77","LUNG1-077",1,58,1,58,1,"female",76.8,"large cell",3,0,0,2
+"78","LUNG1-078",0,1599,1,1095,0,"male",87.1,"squamous cell carcinoma",1,0,0,1
+"80","LUNG1-080",0,1657,1,1095,0,"male",66.3,NA,1,0,0,1
+"81","LUNG1-081",0,1540,0,1095,0,"male",62.1,NA,2,3,0,4
+"82","LUNG1-082",1,456,1,456,1,"male",73.4,"squamous cell carcinoma",4,2,0,4
+"83","LUNG1-083",0,1391,1,1095,0,"male",65.6,NA,2,0,0,1
+"84","LUNG1-084",0,1531,1,1095,0,"female",61.8,"large cell",3,1,0,3
+"85","LUNG1-085",1,223,1,223,1,"female",53.7,NA,NA,3,0,4
+"86","LUNG1-086",1,911,1,911,1,"male",62.6,"squamous cell carcinoma",4,0,0,4
+"87","LUNG1-087",0,2798,1,1095,0,"male",72.8,NA,1,0,0,1
+"89","LUNG1-089",0,1517,0,1095,0,"female",63.3,"adenocarcinoma",1,3,0,4
+"90","LUNG1-090",1,512,1,512,1,"male",60.3,NA,1,0,0,1
+"91","LUNG1-091",1,258,1,258,1,"male",76.4,NA,3,2,0,3
+"92","LUNG1-092",1,1002,1,1002,1,"male",65,"squamous cell carcinoma",4,0,0,4
+"93","LUNG1-093",1,132,1,132,1,"male",49.3,"squamous cell carcinoma",3,2,0,3
+"94","LUNG1-094",1,303,1,303,1,"female",78.7,NA,1,0,0,1
+"96","LUNG1-096",1,704,1,704,1,"male",85.6,"squamous cell carcinoma",4,0,0,4
+"98","LUNG1-098",1,391,1,391,1,"male",86.1,"squamous cell carcinoma",2,0,0,1
+"101","LUNG1-101",1,261,1,261,1,"female",62.4,"squamous cell carcinoma",4,2,0,4
+"102","LUNG1-102",0,1990,1,1095,0,"female",66.9,NA,1,0,0,1
+"104","LUNG1-104",1,465,1,465,1,"male",84.6,"squamous cell carcinoma",3,0,0,2
+"105","LUNG1-105",1,209,1,209,1,"male",70.5,"squamous cell carcinoma",3,0,0,2
+"106","LUNG1-106",1,265,1,265,1,"female",43.4,NA,1,3,0,4
+"107","LUNG1-107",1,197,1,197,1,"male",74.5,"adenocarcinoma",4,0,0,4
+"109","LUNG1-109",1,539,1,539,1,"male",77.5,"squamous cell carcinoma",2,1,0,2
+"110","LUNG1-110",0,1399,0,1095,0,"female",61.6,"large cell",1,2,0,3
+"111","LUNG1-111",1,426,1,426,1,"male",69.4,NA,1,0,0,1
+"112","LUNG1-112",0,1295,1,1095,0,"male",71.8,NA,2,0,0,1
+"113","LUNG1-113",1,646,1,646,1,"male",83.5,"large cell",2,2,0,3
+"115","LUNG1-115",1,98,1,98,1,"male",69,"squamous cell carcinoma",2,2,0,3
+"116","LUNG1-116",0,1636,1,1095,0,"male",60.7,"squamous cell carcinoma",4,0,0,4
+"117","LUNG1-117",1,280,1,280,1,"male",70.5,"squamous cell carcinoma",1,3,0,4
+"118","LUNG1-118",0,1686,1,1095,0,"male",82.5,"large cell",1,0,0,1
+"121","LUNG1-121",1,476,1,476,1,"male",65.1,"squamous cell carcinoma",2,2,0,3
+"122","LUNG1-122",0,1994,1,1095,0,"male",61.2,"squamous cell carcinoma",1,0,0,1
+"123","LUNG1-123",1,201,1,201,1,"female",77.6,"adenocarcinoma",4,2,0,4
+"124","LUNG1-124",1,87,1,87,1,"female",79,"large cell",4,3,0,4
+"125","LUNG1-125",1,379,1,379,1,"male",64.6,"large cell",4,2,0,4
+"126","LUNG1-126",1,524,1,524,1,"female",68.3,NA,1,3,0,4
+"127","LUNG1-127",1,182,1,182,1,"female",52.8,"large cell",2,3,0,4
+"129","LUNG1-130",0,4202,0,1095,0,"female",59.8,"adenocarcinoma",2,3,0,4
+"130","LUNG1-131",1,543,1,543,1,"male",71.1,"adenocarcinoma",1,0,0,1
+"132","LUNG1-133",0,3653,1,1095,0,"male",75.3,NA,1,0,0,1
+"133","LUNG1-134",1,639,1,639,1,"male",67.6,"large cell",1,0,0,1
+"134","LUNG1-135",0,2010,1,1095,0,"female",57.1,"squamous cell carcinoma",4,2,0,4
+"135","LUNG1-136",1,50,1,50,1,"male",79.4,NA,1,0,0,1
+"136","LUNG1-137",1,308,1,308,1,"male",74.6,NA,4,0,0,4
+"137","LUNG1-138",1,1000,1,1000,1,"female",55,NA,2,0,0,1
+"139","LUNG1-140",1,128,1,128,1,"female",73.2,"large cell",4,0,0,4
+"141","LUNG1-142",0,1520,1,1095,0,"male",69.9,"large cell",2,2,0,3
+"142","LUNG1-143",0,4118,0,1095,0,"female",49,"adenocarcinoma",3,3,0,4
+"143","LUNG1-144",1,271,1,271,1,"male",53.5,"adenocarcinoma",4,0,0,4
+"144","LUNG1-145",1,685,1,685,1,"male",85.5,"squamous cell carcinoma",2,0,0,1
+"145","LUNG1-146",1,87,1,87,1,"male",67.5,"squamous cell carcinoma",1,2,0,3
+"146","LUNG1-147",1,1067,1,1067,1,"male",64.7,"large cell",2,2,0,3
+"147","LUNG1-148",1,71,1,71,1,"male",74,"large cell",2,2,0,3
+"148","LUNG1-149",1,179,1,179,1,"male",NA,NA,3,3,0,4
+"149","LUNG1-150",0,1853,1,1095,0,"female",64,"squamous cell carcinoma",1,0,0,1
+"150","LUNG1-151",1,166,1,166,1,"male",72.9,"squamous cell carcinoma",2,1,0,2
+"151","LUNG1-152",1,1076,1,1076,1,"male",82.4,NA,1,0,0,1
+"152","LUNG1-153",1,703,1,703,1,"female",78.1,"large cell",1,0,0,1
+"153","LUNG1-154",0,1723,1,1095,0,"female",67.3,NA,1,0,0,1
+"154","LUNG1-155",1,446,1,446,1,"female",51.2,"squamous cell carcinoma",2,3,0,4
+"155","LUNG1-156",0,1802,1,1095,0,"male",74.1,"large cell",4,1,0,4
+"156","LUNG1-157",0,4067,0,1095,0,"female",57.3,NA,1,0,0,1
+"157","LUNG1-158",1,143,1,143,1,"female",43.3,NA,1,2,0,3
+"158","LUNG1-159",1,515,1,515,1,"male",79.7,NA,2,0,0,1
+"159","LUNG1-160",0,1351,0,1095,0,"male",76.5,NA,1,0,0,1
+"160","LUNG1-161",1,754,1,754,1,"male",65.1,NA,1,0,0,1
+"161","LUNG1-162",1,928,1,928,1,"male",76.2,NA,1,3,0,4
+"163","LUNG1-164",1,625,1,625,1,"male",66.2,NA,2,2,0,3
+"164","LUNG1-165",0,4019,0,1095,0,"female",48.6,"large cell",2,2,0,3
+"165","LUNG1-166",0,4013,0,1095,0,"male",61.1,NA,3,0,0,2
+"166","LUNG1-167",0,1357,1,1095,0,"male",74.9,"squamous cell carcinoma",4,4,0,4
+"167","LUNG1-168",1,317,1,317,1,"male",75.1,NA,4,0,0,4
+"168","LUNG1-169",1,642,1,642,1,"male",69.2,NA,4,2,0,4
+"170","LUNG1-171",1,232,1,232,1,"male",85.5,NA,1,0,0,1
+"171","LUNG1-172",1,130,1,130,1,"male",48,"large cell",3,2,0,3
+"172","LUNG1-173",1,492,1,492,1,"female",58.4,"squamous cell carcinoma",3,0,0,2
+"173","LUNG1-174",1,865,1,865,1,"male",NA,NA,1,0,0,1
+"174","LUNG1-175",1,409,1,409,1,"male",80.2,NA,2,0,0,1
+"175","LUNG1-176",1,52,1,52,1,"female",77.5,"adenocarcinoma",2,0,0,1
+"176","LUNG1-177",1,706,1,706,1,"female",65,"squamous cell carcinoma",2,2,0,3
+"177","LUNG1-178",1,635,1,635,1,"male",61.2,"large cell",3,3,0,4
+"178","LUNG1-179",1,249,1,249,1,"male",79.1,"large cell",4,2,0,4
+"179","LUNG1-180",0,1263,1,1095,0,"female",59.4,NA,3,2,0,3
+"180","LUNG1-181",1,151,1,151,1,"male",70.7,"squamous cell carcinoma",3,2,0,3
+"184","LUNG1-185",1,728,1,728,1,"male",69.7,NA,2,1,0,2
+"185","LUNG1-186",0,2036,1,1095,0,"male",67.5,NA,4,0,0,4
+"186","LUNG1-187",1,756,1,756,1,"female",58.8,NA,2,0,0,1
+"188","LUNG1-189",1,65,1,65,1,"male",64.2,"large cell",4,3,0,4
+"192","LUNG1-193",0,3858,0,1095,0,"female",67,"squamous cell carcinoma",2,2,0,3
+"194","LUNG1-195",0,2706,1,1095,0,"female",63.9,NA,1,2,0,3
+"195","LUNG1-196",1,33,1,33,1,"female",85.1,"large cell",2,2,0,3
+"196","LUNG1-197",1,312,1,312,1,"female",60,"adenocarcinoma",4,3,0,4
+"197","LUNG1-198",1,349,1,349,1,"male",69.9,"large cell",1,3,0,4
+"198","LUNG1-199",0,3814,0,1095,0,"female",58.2,NA,2,2,0,3
+"199","LUNG1-200",1,468,1,468,1,"male",66.8,"adenocarcinoma",3,0,0,2
+"200","LUNG1-201",0,1098,1,1095,0,"male",76.4,"squamous cell carcinoma",2,0,0,1
+"201","LUNG1-202",1,82,1,82,1,"male",69.7,"squamous cell carcinoma",3,1,0,3
+"202","LUNG1-203",0,1628,1,1095,0,"female",79.9,"adenocarcinoma",2,0,0,1
+"203","LUNG1-204",1,192,1,192,1,"female",76.5,"large cell",1,0,0,1
+"204","LUNG1-205",1,96,1,96,1,"male",76.7,"large cell",4,2,0,4
+"205","LUNG1-206",1,448,1,448,1,"female",66.9,"squamous cell carcinoma",1,2,0,3
+"206","LUNG1-207",1,357,1,357,1,"male",91.7,"large cell",2,0,0,1
+"207","LUNG1-208",1,689,1,689,1,"male",64.8,"squamous cell carcinoma",2,2,0,3
+"209","LUNG1-210",1,267,1,267,1,"male",82.6,"squamous cell carcinoma",2,0,0,1
+"210","LUNG1-211",0,1200,1,1095,0,"male",54.7,"large cell",2,3,0,4
+"211","LUNG1-212",0,1661,1,1095,0,"male",78.9,"large cell",1,0,0,1
+"212","LUNG1-213",1,944,1,944,1,"female",57.2,"large cell",1,2,0,3
+"214","LUNG1-215",1,491,1,491,1,"male",81.7,"large cell",4,0,0,4
+"215","LUNG1-216",1,211,1,211,1,"male",74.7,"large cell",1,3,0,4
+"217","LUNG1-218",0,1286,1,1095,0,"female",79.1,"large cell",4,0,0,4
+"220","LUNG1-221",1,515,1,515,1,"male",63.2,NA,4,3,0,4
+"221","LUNG1-222",1,926,1,926,1,"male",78.7,"squamous cell carcinoma",3,3,0,4
+"223","LUNG1-224",1,799,1,799,1,"female",71.7,"adenocarcinoma",2,2,0,3
+"224","LUNG1-225",1,298,1,298,1,"male",85.7,"squamous cell carcinoma",2,0,0,1
+"225","LUNG1-226",1,374,1,374,1,"male",54.9,"large cell",2,3,0,4
+"226","LUNG1-227",1,405,1,405,1,"male",69.1,"large cell",2,2,0,3
+"227","LUNG1-228",1,1020,1,1020,1,"female",46.3,"large cell",3,2,0,3
+"228","LUNG1-229",1,311,1,311,1,"male",56.8,"large cell",4,3,0,4
+"229","LUNG1-230",1,816,1,816,1,"male",75.2,"adenocarcinoma",2,1,0,2
+"230","LUNG1-231",0,1850,1,1095,0,"male",70.2,NA,1,3,0,4
+"232","LUNG1-233",1,196,1,196,1,"male",53.1,"adenocarcinoma",4,2,0,4
+"235","LUNG1-236",1,714,1,714,1,"female",73.1,"large cell",2,2,0,3
+"236","LUNG1-237",0,2490,1,1095,0,"male",58.2,"squamous cell carcinoma",4,0,0,4
+"237","LUNG1-238",0,3642,0,1095,0,"male",70.7,NA,4,2,0,4
+"238","LUNG1-239",0,3632,0,1095,0,"male",45.7,"adenocarcinoma",4,3,0,4
+"239","LUNG1-240",0,3551,0,1095,0,"male",65.1,"large cell",2,3,0,4
+"240","LUNG1-241",1,164,1,164,1,"male",NA,NA,4,2,0,4
+"242","LUNG1-243",0,1543,1,1095,0,"male",75.9,"large cell",2,2,0,3
+"243","LUNG1-244",1,301,1,301,1,"female",53.2,"large cell",4,0,0,4
+"244","LUNG1-245",1,601,1,601,1,"male",68.1,"large cell",4,2,0,4
+"246","LUNG1-247",0,3583,0,1095,0,"female",62.9,"large cell",1,2,0,3
+"247","LUNG1-248",1,316,1,316,1,"female",64.8,"large cell",4,2,0,4
+"248","LUNG1-249",1,896,1,896,1,"male",NA,NA,4,2,1,4
+"249","LUNG1-250",0,1956,1,1095,0,"male",65.8,"adenocarcinoma",1,2,0,3
+"250","LUNG1-251",0,1236,1,1095,0,"female",53.5,NA,2,3,0,4
+"251","LUNG1-252",1,104,1,104,1,"male",81,"adenocarcinoma",1,0,0,1
+"252","LUNG1-253",1,257,1,257,1,"male",68.5,"squamous cell carcinoma",2,0,0,1
+"253","LUNG1-254",0,3494,1,1095,0,"female",71.7,"large cell",2,2,0,3
+"254","LUNG1-255",1,433,1,433,1,"male",73.9,NA,1,0,0,1
+"255","LUNG1-256",1,291,1,291,1,"male",53.1,"large cell",4,2,3,4
+"256","LUNG1-257",1,660,1,660,1,"male",77.3,"squamous cell carcinoma",2,2,0,3
+"257","LUNG1-258",1,753,1,753,1,"male",78.7,"squamous cell carcinoma",4,0,0,4
+"258","LUNG1-259",0,3535,0,1095,0,"female",59.9,"large cell",4,0,0,4
+"260","LUNG1-261",1,857,1,857,1,"female",56.9,NA,2,3,0,4
+"261","LUNG1-262",1,134,1,134,1,"female",60.7,"large cell",4,0,0,4
+"262","LUNG1-263",0,2572,1,1095,0,"male",59.4,"adenocarcinoma",3,0,0,2
+"263","LUNG1-264",1,573,1,573,1,"female",66,"squamous cell carcinoma",2,3,0,4
+"265","LUNG1-266",1,485,1,485,1,"female",81.6,"squamous cell carcinoma",2,2,0,3
+"266","LUNG1-267",0,3528,0,1095,0,"male",63.4,"large cell",4,0,0,4
+"267","LUNG1-268",1,161,1,161,1,"male",64.2,"squamous cell carcinoma",2,3,0,4
+"268","LUNG1-269",1,193,1,193,1,"male",73.1,"large cell",3,3,3,3
+"269","LUNG1-270",1,300,1,300,1,"male",NA,NA,1,2,0,3
+"270","LUNG1-271",0,1490,1,1095,0,"male",77.4,"large cell",2,2,0,3
+"271","LUNG1-272",1,288,1,288,1,"male",60.1,"large cell",5,2,0,NA
+"272","LUNG1-273",1,618,1,618,1,"male",77.9,"squamous cell carcinoma",3,0,0,2
+"273","LUNG1-274",1,439,1,439,1,"male",72.8,"large cell",2,2,0,3
+"274","LUNG1-275",1,173,1,173,1,"male",NA,"large cell",2,3,0,4
+"275","LUNG1-276",0,2730,1,1095,0,"male",63.2,"squamous cell carcinoma",3,2,0,3
+"276","LUNG1-277",1,733,1,733,1,"female",62.6,"large cell",2,3,0,4
+"277","LUNG1-278",1,527,1,527,1,"male",76.5,NA,2,0,0,2
+"278","LUNG1-279",0,3435,1,1095,0,"male",62.9,"squamous cell carcinoma",4,0,0,4
+"279","LUNG1-280",0,3402,0,1095,0,"male",49.3,NA,4,2,0,4
+"280","LUNG1-281",0,1235,1,1095,0,"male",59,"large cell",2,0,0,2
+"282","LUNG1-283",0,3480,0,1095,0,"female",61.7,"large cell",4,2,0,4
+"283","LUNG1-284",1,412,1,412,1,"male",61.5,"squamous cell carcinoma",4,3,0,4
+"284","LUNG1-285",1,303,1,303,1,"male",63.5,"adenocarcinoma",2,2,0,3
+"285","LUNG1-286",1,113,1,113,1,"male",78.9,"large cell",3,2,0,3
+"286","LUNG1-287",1,76,1,76,1,"male",NA,NA,1,3,0,4
+"288","LUNG1-289",1,666,1,666,1,"female",52.9,"large cell",2,3,0,4
+"289","LUNG1-290",1,321,1,321,1,"female",60.1,"squamous cell carcinoma",2,3,0,4
+"290","LUNG1-291",0,3460,0,1095,0,"female",65.5,"large cell",2,2,0,3
+"291","LUNG1-292",1,232,1,232,1,"male",66.2,"squamous cell carcinoma",4,4,0,4
+"292","LUNG1-293",1,720,1,720,1,"male",60,NA,2,0,0,1
+"293","LUNG1-294",0,3451,0,1095,0,"male",59.8,"large cell",3,1,0,3
+"294","LUNG1-295",1,385,1,385,1,"male",61.7,"squamous cell carcinoma",2,2,0,3
+"295","LUNG1-296",1,177,1,177,1,"male",72.2,"squamous cell carcinoma",2,2,0,3
+"296","LUNG1-297",0,3383,0,1095,0,"male",71.3,"adenocarcinoma",2,3,0,4
+"297","LUNG1-298",1,699,1,699,1,"female",53.1,"large cell",2,0,0,1
+"298","LUNG1-299",1,1005,1,1005,1,"male",NA,"squamous cell carcinoma",1,0,0,4
+"299","LUNG1-300",1,741,1,741,1,"male",64.6,"adenocarcinoma",2,3,0,4
+"300","LUNG1-301",1,217,1,217,1,"male",81.9,"large cell",2,2,0,3
+"301","LUNG1-302",0,2894,1,1095,0,"male",67.4,"squamous cell carcinoma",4,0,0,4
+"302","LUNG1-303",1,24,1,24,1,"male",NA,"large cell",2,0,0,1
+"305","LUNG1-306",1,638,1,638,1,"female",49.5,NA,1,0,0,1
+"306","LUNG1-307",1,687,1,687,1,"female",NA,NA,1,0,0,1
+"307","LUNG1-308",1,213,1,213,1,"female",NA,"large cell",2,1,0,2
+"308","LUNG1-309",1,375,1,375,1,"male",NA,NA,2,0,0,1
+"309","LUNG1-310",1,109,1,109,1,"male",44.4,NA,4,0,0,4
+"310","LUNG1-311",1,583,1,583,1,"male",70,NA,1,0,0,1
+"311","LUNG1-312",1,392,1,392,1,"female",65.5,"squamous cell carcinoma",2,2,0,3
+"312","LUNG1-313",0,1841,1,1095,0,"male",67,"large cell",2,1,0,1
+"314","LUNG1-315",1,313,1,313,1,"female",NA,NA,1,0,0,1
+"315","LUNG1-316",0,1463,1,1095,0,"female",70,"large cell",2,3,0,4
+"316","LUNG1-317",0,3362,0,1095,0,"male",72.9,"adenocarcinoma",2,2,0,3
+"317","LUNG1-318",1,100,1,100,1,"male",63.7,"adenocarcinoma",2,3,0,4
+"318","LUNG1-319",1,663,1,663,1,"female",73,"large cell",4,3,0,4
+"319","LUNG1-320",1,544,1,544,1,"male",66.1,"squamous cell carcinoma",4,0,0,4
+"320","LUNG1-321",1,340,1,340,1,"male",69.4,"squamous cell carcinoma",1,0,0,1
+"321","LUNG1-322",0,1508,1,1095,0,"male",72.4,"adenocarcinoma",2,0,0,1
+"322","LUNG1-323",1,361,1,361,1,"male",78.9,"squamous cell carcinoma",2,0,0,1
+"324","LUNG1-325",1,741,1,741,1,"male",76.3,"squamous cell carcinoma",1,3,0,4
+"325","LUNG1-326",1,195,1,195,1,"male",84,"squamous cell carcinoma",2,0,0,2
+"327","LUNG1-328",0,3247,0,1095,0,"male",NA,NA,1,0,0,1
+"328","LUNG1-329",1,208,1,208,1,"female",64,"squamous cell carcinoma",1,0,0,1
+"329","LUNG1-330",0,1634,1,1095,0,"male",72.3,"large cell",4,2,0,4
+"330","LUNG1-331",1,549,1,549,1,"male",69.9,NA,3,2,0,3
+"331","LUNG1-332",0,1208,1,1095,0,"male",NA,NA,1,0,0,1
+"332","LUNG1-333",0,2985,1,1095,0,"male",63.7,"adenocarcinoma",1,2,3,3
+"333","LUNG1-334",0,2847,1,1095,0,"female",68,"squamous cell carcinoma",1,0,0,1
+"334","LUNG1-335",1,744,1,744,1,"male",77.6,"squamous cell carcinoma",3,0,0,2
+"335","LUNG1-336",1,60,1,60,1,"male",69.3,"squamous cell carcinoma",4,0,0,4
+"336","LUNG1-337",0,3208,0,1095,0,"female",65.3,"large cell",4,3,0,4
+"337","LUNG1-338",1,118,1,118,1,"male",74.4,NA,1,2,0,3
+"338","LUNG1-339",1,120,1,120,1,"male",NA,"squamous cell carcinoma",4,2,0,4
+"339","LUNG1-340",1,859,1,859,1,"male",83.7,"squamous cell carcinoma",3,0,0,2
+"340","LUNG1-341",0,1157,1,1095,0,"male",NA,"squamous cell carcinoma",2,0,0,1
+"342","LUNG1-343",1,337,1,337,1,"male",74.8,"squamous cell carcinoma",4,2,0,4
+"343","LUNG1-344",1,587,1,587,1,"male",67.8,NA,4,0,0,4
+"344","LUNG1-345",0,3185,0,1095,0,"male",66.1,"squamous cell carcinoma",4,0,0,4
+"345","LUNG1-346",0,1967,1,1095,0,"female",52.6,"squamous cell carcinoma",1,3,0,4
+"346","LUNG1-347",0,1586,1,1095,0,"female",51.6,"squamous cell carcinoma",4,3,0,4
+"347","LUNG1-348",0,1672,1,1095,0,"female",62.5,NA,4,2,0,4
+"348","LUNG1-349",1,183,1,183,1,"male",NA,"adenocarcinoma",2,1,0,2
+"349","LUNG1-350",1,444,1,444,1,"female",77.4,NA,2,3,0,4
+"351","LUNG1-352",1,446,1,446,1,"male",71.2,"squamous cell carcinoma",4,3,0,4
+"352","LUNG1-353",1,182,1,182,1,"male",78.3,NA,2,0,0,1
+"353","LUNG1-354",1,617,1,617,1,"female",NA,"large cell",1,2,0,3
+"354","LUNG1-355",0,1362,1,1095,0,"female",71.4,"squamous cell carcinoma",1,0,0,1
+"355","LUNG1-356",1,278,1,278,1,"male",54.9,"squamous cell carcinoma",1,2,0,3
+"356","LUNG1-357",0,1738,1,1095,0,"male",50.2,"large cell",2,0,0,2
+"357","LUNG1-358",1,492,1,492,1,"female",60.2,"squamous cell carcinoma",2,0,0,2
+"358","LUNG1-359",1,220,1,220,1,"female",66.7,"squamous cell carcinoma",1,2,0,3
+"359","LUNG1-360",0,1581,1,1095,0,"male",75.4,"squamous cell carcinoma",4,2,0,4
+"360","LUNG1-361",1,166,1,166,1,"male",88.3,"squamous cell carcinoma",4,1,0,4
+"361","LUNG1-362",0,1130,1,1095,0,"male",75.4,"squamous cell carcinoma",2,2,0,3
+"362","LUNG1-363",1,107,1,107,1,"male",68.3,"squamous cell carcinoma",4,2,0,4
+"363","LUNG1-364",1,595,1,595,1,"female",51.1,"squamous cell carcinoma",4,0,0,4
+"364","LUNG1-365",1,284,1,284,1,"male",80.3,"squamous cell carcinoma",4,2,0,4
+"365","LUNG1-366",1,330,1,330,1,"male",79.7,"squamous cell carcinoma",1,3,0,3
+"366","LUNG1-367",1,615,1,615,1,"male",66.6,"squamous cell carcinoma",4,0,0,4
+"367","LUNG1-368",1,1013,1,1013,1,"male",75.6,"squamous cell carcinoma",4,0,0,4
+"368","LUNG1-369",1,522,1,522,1,"female",54.4,"squamous cell carcinoma",1,3,0,3
+"369","LUNG1-370",1,502,1,502,1,"male",48.2,"large cell",2,2,0,3
+"371","LUNG1-372",1,715,1,715,1,"male",77.1,"squamous cell carcinoma",1,3,0,3
+"372","LUNG1-373",1,367,1,367,1,"female",57.9,"adenocarcinoma",2,2,0,3
+"373","LUNG1-374",1,10,1,10,1,"male",78.2,"squamous cell carcinoma",2,2,0,3
+"374","LUNG1-375",1,120,1,120,1,"female",60.2,"adenocarcinoma",4,3,0,4
+"375","LUNG1-376",1,140,1,140,1,"male",83.6,"squamous cell carcinoma",3,2,0,3
+"376","LUNG1-377",1,417,1,417,1,"male",61.8,"large cell",3,2,0,3
+"377","LUNG1-378",0,2891,0,1095,0,"female",70.5,"squamous cell carcinoma",4,0,0,4
+"378","LUNG1-379",0,2040,1,1095,0,"female",67.2,"squamous cell carcinoma",2,3,0,4
+"380","LUNG1-381",1,18,1,18,1,"female",83.1,"squamous cell carcinoma",3,2,0,3
+"381","LUNG1-382",0,1358,1,1095,0,"male",57.5,"squamous cell carcinoma",1,2,0,3
+"382","LUNG1-383",1,457,1,457,1,"male",67.3,"squamous cell carcinoma",1,3,0,3
+"383","LUNG1-384",1,906,1,906,1,"male",88.4,"squamous cell carcinoma",4,0,0,4
+"384","LUNG1-385",1,936,1,936,1,"male",NA,"adenocarcinoma",2,0,0,2
+"385","LUNG1-386",1,381,1,381,1,"male",33.7,"squamous cell carcinoma",1,3,0,3
+"390","LUNG1-391",1,256,1,256,1,"female",60.1,"squamous cell carcinoma",2,0,0,1
+"391","LUNG1-392",1,672,1,672,1,"male",85.6,"adenocarcinoma",2,0,0,1
+"392","LUNG1-393",1,806,1,806,1,"male",72.3,"squamous cell carcinoma",3,2,0,3
+"393","LUNG1-394",1,344,1,344,1,"male",72.2,NA,1,0,0,1
+"397","LUNG1-398",0,1731,1,1095,0,"male",79.7,"squamous cell carcinoma",2,2,0,3
+"398","LUNG1-399",0,2835,0,1095,0,"female",77.8,"squamous cell carcinoma",1,2,0,3
+"399","LUNG1-400",1,423,1,423,1,"female",67.7,"squamous cell carcinoma",4,2,0,4
+"400","LUNG1-401",1,203,1,203,1,"male",58.3,"squamous cell carcinoma",4,3,0,4
+"402","LUNG1-403",0,2098,1,1095,0,"female",57.1,"adenocarcinoma",3,3,0,3
+"404","LUNG1-405",1,882,1,882,1,"female",68.7,"squamous cell carcinoma",2,0,0,1
+"406","LUNG1-408",1,194,1,194,1,"female",73.2,"squamous cell carcinoma",2,0,0,2
+"407","LUNG1-409",0,2802,0,1095,0,"male",71.7,"squamous cell carcinoma",4,0,0,4
+"408","LUNG1-410",1,303,1,303,1,"male",72.8,"adenocarcinoma",3,2,0,3
+"409","LUNG1-411",1,583,1,583,1,"female",61.9,"adenocarcinoma",2,2,0,3
+"411","LUNG1-413",1,246,1,246,1,"female",60.5,"squamous cell carcinoma",4,2,0,4
+"412","LUNG1-414",1,292,1,292,1,"female",50.8,"adenocarcinoma",3,2,0,3
+"413","LUNG1-415",0,2517,1,1095,0,"female",79.9,"adenocarcinoma",1,0,0,1
+"415","LUNG1-417",1,648,1,648,1,"male",65.6,"squamous cell carcinoma",4,2,0,4
+"416","LUNG1-418",1,346,1,346,1,"male",53.7,"adenocarcinoma",2,0,0,1
+"417","LUNG1-419",0,2772,0,1095,0,"male",66.5,"squamous cell carcinoma",4,1,0,4
+"418","LUNG1-420",0,2429,1,1095,0,"male",73.4,"squamous cell carcinoma",2,1,0,2
+"419","LUNG1-421",1,369,1,369,1,"female",61.7,"squamous cell carcinoma",2,2,0,3
+"420","LUNG1-422",0,1590,1,1095,0,"female",68.1,NA,2,0,0,1

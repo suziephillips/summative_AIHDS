@@ -1,0 +1,33 @@
+"","ID","status_3y","surv_3y","cens_3y","surv","cens","Age","tl_RUL","tl_RML","tl_RLL","tl_LUL","tl_LLL","tl_LLing","tl_U","pleural","adj_trt","Chemotherapy","Radiation","Recurrence","site_num","gender_num","hist_num","ethnic_num","XGG_num","path_t_num","path_m_num","path_n_num","lymph_num","egfr_num","kras_num","alk_num","smoke_num","weight","pack_yrs","quit_smoke_yr"
+"2","AMC-004",0,1095,0,1448,0,80,0,0,0,0,0,1,0,NA,0,0,0,0,NA,"Female",NA,NA,NA,NA,NA,NA,NA,"Wildtype","Wildtype","Wildtype","Nonsmoker",NA,NA,NA
+"3","AMC-007",0,1095,0,1160,0,56,1,0,0,0,0,0,0,NA,0,0,0,0,NA,"Female",NA,NA,NA,NA,NA,NA,NA,"Wildtype","Wildtype",NA,"Nonsmoker",NA,NA,NA
+"10","AMC-015",0,1095,0,1254,0,58,1,0,0,0,0,0,0,NA,0,0,0,0,NA,"Male",NA,NA,NA,NA,NA,NA,NA,"Wildtype","Mutant",NA,"Former",NA,45,1974
+"18","AMC-040",0,1095,0,1156,0,77,0,0,0,0,1,0,0,NA,1,1,0,0,NA,"Female",NA,NA,NA,NA,NA,NA,NA,"Wildtype","Wildtype","Wildtype","Nonsmoker",NA,NA,NA
+"20","AMC-045",0,1095,0,1711,0,60,1,0,0,0,0,0,0,NA,0,0,0,0,NA,"Female",NA,NA,NA,NA,NA,NA,NA,"Mutant","Wildtype",NA,"Nonsmoker",NA,NA,NA
+"28","R01-009",0,1095,0,1403,1,59,0,1,0,0,0,0,0,0,0,0,0,0,"VA","Male","G3 Poorly differentiated","Caucasian","0%","T1a","M0","N0","Absent","Wildtype","Wildtype","Wildtype","Current",133,100,NA
+"33","R01-014",0,1095,0,1921,0,52,1,0,0,0,0,0,0,0,0,0,0,0,NA,"Female","G1 Well differentiated","Caucasian","25 - 50%","Tis","M0","N0","Absent",NA,NA,NA,"Former",130,1,1967
+"48","R01-030",1,405,1,405,1,86,0,0,0,1,0,0,0,0,0,0,0,1,"VA","Male","G1 Well differentiated","Caucasian",">0 - 25%","T1a","M0","N2","Absent","Wildtype",NA,NA,"Former",189.6,30,1968
+"49","R01-031",0,1095,0,2241,1,64,0,0,1,0,0,0,0,0,0,0,0,1,"VA","Male","G3 Poorly differentiated","Hispanic/Latino","0%","T1b","M0","N0","Absent","Wildtype","Wildtype","Wildtype","Former",161,46,1985
+"55","R01-037",1,408,1,408,1,84,0,0,0,0,1,0,0,1,0,0,0,0,"VA","Male","Other, Type II: Moderately to poorly differentiated","Caucasian","0%","T2a","M0","N0","Absent","Mutant","Wildtype","Wildtype","Former",187.4,10,1936
+"56","R01-039",1,581,1,581,1,78,1,0,0,0,0,0,0,0,0,0,0,0,"VA","Male","G1 Well differentiated","Caucasian","0%","T1b","M0","N0","Absent",NA,NA,NA,"Former",198.4,54,1992
+"59","R01-042",1,43,1,43,1,76,0,0,1,0,0,0,0,0,0,0,0,0,"VA","Male","Other, Type I: Well to moderately differentiated","African-American","0%","T2b","M0","N0","Absent",NA,NA,NA,"Current",178.6,50,NA
+"68","R01-051",1,267,1,267,1,70,1,0,0,0,0,0,0,0,0,0,0,1,NA,"Male","G2 Moderately differentiated","Caucasian","0%","T1b","M0","N1","Present","Wildtype","Wildtype","Wildtype","Nonsmoker",202.9,NA,NA
+"70","R01-053",0,1095,0,2176,0,62,1,0,0,0,0,0,0,0,0,0,0,0,"VA","Male","G3 Poorly differentiated","African-American","0%","T1a","M0","N0","Absent","Wildtype","Mutant","Wildtype","Current",127.9,34,NA
+"73","R01-056",0,1095,0,2115,0,71,0,0,0,1,0,0,0,1,0,0,0,0,"VA","Male","Other, Type I: Well to moderately differentiated","Caucasian","0%","T2a","M0","N1","Present","Mutant","Wildtype","Wildtype","Former",180.8,22,1974
+"75","R01-058",0,1095,0,2229,0,63,0,0,0,0,1,0,0,0,0,0,0,0,"VA","Male","Other, Type I: Well to moderately differentiated","Asian",">0 - 25%","T1b","M0","N0","Absent","Mutant","Wildtype","Wildtype","Nonsmoker",145.5,NA,NA
+"77","R01-060",0,1095,0,2158,0,53,0,0,0,1,0,0,0,0,1,1,0,0,"VA","Female","G2 Moderately differentiated","Caucasian",">0 - 25%","T4","M0","N0","Absent","Wildtype","Wildtype","Wildtype","Current",156.6,35,NA
+"80","R01-063",0,1095,0,1995,0,65,0,0,0,1,0,0,0,1,1,1,0,0,"VA","Male","G3 Poorly differentiated","Caucasian","0%","T2a","M0","N0","Absent","Wildtype","Wildtype","Wildtype","Former",209.5,40,1991
+"84","R01-067",0,1095,0,2000,0,65,0,0,1,0,0,0,0,0,0,0,0,0,"VA","Male","G2 Moderately differentiated","Caucasian","0%","T2a","M0","N0","Absent","Wildtype","Wildtype","Wildtype","Former",207.3,50,1988
+"85","R01-068",0,1095,0,1982,0,63,0,0,0,1,0,0,0,1,1,1,0,1,"VA","Male","G3 Poorly differentiated","Caucasian","0%","T2a","M1b","N0","Absent","Wildtype","Wildtype","Wildtype","Former",183,40,1992
+"101","R01-086",1,871,1,871,1,68,0,0,0,1,0,0,0,0,1,1,0,0,"VA","Male","G1 Well differentiated","Native Hawaiian/Pacific Islander","0%","T1b","M0","N2","Present","Wildtype","Wildtype","Wildtype","Former",172,25,NA
+"112","R01-097",0,1095,0,1369,1,70,0,1,0,0,0,0,0,0,0,0,0,0,"VA","Male","G1 Well differentiated","Caucasian","0%","T1b","M0","N0","Absent","Wildtype","Mutant","Wildtype","Current",135,30,NA
+"114","R01-099",0,1095,0,1222,1,51,0,0,0,1,0,0,0,1,1,1,1,1,NA,"Female","Other, Type II: Moderately to poorly differentiated","Asian","0%","T4","M1a","N2","Present","Mutant","Wildtype","Wildtype","Nonsmoker",132,NA,NA
+"115","R01-100",1,903,1,903,1,74,1,0,0,0,0,0,0,0,0,0,0,0,NA,"Female","G2 Moderately differentiated","Caucasian","50 - 75%","T1b","M0","N0","Absent","Wildtype","Wildtype","Wildtype","Former",104,30,1967
+"116","R01-101",0,1095,0,1499,1,74,0,1,0,0,0,0,0,1,0,0,0,0,NA,"Male","G3 Poorly differentiated","Caucasian","0%","T2a","M0","N0","Absent",NA,NA,NA,"Former",181,60,NA
+"122","R01-109",0,1095,0,1840,0,69,0,0,1,0,0,0,0,0,0,0,0,1,"VA","Male","G1 Well differentiated","Caucasian",">0 - 25%","Tis","M0","N0","Absent","Wildtype","Wildtype","Wildtype","Former",194,50,1994
+"124","R01-112",1,463,1,463,1,78,0,0,0,0,1,0,0,1,1,1,0,0,"VA","Male","G3 Poorly differentiated","Caucasian","0%","T2b","M0","N0","Absent","Wildtype","Wildtype","Wildtype","Current",260,90,NA
+"125","R01-113",1,683,1,683,1,78,0,0,0,1,0,0,0,0,0,0,0,1,"VA","Male","G3 Poorly differentiated","Caucasian",">0 - 25%","T1b","M0","N1",NA,"Wildtype","Wildtype","Wildtype","Former",170,30,1951
+"128","R01-116",0,1095,0,1612,0,54,1,0,0,0,0,0,0,0,0,0,0,0,"VA","Male","G2 Moderately differentiated","Asian","0%","T1a","M0","N0","Absent","Wildtype","Mutant","Wildtype","Current",150,20,NA
+"130","R01-118",0,1095,0,1476,0,80,0,0,0,0,1,0,0,0,1,1,0,0,"VA","Male","Other, Type II: Moderately to poorly differentiated","Caucasian","0%","T2a","M0","N0","Present","Wildtype","Wildtype","Wildtype","Former",201,45,1981
+"135","R01-124",0,1095,0,1370,0,72,1,0,0,0,0,0,0,0,0,0,0,0,"VA","Male","G2 Moderately differentiated","Caucasian","0%","T1a","M0","N0","Absent",NA,NA,NA,"Former",183,63,1989
+"149","R01-147",0,1095,0,2462,0,69,0,1,0,0,0,0,0,0,1,1,0,1,NA,"Female","G1 Well differentiated","Caucasian",NA,"T2a","M0","N2","Present","Mutant","Wildtype",NA,"Nonsmoker",103.6,NA,NA
