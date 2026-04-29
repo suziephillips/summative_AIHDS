@@ -1,0 +1,4604 @@
+Job started at: Tue Apr 28 17:45:54 BST 2026
+Running on node: bp1-compute122
+Starting conversion at Tue Apr 28 17:46:07 BST 2026
+Finished conversion at Tue Apr 28 17:46:07 BST 2026
+Starting feature extraction at Tue Apr 28 17:46:07 BST 2026
+Found 417 total patients with CT images
+
+Processing all 417 patients
+==================================================
+
+==================================================
+Processing LUNG1-001 (1/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1897423 voxels
+  Volume: 1897423.0 mm^3
+  Surface area: 290950.3 mm^2
+  Sphericity: 0.255
+  Mean intensity: -355.9 HU
+  Contrast: 3.263
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-002 (2/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1868465 voxels
+  Volume: 5350511.9 mm^3
+  Surface area: 400629.1 mm^2
+  Sphericity: 0.369
+  Mean intensity: -365.4 HU
+  Contrast: 2.526
+  Homogeneity: 0.974
+
+==================================================
+Processing LUNG1-003 (3/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1755771 voxels
+  Volume: 5027802.8 mm^3
+  Surface area: 420188.9 mm^2
+  Sphericity: 0.338
+  Mean intensity: -363.0 HU
+  Contrast: 3.225
+  Homogeneity: 0.974
+
+==================================================
+Processing LUNG1-004 (4/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1817578 voxels
+  Volume: 1817578.0 mm^3
+  Surface area: 357217.6 mm^2
+  Sphericity: 0.202
+  Mean intensity: -387.0 HU
+  Contrast: 4.776
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-005 (5/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1380809 voxels
+  Volume: 3954066.6 mm^3
+  Surface area: 458227.2 mm^2
+  Sphericity: 0.264
+  Mean intensity: -366.2 HU
+  Contrast: 5.031
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-006 (6/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2654085 voxels
+  Volume: 7600203.0 mm^3
+  Surface area: 471047.2 mm^2
+  Sphericity: 0.397
+  Mean intensity: -521.0 HU
+  Contrast: 3.443
+  Homogeneity: 0.966
+
+==================================================
+Processing LUNG1-007 (7/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1605500 voxels
+  Volume: 1605500.0 mm^3
+  Surface area: 286092.4 mm^2
+  Sphericity: 0.232
+  Mean intensity: -337.6 HU
+  Contrast: 3.182
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-008 (8/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1180076 voxels
+  Volume: 3379250.2 mm^3
+  Surface area: 316152.1 mm^2
+  Sphericity: 0.344
+  Mean intensity: -301.0 HU
+  Contrast: 1.925
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-009 (9/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1394219 voxels
+  Volume: 3992467.3 mm^3
+  Surface area: 360057.4 mm^2
+  Sphericity: 0.338
+  Mean intensity: -349.6 HU
+  Contrast: 2.188
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-010 (10/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1477428 voxels
+  Volume: 4230743.5 mm^3
+  Surface area: 349327.2 mm^2
+  Sphericity: 0.362
+  Mean intensity: -385.6 HU
+  Contrast: 2.936
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-011 (11/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1783952 voxels
+  Volume: 5108501.6 mm^3
+  Surface area: 412612.8 mm^2
+  Sphericity: 0.348
+  Mean intensity: -316.8 HU
+  Contrast: 3.632
+  Homogeneity: 0.967
+
+==================================================
+Processing LUNG1-012 (12/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2408693 voxels
+  Volume: 6897501.7 mm^3
+  Surface area: 476828.4 mm^2
+  Sphericity: 0.367
+  Mean intensity: -414.5 HU
+  Contrast: 4.264
+  Homogeneity: 0.971
+
+==================================================
+Processing LUNG1-013 (13/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1917472 voxels
+  Volume: 1917472.0 mm^3
+  Surface area: 270306.7 mm^2
+  Sphericity: 0.276
+  Mean intensity: -292.1 HU
+  Contrast: 3.522
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-015 (14/417)...
+    Found 4 segment files, combining...
+  Tumor size: 2170341 voxels
+  Volume: 5250514.7 mm^3
+  Surface area: 335274.9 mm^2
+  Sphericity: 0.436
+  Mean intensity: -640.5 HU
+  Contrast: 2.564
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-016 (15/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1672737 voxels
+  Volume: 4790027.8 mm^3
+  Surface area: 398002.2 mm^2
+  Sphericity: 0.345
+  Mean intensity: -290.8 HU
+  Contrast: 4.818
+  Homogeneity: 0.974
+
+==================================================
+Processing LUNG1-017 (16/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1481863 voxels
+  Volume: 4243443.5 mm^3
+  Surface area: 365407.0 mm^2
+  Sphericity: 0.347
+  Mean intensity: -367.8 HU
+  Contrast: 2.261
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-018 (17/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1515145 voxels
+  Volume: 4338749.4 mm^3
+  Surface area: 334443.6 mm^2
+  Sphericity: 0.385
+  Mean intensity: -599.6 HU
+  Contrast: 3.039
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-019 (18/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2777933 voxels
+  Volume: 5494840.0 mm^3
+  Surface area: 385745.1 mm^2
+  Sphericity: 0.390
+  Mean intensity: -503.8 HU
+  Contrast: 4.789
+  Homogeneity: 0.968
+
+==================================================
+Processing LUNG1-020 (19/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2551334 voxels
+  Volume: 7305966.6 mm^3
+  Surface area: 530199.1 mm^2
+  Sphericity: 0.343
+  Mean intensity: -457.8 HU
+  Contrast: 4.984
+  Homogeneity: 0.971
+
+==================================================
+Processing LUNG1-022 (20/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1974288 voxels
+  Volume: 5653545.3 mm^3
+  Surface area: 413859.4 mm^2
+  Sphericity: 0.371
+  Mean intensity: -357.6 HU
+  Contrast: 3.135
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-023 (21/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2523021 voxels
+  Volume: 7224889.9 mm^3
+  Surface area: 526899.2 mm^2
+  Sphericity: 0.343
+  Mean intensity: -405.4 HU
+  Contrast: 4.134
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-024 (22/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1450863 voxels
+  Volume: 4154672.3 mm^3
+  Surface area: 349659.8 mm^2
+  Sphericity: 0.357
+  Mean intensity: -295.0 HU
+  Contrast: 3.382
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-025 (23/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1928238 voxels
+  Volume: 5521677.1 mm^3
+  Surface area: 394337.1 mm^2
+  Sphericity: 0.383
+  Mean intensity: -392.3 HU
+  Contrast: 2.862
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-026 (24/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1414584 voxels
+  Volume: 4050784.2 mm^3
+  Surface area: 390380.5 mm^2
+  Sphericity: 0.315
+  Mean intensity: -324.7 HU
+  Contrast: 2.682
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-027 (25/417)...
+    Found 4 segment files, combining...
+  Tumor size: 2077503 voxels
+  Volume: 5949110.4 mm^3
+  Surface area: 393267.8 mm^2
+  Sphericity: 0.404
+  Mean intensity: -485.8 HU
+  Contrast: 2.972
+  Homogeneity: 0.971
+
+==================================================
+Processing LUNG1-028 (26/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1951775 voxels
+  Volume: 5589077.3 mm^3
+  Surface area: 407412.4 mm^2
+  Sphericity: 0.374
+  Mean intensity: -404.2 HU
+  Contrast: 3.617
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-029 (27/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1227720 voxels
+  Volume: 1227720.0 mm^3
+  Surface area: 217486.0 mm^2
+  Sphericity: 0.255
+  Mean intensity: -374.8 HU
+  Contrast: 2.505
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-030 (28/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1861435 voxels
+  Volume: 5330380.9 mm^3
+  Surface area: 415086.6 mm^2
+  Sphericity: 0.356
+  Mean intensity: -489.2 HU
+  Contrast: 4.294
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-031 (29/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1710751 voxels
+  Volume: 4898884.2 mm^3
+  Surface area: 360495.1 mm^2
+  Sphericity: 0.387
+  Mean intensity: -467.7 HU
+  Contrast: 1.709
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-032 (30/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2224414 voxels
+  Volume: 2224414.0 mm^3
+  Surface area: 348930.0 mm^2
+  Sphericity: 0.236
+  Mean intensity: -606.7 HU
+  Contrast: 6.199
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-033 (31/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2598660 voxels
+  Volume: 7441488.7 mm^3
+  Surface area: 498144.8 mm^2
+  Sphericity: 0.370
+  Mean intensity: -499.5 HU
+  Contrast: 4.174
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-034 (32/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1766193 voxels
+  Volume: 5057647.1 mm^3
+  Surface area: 387441.4 mm^2
+  Sphericity: 0.368
+  Mean intensity: -404.9 HU
+  Contrast: 3.615
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-035 (33/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1297761 voxels
+  Volume: 3716251.4 mm^3
+  Surface area: 332907.4 mm^2
+  Sphericity: 0.349
+  Mean intensity: -317.9 HU
+  Contrast: 2.444
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-036 (34/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1845465 voxels
+  Volume: 1845465.0 mm^3
+  Surface area: 267976.5 mm^2
+  Sphericity: 0.272
+  Mean intensity: -490.5 HU
+  Contrast: 3.365
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-037 (35/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1407005 voxels
+  Volume: 4029081.1 mm^3
+  Surface area: 331248.6 mm^2
+  Sphericity: 0.370
+  Mean intensity: -438.9 HU
+  Contrast: 2.740
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-038 (36/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1343672 voxels
+  Volume: 3847721.5 mm^3
+  Surface area: 343788.9 mm^2
+  Sphericity: 0.345
+  Mean intensity: -317.5 HU
+  Contrast: 1.331
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-039 (37/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2028014 voxels
+  Volume: 5807394.3 mm^3
+  Surface area: 395911.3 mm^2
+  Sphericity: 0.395
+  Mean intensity: -510.0 HU
+  Contrast: 4.002
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-040 (38/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1176741 voxels
+  Volume: 3369700.1 mm^3
+  Surface area: 301927.0 mm^2
+  Sphericity: 0.360
+  Mean intensity: -304.9 HU
+  Contrast: 2.545
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-041 (39/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1108650 voxels
+  Volume: 3174715.6 mm^3
+  Surface area: 269311.3 mm^2
+  Sphericity: 0.388
+  Mean intensity: -516.7 HU
+  Contrast: 1.677
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-042 (40/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1465598 voxels
+  Volume: 4196867.2 mm^3
+  Surface area: 376869.4 mm^2
+  Sphericity: 0.334
+  Mean intensity: -362.5 HU
+  Contrast: 2.752
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-043 (41/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1921585 voxels
+  Volume: 5502625.6 mm^3
+  Surface area: 403589.2 mm^2
+  Sphericity: 0.373
+  Mean intensity: -340.8 HU
+  Contrast: 3.591
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-044 (42/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1226095 voxels
+  Volume: 3511029.6 mm^3
+  Surface area: 290366.3 mm^2
+  Sphericity: 0.385
+  Mean intensity: -443.8 HU
+  Contrast: 2.285
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-045 (43/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1163736 voxels
+  Volume: 3332459.2 mm^3
+  Surface area: 292985.6 mm^2
+  Sphericity: 0.368
+  Mean intensity: -413.0 HU
+  Contrast: 2.303
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-046 (44/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1462142 voxels
+  Volume: 4186970.7 mm^3
+  Surface area: 417114.3 mm^2
+  Sphericity: 0.301
+  Mean intensity: -293.0 HU
+  Contrast: 4.445
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-047 (45/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1615024 voxels
+  Volume: 4624761.6 mm^3
+  Surface area: 349097.1 mm^2
+  Sphericity: 0.385
+  Mean intensity: -439.3 HU
+  Contrast: 2.200
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-048 (46/417)...
+    Found 4 segment files, combining...
+  Tumor size: 907386 voxels
+  Volume: 907386.0 mm^3
+  Surface area: 180432.1 mm^2
+  Sphericity: 0.251
+  Mean intensity: -246.1 HU
+  Contrast: 2.382
+  Homogeneity: 0.991
+
+==================================================
+Processing LUNG1-049 (47/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1995595 voxels
+  Volume: 5714559.7 mm^3
+  Surface area: 380647.0 mm^2
+  Sphericity: 0.406
+  Mean intensity: -463.2 HU
+  Contrast: 2.429
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-050 (48/417)...
+    Found 1 segment files, combining...
+  Tumor size: 2105 voxels
+  Volume: 6027.9 mm^3
+  Surface area: 2579.7 mm^2
+  Sphericity: 0.621
+  Mean intensity: -510.7 HU
+  Contrast: 0.023
+  Homogeneity: 1.000
+
+==================================================
+Processing LUNG1-051 (49/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2413437 voxels
+  Volume: 2413437.0 mm^3
+  Surface area: 330576.0 mm^2
+  Sphericity: 0.263
+  Mean intensity: -576.2 HU
+  Contrast: 5.331
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-052 (50/417)...
+    Found 5 segment files, combining...
+  Tumor size: 964941 voxels
+  Volume: 2763192.4 mm^3
+  Surface area: 288991.2 mm^2
+  Sphericity: 0.330
+  Mean intensity: -375.6 HU
+  Contrast: 1.484
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-053 (51/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1332550 voxels
+  Volume: 3815872.7 mm^3
+  Surface area: 328489.1 mm^2
+  Sphericity: 0.359
+  Mean intensity: -657.9 HU
+  Contrast: 3.860
+  Homogeneity: 0.989
+
+==================================================
+Processing LUNG1-054 (52/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1903629 voxels
+  Volume: 5451207.1 mm^3
+  Surface area: 372191.3 mm^2
+  Sphericity: 0.402
+  Mean intensity: -630.0 HU
+  Contrast: 2.481
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-055 (53/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1243677 voxels
+  Volume: 3561377.2 mm^3
+  Surface area: 329212.4 mm^2
+  Sphericity: 0.343
+  Mean intensity: -395.5 HU
+  Contrast: 1.572
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-056 (54/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1417920 voxels
+  Volume: 1417920.0 mm^3
+  Surface area: 230679.8 mm^2
+  Sphericity: 0.265
+  Mean intensity: -319.8 HU
+  Contrast: 3.115
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-057 (55/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1332916 voxels
+  Volume: 3816920.8 mm^3
+  Surface area: 321809.6 mm^2
+  Sphericity: 0.367
+  Mean intensity: -416.7 HU
+  Contrast: 3.110
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-058 (56/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2068528 voxels
+  Volume: 5918100.2 mm^3
+  Surface area: 422321.0 mm^2
+  Sphericity: 0.375
+  Mean intensity: -542.6 HU
+  Contrast: 1.092
+  Homogeneity: 0.991
+
+==================================================
+Processing LUNG1-059 (57/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1822109 voxels
+  Volume: 5217767.5 mm^3
+  Surface area: 360700.5 mm^2
+  Sphericity: 0.403
+  Mean intensity: -657.0 HU
+  Contrast: 3.145
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-060 (58/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1880210 voxels
+  Volume: 5384144.7 mm^3
+  Surface area: 391480.3 mm^2
+  Sphericity: 0.379
+  Mean intensity: -510.1 HU
+  Contrast: 2.140
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-061 (59/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1600034 voxels
+  Volume: 4581836.4 mm^3
+  Surface area: 373196.8 mm^2
+  Sphericity: 0.357
+  Mean intensity: -470.5 HU
+  Contrast: 2.336
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-062 (60/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1169875 voxels
+  Volume: 3350038.7 mm^3
+  Surface area: 274174.7 mm^2
+  Sphericity: 0.395
+  Mean intensity: -686.0 HU
+  Contrast: 2.570
+  Homogeneity: 0.990
+
+==================================================
+Processing LUNG1-063 (61/417)...
+    Found 4 segment files, combining...
+  Tumor size: 909797 voxels
+  Volume: 2605282.8 mm^3
+  Surface area: 236602.7 mm^2
+  Sphericity: 0.387
+  Mean intensity: -443.3 HU
+  Contrast: 1.430
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-064 (62/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2091896 voxels
+  Volume: 5990326.0 mm^3
+  Surface area: 458258.2 mm^2
+  Sphericity: 0.348
+  Mean intensity: -473.1 HU
+  Contrast: 4.240
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-065 (63/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1032151 voxels
+  Volume: 1032151.0 mm^3
+  Surface area: 194685.2 mm^2
+  Sphericity: 0.254
+  Mean intensity: -196.9 HU
+  Contrast: 2.498
+  Homogeneity: 0.990
+
+==================================================
+Processing LUNG1-066 (64/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1350607 voxels
+  Volume: 3867580.5 mm^3
+  Surface area: 317940.7 mm^2
+  Sphericity: 0.375
+  Mean intensity: -352.2 HU
+  Contrast: 2.366
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-067 (65/417)...
+    Found 1 segment files, combining...
+  Tumor size: 11161 voxels
+  Volume: 11161.0 mm^3
+  Surface area: 3646.5 mm^2
+  Sphericity: 0.662
+  Mean intensity: 223.9 HU
+  Contrast: 0.035
+  Homogeneity: 1.000
+
+==================================================
+Processing LUNG1-068 (66/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1710725 voxels
+  Volume: 4898809.7 mm^3
+  Surface area: 363735.1 mm^2
+  Sphericity: 0.383
+  Mean intensity: -482.8 HU
+  Contrast: 3.391
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-069 (67/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1478439 voxels
+  Volume: 4233638.6 mm^3
+  Surface area: 344863.6 mm^2
+  Sphericity: 0.367
+  Mean intensity: -583.2 HU
+  Contrast: 1.978
+  Homogeneity: 0.989
+
+==================================================
+Processing LUNG1-070 (68/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1945238 voxels
+  Volume: 5570358.1 mm^3
+  Surface area: 378975.4 mm^2
+  Sphericity: 0.401
+  Mean intensity: -708.0 HU
+  Contrast: 3.578
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-071 (69/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1393882 voxels
+  Volume: 1393882.0 mm^3
+  Surface area: 254288.0 mm^2
+  Sphericity: 0.237
+  Mean intensity: -184.7 HU
+  Contrast: 3.207
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-072 (70/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1466330 voxels
+  Volume: 1466330.0 mm^3
+  Surface area: 280734.2 mm^2
+  Sphericity: 0.222
+  Mean intensity: -246.3 HU
+  Contrast: 3.901
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-073 (71/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1292880 voxels
+  Volume: 1292880.0 mm^3
+  Surface area: 210219.8 mm^2
+  Sphericity: 0.273
+  Mean intensity: -221.0 HU
+  Contrast: 1.937
+  Homogeneity: 0.992
+
+==================================================
+Processing LUNG1-074 (72/417)...
+    Found 5 segment files, combining...
+  Tumor size: 980509 voxels
+  Volume: 2807772.7 mm^3
+  Surface area: 291773.2 mm^2
+  Sphericity: 0.330
+  Mean intensity: -361.7 HU
+  Contrast: 1.839
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-075 (73/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1618485 voxels
+  Volume: 1618485.0 mm^3
+  Surface area: 212735.5 mm^2
+  Sphericity: 0.313
+  Mean intensity: -290.9 HU
+  Contrast: 2.200
+  Homogeneity: 0.991
+
+==================================================
+Processing LUNG1-076 (74/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1284757 voxels
+  Volume: 3679013.3 mm^3
+  Surface area: 286520.2 mm^2
+  Sphericity: 0.402
+  Mean intensity: -415.3 HU
+  Contrast: 2.002
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-077 (75/417)...
+    Found 4 segment files, combining...
+  Tumor size: 981368 voxels
+  Volume: 981368.0 mm^3
+  Surface area: 205174.4 mm^2
+  Sphericity: 0.233
+  Mean intensity: -243.8 HU
+  Contrast: 3.074
+  Homogeneity: 0.990
+
+==================================================
+Processing LUNG1-078 (76/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2314484 voxels
+  Volume: 6627726.1 mm^3
+  Surface area: 441570.4 mm^2
+  Sphericity: 0.386
+  Mean intensity: -499.0 HU
+  Contrast: 3.030
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-079 (77/417)...
+    Found 5 segment files, combining...
+  Tumor size: 951974 voxels
+  Volume: 951974.0 mm^3
+  Surface area: 205553.8 mm^2
+  Sphericity: 0.228
+  Mean intensity: -43.5 HU
+  Contrast: 2.375
+  Homogeneity: 0.992
+
+==================================================
+Processing LUNG1-080 (78/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2010997 voxels
+  Volume: 2010997.0 mm^3
+  Surface area: 390355.4 mm^2
+  Sphericity: 0.197
+  Mean intensity: -430.9 HU
+  Contrast: 7.734
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-081 (79/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1520990 voxels
+  Volume: 4355487.0 mm^3
+  Surface area: 373436.8 mm^2
+  Sphericity: 0.345
+  Mean intensity: -411.7 HU
+  Contrast: 2.923
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-082 (80/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1240898 voxels
+  Volume: 1240898.0 mm^3
+  Surface area: 199447.8 mm^2
+  Sphericity: 0.280
+  Mean intensity: -147.4 HU
+  Contrast: 1.287
+  Homogeneity: 0.989
+
+==================================================
+Processing LUNG1-083 (81/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2511546 voxels
+  Volume: 2511546.0 mm^3
+  Surface area: 382841.6 mm^2
+  Sphericity: 0.233
+  Mean intensity: -434.4 HU
+  Contrast: 5.209
+  Homogeneity: 0.969
+
+==================================================
+Processing LUNG1-084 (82/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1727585 voxels
+  Volume: 1727585.0 mm^3
+  Surface area: 255935.7 mm^2
+  Sphericity: 0.272
+  Mean intensity: -516.6 HU
+  Contrast: 3.754
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-086 (83/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1394202 voxels
+  Volume: 1394202.0 mm^3
+  Surface area: 205481.9 mm^2
+  Sphericity: 0.294
+  Mean intensity: -110.7 HU
+  Contrast: 1.304
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-087 (84/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2104349 voxels
+  Volume: 6025986.2 mm^3
+  Surface area: 404526.2 mm^2
+  Sphericity: 0.396
+  Mean intensity: -527.7 HU
+  Contrast: 2.808
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-088 (85/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2087550 voxels
+  Volume: 5977880.8 mm^3
+  Surface area: 423779.2 mm^2
+  Sphericity: 0.376
+  Mean intensity: -574.4 HU
+  Contrast: 3.399
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-089 (86/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1303595 voxels
+  Volume: 3732957.6 mm^3
+  Surface area: 286028.4 mm^2
+  Sphericity: 0.407
+  Mean intensity: -454.9 HU
+  Contrast: 2.607
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-090 (87/417)...
+    Found 4 segment files, combining...
+  Tumor size: 2260137 voxels
+  Volume: 2260137.0 mm^3
+  Surface area: 319002.1 mm^2
+  Sphericity: 0.261
+  Mean intensity: -522.3 HU
+  Contrast: 5.149
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-091 (88/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1275374 voxels
+  Volume: 3652144.3 mm^3
+  Surface area: 285193.3 mm^2
+  Sphericity: 0.402
+  Mean intensity: -351.3 HU
+  Contrast: 1.604
+  Homogeneity: 0.989
+
+==================================================
+Processing LUNG1-092 (89/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1846913 voxels
+  Volume: 1846913.0 mm^3
+  Surface area: 294455.1 mm^2
+  Sphericity: 0.247
+  Mean intensity: -334.7 HU
+  Contrast: 3.951
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-093 (90/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1704484 voxels
+  Volume: 1704484.0 mm^3
+  Surface area: 241471.9 mm^2
+  Sphericity: 0.286
+  Mean intensity: -272.7 HU
+  Contrast: 2.459
+  Homogeneity: 0.989
+
+==================================================
+Processing LUNG1-094 (91/417)...
+    Found 5 segment files, combining...
+  Tumor size: 970441 voxels
+  Volume: 970441.0 mm^3
+  Surface area: 268266.1 mm^2
+  Sphericity: 0.177
+  Mean intensity: -382.0 HU
+  Contrast: 6.160
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-096 (92/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1950350 voxels
+  Volume: 1950350.0 mm^3
+  Surface area: 250588.6 mm^2
+  Sphericity: 0.301
+  Mean intensity: -260.3 HU
+  Contrast: 2.585
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-097 (93/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1556128 voxels
+  Volume: 1556128.0 mm^3
+  Surface area: 264255.7 mm^2
+  Sphericity: 0.246
+  Mean intensity: -326.0 HU
+  Contrast: 2.692
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-098 (94/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1531995 voxels
+  Volume: 1531995.0 mm^3
+  Surface area: 299275.8 mm^2
+  Sphericity: 0.215
+  Mean intensity: -370.8 HU
+  Contrast: 4.014
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-099 (95/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1917223 voxels
+  Volume: 1917223.0 mm^3
+  Surface area: 322767.6 mm^2
+  Sphericity: 0.231
+  Mean intensity: -425.3 HU
+  Contrast: 5.247
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-100 (96/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1113546 voxels
+  Volume: 1113546.0 mm^3
+  Surface area: 258654.4 mm^2
+  Sphericity: 0.201
+  Mean intensity: -330.5 HU
+  Contrast: 3.430
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-101 (97/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1223144 voxels
+  Volume: 3502579.1 mm^3
+  Surface area: 306413.2 mm^2
+  Sphericity: 0.364
+  Mean intensity: -439.5 HU
+  Contrast: 2.075
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-102 (98/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1588176 voxels
+  Volume: 1588176.0 mm^3
+  Surface area: 268098.7 mm^2
+  Sphericity: 0.246
+  Mean intensity: -454.3 HU
+  Contrast: 4.040
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-103 (99/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1988994 voxels
+  Volume: 1988994.0 mm^3
+  Surface area: 348775.9 mm^2
+  Sphericity: 0.219
+  Mean intensity: -458.3 HU
+  Contrast: 5.919
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-104 (100/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1147629 voxels
+  Volume: 1147629.0 mm^3
+  Surface area: 153396.6 mm^2
+  Sphericity: 0.346
+  Mean intensity: -86.2 HU
+  Contrast: 0.602
+  Homogeneity: 0.995
+
+==================================================
+Processing LUNG1-105 (101/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1666601 voxels
+  Volume: 1666601.0 mm^3
+  Surface area: 298152.6 mm^2
+  Sphericity: 0.228
+  Mean intensity: -496.0 HU
+  Contrast: 4.556
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-106 (102/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1262648 voxels
+  Volume: 1262648.0 mm^3
+  Surface area: 283887.9 mm^2
+  Sphericity: 0.199
+  Mean intensity: -291.7 HU
+  Contrast: 3.832
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-107 (103/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1396672 voxels
+  Volume: 3999491.6 mm^3
+  Surface area: 336241.2 mm^2
+  Sphericity: 0.362
+  Mean intensity: -473.0 HU
+  Contrast: 2.847
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-108 (104/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1685463 voxels
+  Volume: 1685463.0 mm^3
+  Surface area: 223687.1 mm^2
+  Sphericity: 0.306
+  Mean intensity: -248.7 HU
+  Contrast: 1.674
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-109 (105/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1394783 voxels
+  Volume: 1394783.0 mm^3
+  Surface area: 301541.4 mm^2
+  Sphericity: 0.200
+  Mean intensity: -398.4 HU
+  Contrast: 5.283
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-110 (106/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1360377 voxels
+  Volume: 1360377.0 mm^3
+  Surface area: 210575.8 mm^2
+  Sphericity: 0.282
+  Mean intensity: -261.3 HU
+  Contrast: 1.673
+  Homogeneity: 0.990
+
+==================================================
+Processing LUNG1-111 (107/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1989259 voxels
+  Volume: 1989259.0 mm^3
+  Surface area: 212758.8 mm^2
+  Sphericity: 0.360
+  Mean intensity: -364.1 HU
+  Contrast: 1.812
+  Homogeneity: 0.992
+
+==================================================
+Processing LUNG1-112 (108/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1815837 voxels
+  Volume: 1815837.0 mm^3
+  Surface area: 243831.6 mm^2
+  Sphericity: 0.295
+  Mean intensity: -188.4 HU
+  Contrast: 1.760
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-113 (109/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1491094 voxels
+  Volume: 1491094.0 mm^3
+  Surface area: 274964.0 mm^2
+  Sphericity: 0.230
+  Mean intensity: -379.0 HU
+  Contrast: 3.661
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-114 (110/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1507760 voxels
+  Volume: 1507760.0 mm^3
+  Surface area: 261186.4 mm^2
+  Sphericity: 0.243
+  Mean intensity: -406.9 HU
+  Contrast: 3.485
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-115 (111/417)...
+    Found 1 segment files, combining...
+  Tumor size: 81802 voxels
+  Volume: 81802.0 mm^3
+  Surface area: 20885.4 mm^2
+  Sphericity: 0.436
+  Mean intensity: -471.0 HU
+  Contrast: 0.299
+  Homogeneity: 0.999
+
+==================================================
+Processing LUNG1-116 (112/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2188472 voxels
+  Volume: 2188472.0 mm^3
+  Surface area: 305808.4 mm^2
+  Sphericity: 0.267
+  Mean intensity: -296.0 HU
+  Contrast: 2.825
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-117 (113/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1356207 voxels
+  Volume: 3883616.6 mm^3
+  Surface area: 309757.0 mm^2
+  Sphericity: 0.386
+  Mean intensity: -473.4 HU
+  Contrast: 3.123
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-118 (114/417)...
+    Found 3 segment files, combining...
+  Tumor size: 2130089 voxels
+  Volume: 2130089.0 mm^3
+  Surface area: 309559.5 mm^2
+  Sphericity: 0.259
+  Mean intensity: -481.2 HU
+  Contrast: 4.209
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-119 (115/417)...
+    Found 3 segment files, combining...
+  Tumor size: 42276 voxels
+  Volume: 42276.0 mm^3
+  Surface area: 31383.6 mm^2
+  Sphericity: 0.187
+  Mean intensity: -526.3 HU
+  Contrast: 0.405
+  Homogeneity: 0.999
+
+==================================================
+Processing LUNG1-120 (116/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1685530 voxels
+  Volume: 1685530.0 mm^3
+  Surface area: 302627.4 mm^2
+  Sphericity: 0.226
+  Mean intensity: -366.3 HU
+  Contrast: 3.885
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-121 (117/417)...
+    Found 3 segment files, combining...
+  Tumor size: 36638 voxels
+  Volume: 36638.0 mm^3
+  Surface area: 25100.6 mm^2
+  Sphericity: 0.213
+  Mean intensity: -579.4 HU
+  Contrast: 0.401
+  Homogeneity: 0.999
+
+==================================================
+Processing LUNG1-122 (118/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1572128 voxels
+  Volume: 1572128.0 mm^3
+  Surface area: 257749.2 mm^2
+  Sphericity: 0.254
+  Mean intensity: -356.8 HU
+  Contrast: 2.842
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-123 (119/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1763352 voxels
+  Volume: 1763352.0 mm^3
+  Surface area: 279482.6 mm^2
+  Sphericity: 0.253
+  Mean intensity: -423.2 HU
+  Contrast: 4.828
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-124 (120/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1981200 voxels
+  Volume: 1981200.0 mm^3
+  Surface area: 322614.1 mm^2
+  Sphericity: 0.236
+  Mean intensity: -544.0 HU
+  Contrast: 5.581
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-125 (121/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1448219 voxels
+  Volume: 4147101.0 mm^3
+  Surface area: 332777.3 mm^2
+  Sphericity: 0.375
+  Mean intensity: -506.5 HU
+  Contrast: 2.240
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-126 (122/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1013413 voxels
+  Volume: 1013413.0 mm^3
+  Surface area: 222981.9 mm^2
+  Sphericity: 0.219
+  Mean intensity: -193.2 HU
+  Contrast: 2.588
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-127 (123/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1354220 voxels
+  Volume: 1354220.0 mm^3
+  Surface area: 267106.2 mm^2
+  Sphericity: 0.222
+  Mean intensity: -323.3 HU
+  Contrast: 3.543
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-128 (124/417)...
+  No segmentation files found - skipping
+
+==================================================
+Processing LUNG1-129 (125/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1121059 voxels
+  Volume: 1121059.0 mm^3
+  Surface area: 274387.8 mm^2
+  Sphericity: 0.190
+  Mean intensity: -184.6 HU
+  Contrast: 3.488
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-130 (126/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1249900 voxels
+  Volume: 1249900.0 mm^3
+  Surface area: 296744.8 mm^2
+  Sphericity: 0.189
+  Mean intensity: -355.6 HU
+  Contrast: 4.450
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-131 (127/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1274926 voxels
+  Volume: 1274926.0 mm^3
+  Surface area: 249138.4 mm^2
+  Sphericity: 0.228
+  Mean intensity: -275.6 HU
+  Contrast: 3.061
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-132 (128/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1263231 voxels
+  Volume: 1263231.0 mm^3
+  Surface area: 267157.8 mm^2
+  Sphericity: 0.212
+  Mean intensity: -315.9 HU
+  Contrast: 3.135
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-133 (129/417)...
+    Found 4 segment files, combining...
+  Tumor size: 2096749 voxels
+  Volume: 2096749.0 mm^3
+  Surface area: 245877.6 mm^2
+  Sphericity: 0.322
+  Mean intensity: -377.2 HU
+  Contrast: 2.362
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-134 (130/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1790501 voxels
+  Volume: 1790501.0 mm^3
+  Surface area: 324866.1 mm^2
+  Sphericity: 0.219
+  Mean intensity: -486.5 HU
+  Contrast: 5.123
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-135 (131/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1470405 voxels
+  Volume: 1470405.0 mm^3
+  Surface area: 321322.6 mm^2
+  Sphericity: 0.195
+  Mean intensity: -413.6 HU
+  Contrast: 5.802
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-136 (132/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1370476 voxels
+  Volume: 1370476.0 mm^3
+  Surface area: 311846.6 mm^2
+  Sphericity: 0.191
+  Mean intensity: -260.2 HU
+  Contrast: 4.741
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-137 (133/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1352767 voxels
+  Volume: 3873765.9 mm^3
+  Surface area: 353128.4 mm^2
+  Sphericity: 0.338
+  Mean intensity: -359.2 HU
+  Contrast: 1.944
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-138 (134/417)...
+    Found 4 segment files, combining...
+  Tumor size: 761889 voxels
+  Volume: 761889.0 mm^3
+  Surface area: 146645.3 mm^2
+  Sphericity: 0.275
+  Mean intensity: -232.8 HU
+  Contrast: 2.746
+  Homogeneity: 0.991
+
+==================================================
+Processing LUNG1-139 (135/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1605553 voxels
+  Volume: 1605553.0 mm^3
+  Surface area: 308228.1 mm^2
+  Sphericity: 0.215
+  Mean intensity: -354.7 HU
+  Contrast: 4.119
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-140 (136/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1348000 voxels
+  Volume: 3860115.1 mm^3
+  Surface area: 346778.6 mm^2
+  Sphericity: 0.343
+  Mean intensity: -497.3 HU
+  Contrast: 2.950
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-141 (137/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1375132 voxels
+  Volume: 1375132.0 mm^3
+  Surface area: 255451.9 mm^2
+  Sphericity: 0.234
+  Mean intensity: -473.3 HU
+  Contrast: 3.583
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-142 (138/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1507584 voxels
+  Volume: 1507584.0 mm^3
+  Surface area: 335108.6 mm^2
+  Sphericity: 0.190
+  Mean intensity: -270.2 HU
+  Contrast: 4.173
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-143 (139/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1107826 voxels
+  Volume: 1107826.0 mm^3
+  Surface area: 221044.7 mm^2
+  Sphericity: 0.234
+  Mean intensity: -234.1 HU
+  Contrast: 2.548
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-144 (140/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1459823 voxels
+  Volume: 1459823.0 mm^3
+  Surface area: 244365.8 mm^2
+  Sphericity: 0.255
+  Mean intensity: -228.8 HU
+  Contrast: 3.021
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-145 (141/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1295758 voxels
+  Volume: 1295758.0 mm^3
+  Surface area: 273540.7 mm^2
+  Sphericity: 0.210
+  Mean intensity: -303.0 HU
+  Contrast: 3.919
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-146 (142/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1353402 voxels
+  Volume: 1353402.0 mm^3
+  Surface area: 245587.9 mm^2
+  Sphericity: 0.241
+  Mean intensity: -306.3 HU
+  Contrast: 2.695
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-147 (143/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1221271 voxels
+  Volume: 1221271.0 mm^3
+  Surface area: 275767.2 mm^2
+  Sphericity: 0.200
+  Mean intensity: -376.7 HU
+  Contrast: 4.482
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-148 (144/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1270814 voxels
+  Volume: 1270814.0 mm^3
+  Surface area: 279854.1 mm^2
+  Sphericity: 0.203
+  Mean intensity: -420.4 HU
+  Contrast: 4.360
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-149 (145/417)...
+    Found 1 segment files, combining...
+  Tumor size: 264046 voxels
+  Volume: 411443.2 mm^3
+  Surface area: 43196.5 mm^2
+  Sphericity: 0.619
+  Mean intensity: -115.0 HU
+  Contrast: 0.466
+  Homogeneity: 0.997
+
+==================================================
+Processing LUNG1-150 (146/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1469414 voxels
+  Volume: 1469414.0 mm^3
+  Surface area: 274739.9 mm^2
+  Sphericity: 0.228
+  Mean intensity: -337.7 HU
+  Contrast: 3.162
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-151 (147/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2248985 voxels
+  Volume: 2248985.0 mm^3
+  Surface area: 368221.8 mm^2
+  Sphericity: 0.225
+  Mean intensity: -561.1 HU
+  Contrast: 6.104
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-152 (148/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2115086 voxels
+  Volume: 2115086.0 mm^3
+  Surface area: 357746.6 mm^2
+  Sphericity: 0.223
+  Mean intensity: -559.6 HU
+  Contrast: 6.233
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-153 (149/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1135169 voxels
+  Volume: 1135169.0 mm^3
+  Surface area: 274287.6 mm^2
+  Sphericity: 0.192
+  Mean intensity: -531.2 HU
+  Contrast: 5.392
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-154 (150/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1579279 voxels
+  Volume: 4522402.7 mm^3
+  Surface area: 310137.8 mm^2
+  Sphericity: 0.426
+  Mean intensity: -589.3 HU
+  Contrast: 2.087
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-155 (151/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1277857 voxels
+  Volume: 3659254.6 mm^3
+  Surface area: 325867.6 mm^2
+  Sphericity: 0.352
+  Mean intensity: -473.7 HU
+  Contrast: 2.483
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-156 (152/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1083875 voxels
+  Volume: 1083875.0 mm^3
+  Surface area: 260790.8 mm^2
+  Sphericity: 0.196
+  Mean intensity: -223.8 HU
+  Contrast: 3.311
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-157 (153/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1295844 voxels
+  Volume: 1295844.0 mm^3
+  Surface area: 271848.1 mm^2
+  Sphericity: 0.211
+  Mean intensity: -372.4 HU
+  Contrast: 3.801
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-158 (154/417)...
+    Found 3 segment files, combining...
+  Tumor size: 38410 voxels
+  Volume: 109990.4 mm^3
+  Surface area: 41868.5 mm^2
+  Sphericity: 0.265
+  Mean intensity: -329.0 HU
+  Contrast: 0.244
+  Homogeneity: 0.999
+
+==================================================
+Processing LUNG1-159 (155/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1819275 voxels
+  Volume: 5209652.1 mm^3
+  Surface area: 376325.8 mm^2
+  Sphericity: 0.386
+  Mean intensity: -549.3 HU
+  Contrast: 2.911
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-160 (156/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2289394 voxels
+  Volume: 2289394.0 mm^3
+  Surface area: 286756.5 mm^2
+  Sphericity: 0.293
+  Mean intensity: -589.7 HU
+  Contrast: 3.766
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-161 (157/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1631546 voxels
+  Volume: 1631546.0 mm^3
+  Surface area: 292962.9 mm^2
+  Sphericity: 0.229
+  Mean intensity: -197.9 HU
+  Contrast: 3.969
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-162 (158/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1572466 voxels
+  Volume: 1572466.0 mm^3
+  Surface area: 269625.7 mm^2
+  Sphericity: 0.243
+  Mean intensity: -392.5 HU
+  Contrast: 3.444
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-163 (159/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1065143 voxels
+  Volume: 1065143.0 mm^3
+  Surface area: 239997.8 mm^2
+  Sphericity: 0.210
+  Mean intensity: -330.6 HU
+  Contrast: 3.174
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-164 (160/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1012256 voxels
+  Volume: 1012256.0 mm^3
+  Surface area: 198113.1 mm^2
+  Sphericity: 0.246
+  Mean intensity: -176.6 HU
+  Contrast: 2.405
+  Homogeneity: 0.991
+
+==================================================
+Processing LUNG1-165 (161/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1396062 voxels
+  Volume: 1396062.0 mm^3
+  Surface area: 266547.2 mm^2
+  Sphericity: 0.227
+  Mean intensity: -450.3 HU
+  Contrast: 4.689
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-166 (162/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1769433 voxels
+  Volume: 1769433.0 mm^3
+  Surface area: 262248.5 mm^2
+  Sphericity: 0.270
+  Mean intensity: -406.7 HU
+  Contrast: 2.887
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-167 (163/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1922993 voxels
+  Volume: 1922993.0 mm^3
+  Surface area: 292315.1 mm^2
+  Sphericity: 0.256
+  Mean intensity: -511.2 HU
+  Contrast: 4.588
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-168 (164/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1299780 voxels
+  Volume: 1299780.0 mm^3
+  Surface area: 229259.3 mm^2
+  Sphericity: 0.251
+  Mean intensity: -336.8 HU
+  Contrast: 2.483
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-169 (165/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1676858 voxels
+  Volume: 1676858.0 mm^3
+  Surface area: 347682.8 mm^2
+  Sphericity: 0.196
+  Mean intensity: -434.6 HU
+  Contrast: 6.155
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-170 (166/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1832410 voxels
+  Volume: 5247265.3 mm^3
+  Surface area: 387151.2 mm^2
+  Sphericity: 0.377
+  Mean intensity: -391.1 HU
+  Contrast: 2.673
+  Homogeneity: 0.973
+
+==================================================
+Processing LUNG1-171 (167/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1601058 voxels
+  Volume: 1601058.0 mm^3
+  Surface area: 281300.7 mm^2
+  Sphericity: 0.235
+  Mean intensity: -408.4 HU
+  Contrast: 4.825
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-172 (168/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2083987 voxels
+  Volume: 2083987.0 mm^3
+  Surface area: 372218.4 mm^2
+  Sphericity: 0.212
+  Mean intensity: -498.7 HU
+  Contrast: 7.129
+  Homogeneity: 0.970
+
+==================================================
+Processing LUNG1-173 (169/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1417777 voxels
+  Volume: 4059927.6 mm^3
+  Surface area: 298862.1 mm^2
+  Sphericity: 0.412
+  Mean intensity: -518.3 HU
+  Contrast: 2.114
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-174 (170/417)...
+    Found 4 segment files, combining...
+  Tumor size: 995313 voxels
+  Volume: 995313.0 mm^3
+  Surface area: 166940.3 mm^2
+  Sphericity: 0.289
+  Mean intensity: -390.5 HU
+  Contrast: 2.769
+  Homogeneity: 0.990
+
+==================================================
+Processing LUNG1-175 (171/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1756351 voxels
+  Volume: 1756351.0 mm^3
+  Surface area: 313173.6 mm^2
+  Sphericity: 0.225
+  Mean intensity: -324.9 HU
+  Contrast: 4.938
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-176 (172/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1005447 voxels
+  Volume: 1005447.0 mm^3
+  Surface area: 240324.2 mm^2
+  Sphericity: 0.202
+  Mean intensity: -281.0 HU
+  Contrast: 3.179
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-177 (173/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1168310 voxels
+  Volume: 3345557.2 mm^3
+  Surface area: 283283.9 mm^2
+  Sphericity: 0.382
+  Mean intensity: -461.1 HU
+  Contrast: 2.127
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-178 (174/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1416972 voxels
+  Volume: 1416972.0 mm^3
+  Surface area: 247989.8 mm^2
+  Sphericity: 0.246
+  Mean intensity: -318.0 HU
+  Contrast: 3.650
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-179 (175/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1719352 voxels
+  Volume: 1719352.0 mm^3
+  Surface area: 312982.5 mm^2
+  Sphericity: 0.222
+  Mean intensity: -390.1 HU
+  Contrast: 4.847
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-180 (176/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1595523 voxels
+  Volume: 4568918.8 mm^3
+  Surface area: 345149.5 mm^2
+  Sphericity: 0.386
+  Mean intensity: -436.2 HU
+  Contrast: 2.048
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-181 (177/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1864976 voxels
+  Volume: 1864976.0 mm^3
+  Surface area: 311117.7 mm^2
+  Sphericity: 0.236
+  Mean intensity: -259.3 HU
+  Contrast: 3.882
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-182 (178/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1473367 voxels
+  Volume: 4219114.4 mm^3
+  Surface area: 346577.2 mm^2
+  Sphericity: 0.364
+  Mean intensity: -388.8 HU
+  Contrast: 1.580
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-183 (179/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1262474 voxels
+  Volume: 1262474.0 mm^3
+  Surface area: 278664.2 mm^2
+  Sphericity: 0.203
+  Mean intensity: -359.1 HU
+  Contrast: 3.679
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-184 (180/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2233238 voxels
+  Volume: 6395071.1 mm^3
+  Surface area: 411040.8 mm^2
+  Sphericity: 0.405
+  Mean intensity: -576.5 HU
+  Contrast: 2.279
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-185 (181/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1543577 voxels
+  Volume: 4420166.9 mm^3
+  Surface area: 366340.1 mm^2
+  Sphericity: 0.356
+  Mean intensity: -373.1 HU
+  Contrast: 2.303
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-186 (182/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1306671 voxels
+  Volume: 3741766.0 mm^3
+  Surface area: 340808.8 mm^2
+  Sphericity: 0.342
+  Mean intensity: -400.7 HU
+  Contrast: 1.738
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-187 (183/417)...
+    Found 4 segment files, combining...
+  Tumor size: 903902 voxels
+  Volume: 2588401.9 mm^3
+  Surface area: 238348.9 mm^2
+  Sphericity: 0.382
+  Mean intensity: -378.1 HU
+  Contrast: 1.586
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-188 (184/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1498208 voxels
+  Volume: 4290248.8 mm^3
+  Surface area: 330508.7 mm^2
+  Sphericity: 0.386
+  Mean intensity: -424.1 HU
+  Contrast: 2.132
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-189 (185/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1239884 voxels
+  Volume: 1239884.0 mm^3
+  Surface area: 297979.8 mm^2
+  Sphericity: 0.187
+  Mean intensity: -312.2 HU
+  Contrast: 5.676
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-190 (186/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1158424 voxels
+  Volume: 3317247.8 mm^3
+  Surface area: 334187.2 mm^2
+  Sphericity: 0.322
+  Mean intensity: -520.1 HU
+  Contrast: 2.257
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-191 (187/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2095618 voxels
+  Volume: 2095618.0 mm^3
+  Surface area: 344064.4 mm^2
+  Sphericity: 0.230
+  Mean intensity: -486.8 HU
+  Contrast: 5.029
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-192 (188/417)...
+    Found 5 segment files, combining...
+  Tumor size: 985614 voxels
+  Volume: 985614.0 mm^3
+  Surface area: 254969.7 mm^2
+  Sphericity: 0.188
+  Mean intensity: -158.7 HU
+  Contrast: 2.139
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-193 (189/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1049716 voxels
+  Volume: 1049716.0 mm^3
+  Surface area: 247133.2 mm^2
+  Sphericity: 0.202
+  Mean intensity: -248.4 HU
+  Contrast: 2.776
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-195 (190/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1029652 voxels
+  Volume: 1029652.0 mm^3
+  Surface area: 240616.7 mm^2
+  Sphericity: 0.205
+  Mean intensity: -383.7 HU
+  Contrast: 3.774
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-196 (191/417)...
+    Found 5 segment files, combining...
+  Tumor size: 816501 voxels
+  Volume: 816501.0 mm^3
+  Surface area: 240107.7 mm^2
+  Sphericity: 0.176
+  Mean intensity: -245.3 HU
+  Contrast: 3.595
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-197 (192/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1449340 voxels
+  Volume: 1449340.0 mm^3
+  Surface area: 245593.3 mm^2
+  Sphericity: 0.252
+  Mean intensity: -345.4 HU
+  Contrast: 3.138
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-198 (193/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1398151 voxels
+  Volume: 4003726.9 mm^3
+  Surface area: 365714.9 mm^2
+  Sphericity: 0.333
+  Mean intensity: -337.7 HU
+  Contrast: 2.089
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-199 (194/417)...
+    Found 5 segment files, combining...
+  Tumor size: 938901 voxels
+  Volume: 938901.0 mm^3
+  Surface area: 218891.3 mm^2
+  Sphericity: 0.212
+  Mean intensity: -297.6 HU
+  Contrast: 2.736
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-200 (195/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1698012 voxels
+  Volume: 1698012.0 mm^3
+  Surface area: 261209.2 mm^2
+  Sphericity: 0.264
+  Mean intensity: -400.5 HU
+  Contrast: 3.365
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-201 (196/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1508623 voxels
+  Volume: 4320073.1 mm^3
+  Surface area: 363219.3 mm^2
+  Sphericity: 0.353
+  Mean intensity: -450.9 HU
+  Contrast: 1.906
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-202 (197/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1135077 voxels
+  Volume: 1135077.0 mm^3
+  Surface area: 219615.9 mm^2
+  Sphericity: 0.240
+  Mean intensity: -157.8 HU
+  Contrast: 2.669
+  Homogeneity: 0.991
+
+==================================================
+Processing LUNG1-203 (198/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1083210 voxels
+  Volume: 3101866.0 mm^3
+  Surface area: 295769.6 mm^2
+  Sphericity: 0.348
+  Mean intensity: -437.2 HU
+  Contrast: 2.130
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-204 (199/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1591626 voxels
+  Volume: 4557759.4 mm^3
+  Surface area: 337129.7 mm^2
+  Sphericity: 0.394
+  Mean intensity: -441.9 HU
+  Contrast: 2.701
+  Homogeneity: 0.973
+
+==================================================
+Processing LUNG1-205 (200/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1141633 voxels
+  Volume: 1141633.0 mm^3
+  Surface area: 283881.5 mm^2
+  Sphericity: 0.186
+  Mean intensity: -339.1 HU
+  Contrast: 4.520
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-206 (201/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1576085 voxels
+  Volume: 1576085.0 mm^3
+  Surface area: 257828.2 mm^2
+  Sphericity: 0.254
+  Mean intensity: -384.8 HU
+  Contrast: 2.685
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-207 (202/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2375513 voxels
+  Volume: 6802487.9 mm^3
+  Surface area: 459206.4 mm^2
+  Sphericity: 0.378
+  Mean intensity: -539.9 HU
+  Contrast: 2.947
+  Homogeneity: 0.970
+
+==================================================
+Processing LUNG1-208 (203/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1768580 voxels
+  Volume: 1768580.0 mm^3
+  Surface area: 313355.8 mm^2
+  Sphericity: 0.226
+  Mean intensity: -409.2 HU
+  Contrast: 4.553
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-209 (204/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1920729 voxels
+  Volume: 5500174.4 mm^3
+  Surface area: 409004.7 mm^2
+  Sphericity: 0.368
+  Mean intensity: -462.8 HU
+  Contrast: 2.731
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-210 (205/417)...
+    Found 1 segment files, combining...
+  Tumor size: 22098 voxels
+  Volume: 22098.0 mm^3
+  Surface area: 7869.0 mm^2
+  Sphericity: 0.484
+  Mean intensity: -64.6 HU
+  Contrast: 0.058
+  Homogeneity: 1.000
+
+==================================================
+Processing LUNG1-211 (206/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1436031 voxels
+  Volume: 1436031.0 mm^3
+  Surface area: 309838.1 mm^2
+  Sphericity: 0.199
+  Mean intensity: -326.6 HU
+  Contrast: 4.597
+  Homogeneity: 0.973
+
+==================================================
+Processing LUNG1-212 (207/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1373053 voxels
+  Volume: 1373053.0 mm^3
+  Surface area: 273841.7 mm^2
+  Sphericity: 0.218
+  Mean intensity: -335.2 HU
+  Contrast: 3.951
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-213 (208/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1403449 voxels
+  Volume: 1403449.0 mm^3
+  Surface area: 304642.3 mm^2
+  Sphericity: 0.199
+  Mean intensity: -385.2 HU
+  Contrast: 4.807
+  Homogeneity: 0.974
+
+==================================================
+Processing LUNG1-214 (209/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1510679 voxels
+  Volume: 1510679.0 mm^3
+  Surface area: 298306.0 mm^2
+  Sphericity: 0.213
+  Mean intensity: -382.8 HU
+  Contrast: 4.224
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-215 (210/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1117392 voxels
+  Volume: 1117392.0 mm^3
+  Surface area: 309302.2 mm^2
+  Sphericity: 0.168
+  Mean intensity: -436.7 HU
+  Contrast: 7.801
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-216 (211/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1801656 voxels
+  Volume: 1801656.0 mm^3
+  Surface area: 291685.1 mm^2
+  Sphericity: 0.245
+  Mean intensity: -343.6 HU
+  Contrast: 3.644
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-217 (212/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1064973 voxels
+  Volume: 1064973.0 mm^3
+  Surface area: 285490.8 mm^2
+  Sphericity: 0.177
+  Mean intensity: -385.9 HU
+  Contrast: 5.243
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-218 (213/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1188994 voxels
+  Volume: 1188994.0 mm^3
+  Surface area: 290820.9 mm^2
+  Sphericity: 0.187
+  Mean intensity: -358.7 HU
+  Contrast: 5.756
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-219 (214/417)...
+    Found 3 segment files, combining...
+  Tumor size: 38064 voxels
+  Volume: 38064.0 mm^3
+  Surface area: 32769.3 mm^2
+  Sphericity: 0.167
+  Mean intensity: -333.3 HU
+  Contrast: 0.472
+  Homogeneity: 0.999
+
+==================================================
+Processing LUNG1-220 (215/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1642525 voxels
+  Volume: 1642525.0 mm^3
+  Surface area: 339630.6 mm^2
+  Sphericity: 0.198
+  Mean intensity: -458.0 HU
+  Contrast: 6.961
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-221 (216/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1771537 voxels
+  Volume: 1771537.0 mm^3
+  Surface area: 362692.8 mm^2
+  Sphericity: 0.195
+  Mean intensity: -382.8 HU
+  Contrast: 7.238
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-222 (217/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1980975 voxels
+  Volume: 1980975.0 mm^3
+  Surface area: 322967.8 mm^2
+  Sphericity: 0.236
+  Mean intensity: -521.8 HU
+  Contrast: 5.985
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-223 (218/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1464688 voxels
+  Volume: 1464688.0 mm^3
+  Surface area: 243669.0 mm^2
+  Sphericity: 0.256
+  Mean intensity: -437.5 HU
+  Contrast: 3.152
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-224 (219/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1385329 voxels
+  Volume: 1385329.0 mm^3
+  Surface area: 306362.2 mm^2
+  Sphericity: 0.196
+  Mean intensity: -442.9 HU
+  Contrast: 6.350
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-225 (220/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1492764 voxels
+  Volume: 1492764.0 mm^3
+  Surface area: 268526.8 mm^2
+  Sphericity: 0.235
+  Mean intensity: -316.3 HU
+  Contrast: 2.807
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-226 (221/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1138109 voxels
+  Volume: 1138109.0 mm^3
+  Surface area: 279367.3 mm^2
+  Sphericity: 0.189
+  Mean intensity: -318.5 HU
+  Contrast: 4.030
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-227 (222/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1358647 voxels
+  Volume: 1358647.0 mm^3
+  Surface area: 282589.1 mm^2
+  Sphericity: 0.210
+  Mean intensity: -296.3 HU
+  Contrast: 4.256
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-228 (223/417)...
+    Found 4 segment files, combining...
+  Tumor size: 903702 voxels
+  Volume: 2585710.8 mm^3
+  Surface area: 227971.2 mm^2
+  Sphericity: 0.400
+  Mean intensity: -433.4 HU
+  Contrast: 1.755
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-229 (224/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1065496 voxels
+  Volume: 1065496.0 mm^3
+  Surface area: 287651.4 mm^2
+  Sphericity: 0.175
+  Mean intensity: -233.9 HU
+  Contrast: 3.745
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-230 (225/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1030651 voxels
+  Volume: 1030651.0 mm^3
+  Surface area: 277971.4 mm^2
+  Sphericity: 0.178
+  Mean intensity: -251.8 HU
+  Contrast: 4.953
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-231 (226/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1470453 voxels
+  Volume: 1470453.0 mm^3
+  Surface area: 261657.7 mm^2
+  Sphericity: 0.239
+  Mean intensity: -317.4 HU
+  Contrast: 2.630
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-232 (227/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1456774 voxels
+  Volume: 1456774.0 mm^3
+  Surface area: 246739.2 mm^2
+  Sphericity: 0.252
+  Mean intensity: -275.3 HU
+  Contrast: 2.605
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-233 (228/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1319383 voxels
+  Volume: 1319383.0 mm^3
+  Surface area: 253004.5 mm^2
+  Sphericity: 0.230
+  Mean intensity: -183.1 HU
+  Contrast: 2.413
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-234 (229/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1173299 voxels
+  Volume: 1173299.0 mm^3
+  Surface area: 273648.6 mm^2
+  Sphericity: 0.197
+  Mean intensity: -295.2 HU
+  Contrast: 3.970
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-235 (230/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1128456 voxels
+  Volume: 1128456.0 mm^3
+  Surface area: 206208.5 mm^2
+  Sphericity: 0.254
+  Mean intensity: -263.1 HU
+  Contrast: 2.091
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-236 (231/417)...
+    Found 5 segment files, combining...
+  Tumor size: 962962 voxels
+  Volume: 962962.0 mm^3
+  Surface area: 248127.2 mm^2
+  Sphericity: 0.190
+  Mean intensity: -282.9 HU
+  Contrast: 3.459
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-237 (232/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1696197 voxels
+  Volume: 1696197.0 mm^3
+  Surface area: 293375.8 mm^2
+  Sphericity: 0.234
+  Mean intensity: -262.1 HU
+  Contrast: 3.883
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-238 (233/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1242276 voxels
+  Volume: 1242276.0 mm^3
+  Surface area: 303878.1 mm^2
+  Sphericity: 0.184
+  Mean intensity: -367.2 HU
+  Contrast: 5.081
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-239 (234/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1283513 voxels
+  Volume: 1283513.0 mm^3
+  Surface area: 242448.3 mm^2
+  Sphericity: 0.236
+  Mean intensity: -301.6 HU
+  Contrast: 2.225
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-240 (235/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1892003 voxels
+  Volume: 1892003.0 mm^3
+  Surface area: 316704.3 mm^2
+  Sphericity: 0.234
+  Mean intensity: -319.8 HU
+  Contrast: 2.797
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-241 (236/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1337106 voxels
+  Volume: 1337106.0 mm^3
+  Surface area: 266733.2 mm^2
+  Sphericity: 0.220
+  Mean intensity: -229.1 HU
+  Contrast: 2.863
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-242 (237/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1050285 voxels
+  Volume: 1050285.0 mm^3
+  Surface area: 202398.1 mm^2
+  Sphericity: 0.247
+  Mean intensity: -236.0 HU
+  Contrast: 2.568
+  Homogeneity: 0.990
+
+==================================================
+Processing LUNG1-243 (238/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1159342 voxels
+  Volume: 1159342.0 mm^3
+  Surface area: 285614.6 mm^2
+  Sphericity: 0.187
+  Mean intensity: -339.5 HU
+  Contrast: 5.353
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-244 (239/417)...
+    Found 4 segment files, combining...
+  Tumor size: 993184 voxels
+  Volume: 993184.0 mm^3
+  Surface area: 191815.8 mm^2
+  Sphericity: 0.251
+  Mean intensity: -210.9 HU
+  Contrast: 1.499
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-245 (240/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1583230 voxels
+  Volume: 1583230.0 mm^3
+  Surface area: 259996.0 mm^2
+  Sphericity: 0.253
+  Mean intensity: -335.6 HU
+  Contrast: 2.849
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-246 (241/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1461150 voxels
+  Volume: 1461150.0 mm^3
+  Surface area: 257140.1 mm^2
+  Sphericity: 0.242
+  Mean intensity: -244.2 HU
+  Contrast: 4.081
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-247 (242/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1006771 voxels
+  Volume: 1006771.0 mm^3
+  Surface area: 206609.7 mm^2
+  Sphericity: 0.235
+  Mean intensity: -321.1 HU
+  Contrast: 1.983
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-248 (243/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1023946 voxels
+  Volume: 1023946.0 mm^3
+  Surface area: 219107.8 mm^2
+  Sphericity: 0.224
+  Mean intensity: -259.4 HU
+  Contrast: 2.122
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-249 (244/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1227191 voxels
+  Volume: 1227191.0 mm^3
+  Surface area: 315473.5 mm^2
+  Sphericity: 0.176
+  Mean intensity: -239.4 HU
+  Contrast: 4.065
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-250 (245/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1575643 voxels
+  Volume: 1575643.0 mm^3
+  Surface area: 262057.9 mm^2
+  Sphericity: 0.250
+  Mean intensity: -245.2 HU
+  Contrast: 3.258
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-251 (246/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1560523 voxels
+  Volume: 1560523.0 mm^3
+  Surface area: 253429.0 mm^2
+  Sphericity: 0.257
+  Mean intensity: -437.2 HU
+  Contrast: 3.252
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-252 (247/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1564046 voxels
+  Volume: 1564046.0 mm^3
+  Surface area: 360445.7 mm^2
+  Sphericity: 0.181
+  Mean intensity: -304.0 HU
+  Contrast: 5.819
+  Homogeneity: 0.974
+
+==================================================
+Processing LUNG1-253 (248/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1569353 voxels
+  Volume: 1569353.0 mm^3
+  Surface area: 326275.3 mm^2
+  Sphericity: 0.200
+  Mean intensity: -285.3 HU
+  Contrast: 5.460
+  Homogeneity: 0.973
+
+==================================================
+Processing LUNG1-254 (249/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1528314 voxels
+  Volume: 1528314.0 mm^3
+  Surface area: 262974.3 mm^2
+  Sphericity: 0.244
+  Mean intensity: -383.1 HU
+  Contrast: 3.199
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-255 (250/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2729756 voxels
+  Volume: 2729756.0 mm^3
+  Surface area: 337869.3 mm^2
+  Sphericity: 0.280
+  Mean intensity: -555.8 HU
+  Contrast: 4.457
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-256 (251/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1710565 voxels
+  Volume: 1710565.0 mm^3
+  Surface area: 268420.0 mm^2
+  Sphericity: 0.258
+  Mean intensity: -387.8 HU
+  Contrast: 3.682
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-257 (252/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1191846 voxels
+  Volume: 1191846.0 mm^3
+  Surface area: 227156.7 mm^2
+  Sphericity: 0.239
+  Mean intensity: -228.0 HU
+  Contrast: 2.081
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-258 (253/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1526599 voxels
+  Volume: 1526599.0 mm^3
+  Surface area: 249794.8 mm^2
+  Sphericity: 0.257
+  Mean intensity: -273.6 HU
+  Contrast: 2.807
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-259 (254/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1316570 voxels
+  Volume: 1316570.0 mm^3
+  Surface area: 209608.2 mm^2
+  Sphericity: 0.277
+  Mean intensity: -375.9 HU
+  Contrast: 2.985
+  Homogeneity: 0.989
+
+==================================================
+Processing LUNG1-260 (255/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2382163 voxels
+  Volume: 2382163.0 mm^3
+  Surface area: 326749.0 mm^2
+  Sphericity: 0.264
+  Mean intensity: -370.7 HU
+  Contrast: 3.313
+  Homogeneity: 0.974
+
+==================================================
+Processing LUNG1-261 (256/417)...
+    Found 5 segment files, combining...
+  Tumor size: 899218 voxels
+  Volume: 899218.0 mm^3
+  Surface area: 244715.2 mm^2
+  Sphericity: 0.184
+  Mean intensity: -283.3 HU
+  Contrast: 4.186
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-262 (257/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1589386 voxels
+  Volume: 1589386.0 mm^3
+  Surface area: 315591.6 mm^2
+  Sphericity: 0.209
+  Mean intensity: -457.7 HU
+  Contrast: 5.694
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-263 (258/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2005895 voxels
+  Volume: 2005895.0 mm^3
+  Surface area: 305630.4 mm^2
+  Sphericity: 0.252
+  Mean intensity: -354.3 HU
+  Contrast: 3.240
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-264 (259/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1361074 voxels
+  Volume: 1361074.0 mm^3
+  Surface area: 250665.1 mm^2
+  Sphericity: 0.237
+  Mean intensity: -322.3 HU
+  Contrast: 2.533
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-265 (260/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2076384 voxels
+  Volume: 2076384.0 mm^3
+  Surface area: 314200.0 mm^2
+  Sphericity: 0.251
+  Mean intensity: -466.4 HU
+  Contrast: 3.919
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-266 (261/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1446450 voxels
+  Volume: 1446450.0 mm^3
+  Surface area: 319870.8 mm^2
+  Sphericity: 0.193
+  Mean intensity: -416.8 HU
+  Contrast: 6.159
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-267 (262/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1926004 voxels
+  Volume: 1926004.0 mm^3
+  Surface area: 295590.8 mm^2
+  Sphericity: 0.253
+  Mean intensity: -317.9 HU
+  Contrast: 3.160
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-268 (263/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2058903 voxels
+  Volume: 2058903.0 mm^3
+  Surface area: 320387.5 mm^2
+  Sphericity: 0.244
+  Mean intensity: -351.2 HU
+  Contrast: 3.813
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-269 (264/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1000169 voxels
+  Volume: 1000169.0 mm^3
+  Surface area: 221864.7 mm^2
+  Sphericity: 0.218
+  Mean intensity: -186.8 HU
+  Contrast: 2.172
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-270 (265/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1934919 voxels
+  Volume: 1934919.0 mm^3
+  Surface area: 287005.9 mm^2
+  Sphericity: 0.262
+  Mean intensity: -379.0 HU
+  Contrast: 3.110
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-271 (266/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1886550 voxels
+  Volume: 1886550.0 mm^3
+  Surface area: 395521.1 mm^2
+  Sphericity: 0.187
+  Mean intensity: -432.8 HU
+  Contrast: 8.207
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-272 (267/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1637455 voxels
+  Volume: 1637455.0 mm^3
+  Surface area: 265527.3 mm^2
+  Sphericity: 0.253
+  Mean intensity: -290.5 HU
+  Contrast: 2.708
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-273 (268/417)...
+    Found 3 segment files, combining...
+  Tumor size: 148278 voxels
+  Volume: 148278.0 mm^3
+  Surface area: 51281.7 mm^2
+  Sphericity: 0.264
+  Mean intensity: -557.9 HU
+  Contrast: 0.718
+  Homogeneity: 0.998
+
+==================================================
+Processing LUNG1-274 (269/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1295758 voxels
+  Volume: 1295758.0 mm^3
+  Surface area: 232724.1 mm^2
+  Sphericity: 0.247
+  Mean intensity: -288.0 HU
+  Contrast: 2.295
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-275 (270/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1335608 voxels
+  Volume: 1335608.0 mm^3
+  Surface area: 252380.1 mm^2
+  Sphericity: 0.232
+  Mean intensity: -242.3 HU
+  Contrast: 2.358
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-276 (271/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1884089 voxels
+  Volume: 1884089.0 mm^3
+  Surface area: 363338.7 mm^2
+  Sphericity: 0.203
+  Mean intensity: -393.8 HU
+  Contrast: 6.702
+  Homogeneity: 0.971
+
+==================================================
+Processing LUNG1-277 (272/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1464896 voxels
+  Volume: 1464896.0 mm^3
+  Surface area: 244336.4 mm^2
+  Sphericity: 0.255
+  Mean intensity: -330.5 HU
+  Contrast: 2.845
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-278 (273/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2574831 voxels
+  Volume: 2574831.0 mm^3
+  Surface area: 355020.6 mm^2
+  Sphericity: 0.256
+  Mean intensity: -518.8 HU
+  Contrast: 5.489
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-279 (274/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2252943 voxels
+  Volume: 2252943.0 mm^3
+  Surface area: 324348.7 mm^2
+  Sphericity: 0.256
+  Mean intensity: -449.0 HU
+  Contrast: 3.719
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-280 (275/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1306381 voxels
+  Volume: 1306381.0 mm^3
+  Surface area: 256527.9 mm^2
+  Sphericity: 0.225
+  Mean intensity: -222.8 HU
+  Contrast: 3.317
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-281 (276/417)...
+    Found 4 segment files, combining...
+  Tumor size: 2074242 voxels
+  Volume: 2074242.0 mm^3
+  Surface area: 332571.2 mm^2
+  Sphericity: 0.237
+  Mean intensity: -450.8 HU
+  Contrast: 6.504
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-282 (277/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1371741 voxels
+  Volume: 1371741.0 mm^3
+  Surface area: 315187.4 mm^2
+  Sphericity: 0.189
+  Mean intensity: -301.4 HU
+  Contrast: 5.289
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-283 (278/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1251176 voxels
+  Volume: 1251176.0 mm^3
+  Surface area: 279057.9 mm^2
+  Sphericity: 0.201
+  Mean intensity: -344.6 HU
+  Contrast: 4.861
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-284 (279/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1703334 voxels
+  Volume: 1703334.0 mm^3
+  Surface area: 341872.9 mm^2
+  Sphericity: 0.202
+  Mean intensity: -394.8 HU
+  Contrast: 5.068
+  Homogeneity: 0.973
+
+==================================================
+Processing LUNG1-285 (280/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1097173 voxels
+  Volume: 1097173.0 mm^3
+  Surface area: 330826.2 mm^2
+  Sphericity: 0.156
+  Mean intensity: -287.7 HU
+  Contrast: 5.972
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-286 (281/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1110815 voxels
+  Volume: 1110815.0 mm^3
+  Surface area: 241812.5 mm^2
+  Sphericity: 0.215
+  Mean intensity: -202.1 HU
+  Contrast: 2.112
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-287 (282/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1014612 voxels
+  Volume: 1014612.0 mm^3
+  Surface area: 255065.0 mm^2
+  Sphericity: 0.191
+  Mean intensity: -291.4 HU
+  Contrast: 3.817
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-288 (283/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1494193 voxels
+  Volume: 1494193.0 mm^3
+  Surface area: 270253.4 mm^2
+  Sphericity: 0.234
+  Mean intensity: -389.5 HU
+  Contrast: 3.066
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-289 (284/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1433013 voxels
+  Volume: 1433013.0 mm^3
+  Surface area: 257696.4 mm^2
+  Sphericity: 0.239
+  Mean intensity: -310.7 HU
+  Contrast: 2.828
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-290 (285/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1414941 voxels
+  Volume: 1414941.0 mm^3
+  Surface area: 253067.4 mm^2
+  Sphericity: 0.241
+  Mean intensity: -301.7 HU
+  Contrast: 3.000
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-291 (286/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1438498 voxels
+  Volume: 1438498.0 mm^3
+  Surface area: 267908.6 mm^2
+  Sphericity: 0.230
+  Mean intensity: -241.9 HU
+  Contrast: 2.778
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-292 (287/417)...
+    Found 3 segment files, combining...
+  Tumor size: 2041315 voxels
+  Volume: 2041315.0 mm^3
+  Surface area: 292669.4 mm^2
+  Sphericity: 0.266
+  Mean intensity: -441.4 HU
+  Contrast: 4.479
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-293 (288/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1655561 voxels
+  Volume: 1655561.0 mm^3
+  Surface area: 263762.5 mm^2
+  Sphericity: 0.257
+  Mean intensity: -418.9 HU
+  Contrast: 2.965
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-294 (289/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1490925 voxels
+  Volume: 1490925.0 mm^3
+  Surface area: 347821.1 mm^2
+  Sphericity: 0.181
+  Mean intensity: -502.9 HU
+  Contrast: 7.236
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-295 (290/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1481034 voxels
+  Volume: 1481034.0 mm^3
+  Surface area: 275246.9 mm^2
+  Sphericity: 0.228
+  Mean intensity: -282.3 HU
+  Contrast: 2.847
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-296 (291/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1812598 voxels
+  Volume: 1812598.0 mm^3
+  Surface area: 269858.1 mm^2
+  Sphericity: 0.266
+  Mean intensity: -428.0 HU
+  Contrast: 3.166
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-297 (292/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1585831 voxels
+  Volume: 1585831.0 mm^3
+  Surface area: 326072.4 mm^2
+  Sphericity: 0.202
+  Mean intensity: -382.9 HU
+  Contrast: 4.661
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-298 (293/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2127924 voxels
+  Volume: 2127924.0 mm^3
+  Surface area: 334485.8 mm^2
+  Sphericity: 0.239
+  Mean intensity: -492.2 HU
+  Contrast: 4.593
+  Homogeneity: 0.973
+
+==================================================
+Processing LUNG1-299 (294/417)...
+    Found 3 segment files, combining...
+  Tumor size: 1358933 voxels
+  Volume: 1358933.0 mm^3
+  Surface area: 279499.3 mm^2
+  Sphericity: 0.212
+  Mean intensity: -380.6 HU
+  Contrast: 5.337
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-300 (295/417)...
+    Found 4 segment files, combining...
+  Tumor size: 2433860 voxels
+  Volume: 2433860.0 mm^3
+  Surface area: 342275.8 mm^2
+  Sphericity: 0.256
+  Mean intensity: -414.8 HU
+  Contrast: 4.738
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-301 (296/417)...
+    Found 2 segment files, combining...
+  Tumor size: 1151534 voxels
+  Volume: 1151534.0 mm^3
+  Surface area: 243900.7 mm^2
+  Sphericity: 0.218
+  Mean intensity: -244.5 HU
+  Contrast: 3.093
+  Homogeneity: 0.988
+
+==================================================
+Processing LUNG1-302 (297/417)...
+    Found 4 segment files, combining...
+  Tumor size: 2275668 voxels
+  Volume: 2275668.0 mm^3
+  Surface area: 349536.8 mm^2
+  Sphericity: 0.239
+  Mean intensity: -355.3 HU
+  Contrast: 5.019
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-303 (298/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1535177 voxels
+  Volume: 1535177.0 mm^3
+  Surface area: 267188.6 mm^2
+  Sphericity: 0.241
+  Mean intensity: -310.0 HU
+  Contrast: 3.711
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-304 (299/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1163222 voxels
+  Volume: 1163222.0 mm^3
+  Surface area: 230171.8 mm^2
+  Sphericity: 0.232
+  Mean intensity: -458.5 HU
+  Contrast: 4.499
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-305 (300/417)...
+    Found 3 segment files, combining...
+  Tumor size: 1183947 voxels
+  Volume: 1183947.0 mm^3
+  Surface area: 202715.1 mm^2
+  Sphericity: 0.267
+  Mean intensity: -468.0 HU
+  Contrast: 2.516
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-306 (301/417)...
+    Found 3 segment files, combining...
+  Tumor size: 1993422 voxels
+  Volume: 1993422.0 mm^3
+  Surface area: 256985.2 mm^2
+  Sphericity: 0.298
+  Mean intensity: -572.7 HU
+  Contrast: 3.862
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-307 (302/417)...
+    Found 4 segment files, combining...
+  Tumor size: 771113 voxels
+  Volume: 771113.0 mm^3
+  Surface area: 152248.8 mm^2
+  Sphericity: 0.267
+  Mean intensity: -258.9 HU
+  Contrast: 1.553
+  Homogeneity: 0.992
+
+==================================================
+Processing LUNG1-308 (303/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1230861 voxels
+  Volume: 1230861.0 mm^3
+  Surface area: 324797.1 mm^2
+  Sphericity: 0.171
+  Mean intensity: -323.3 HU
+  Contrast: 5.889
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-309 (304/417)...
+    Found 3 segment files, combining...
+  Tumor size: 2322752 voxels
+  Volume: 2322752.0 mm^3
+  Surface area: 363193.4 mm^2
+  Sphericity: 0.234
+  Mean intensity: -420.6 HU
+  Contrast: 4.088
+  Homogeneity: 0.972
+
+==================================================
+Processing LUNG1-310 (305/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1153485 voxels
+  Volume: 1153485.0 mm^3
+  Surface area: 208464.4 mm^2
+  Sphericity: 0.255
+  Mean intensity: -286.8 HU
+  Contrast: 2.084
+  Homogeneity: 0.989
+
+==================================================
+Processing LUNG1-311 (306/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2312324 voxels
+  Volume: 2312324.0 mm^3
+  Surface area: 329872.8 mm^2
+  Sphericity: 0.256
+  Mean intensity: -538.6 HU
+  Contrast: 5.114
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-312 (307/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2199562 voxels
+  Volume: 2199562.0 mm^3
+  Surface area: 301412.2 mm^2
+  Sphericity: 0.271
+  Mean intensity: -484.6 HU
+  Contrast: 4.010
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-313 (308/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1714332 voxels
+  Volume: 1714332.0 mm^3
+  Surface area: 283500.2 mm^2
+  Sphericity: 0.244
+  Mean intensity: -354.8 HU
+  Contrast: 2.945
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-314 (309/417)...
+    Found 4 segment files, combining...
+  Tumor size: 918142 voxels
+  Volume: 918142.0 mm^3
+  Surface area: 264383.2 mm^2
+  Sphericity: 0.173
+  Mean intensity: -203.1 HU
+  Contrast: 3.138
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-315 (310/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1794603 voxels
+  Volume: 1794603.0 mm^3
+  Surface area: 284315.8 mm^2
+  Sphericity: 0.251
+  Mean intensity: -564.3 HU
+  Contrast: 4.395
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-316 (311/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1599334 voxels
+  Volume: 1599334.0 mm^3
+  Surface area: 240046.9 mm^2
+  Sphericity: 0.276
+  Mean intensity: -430.6 HU
+  Contrast: 3.375
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-317 (312/417)...
+    Found 3 segment files, combining...
+  Tumor size: 1589221 voxels
+  Volume: 1589221.0 mm^3
+  Surface area: 289712.4 mm^2
+  Sphericity: 0.227
+  Mean intensity: -348.2 HU
+  Contrast: 3.272
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-318 (313/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1950364 voxels
+  Volume: 1950364.0 mm^3
+  Surface area: 295827.8 mm^2
+  Sphericity: 0.255
+  Mean intensity: -327.4 HU
+  Contrast: 3.194
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-319 (314/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1404098 voxels
+  Volume: 1404098.0 mm^3
+  Surface area: 259857.2 mm^2
+  Sphericity: 0.233
+  Mean intensity: -378.7 HU
+  Contrast: 3.452
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-320 (315/417)...
+    Found 3 segment files, combining...
+  Tumor size: 2160610 voxels
+  Volume: 2160610.0 mm^3
+  Surface area: 284242.5 mm^2
+  Sphericity: 0.284
+  Mean intensity: -482.2 HU
+  Contrast: 3.592
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-321 (316/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2637377 voxels
+  Volume: 2637377.0 mm^3
+  Surface area: 321226.2 mm^2
+  Sphericity: 0.287
+  Mean intensity: -594.2 HU
+  Contrast: 4.313
+  Homogeneity: 0.974
+
+==================================================
+Processing LUNG1-322 (317/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2693476 voxels
+  Volume: 2693476.0 mm^3
+  Surface area: 327377.3 mm^2
+  Sphericity: 0.286
+  Mean intensity: -558.1 HU
+  Contrast: 4.550
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-323 (318/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1485165 voxels
+  Volume: 1485165.0 mm^3
+  Surface area: 265278.1 mm^2
+  Sphericity: 0.237
+  Mean intensity: -232.2 HU
+  Contrast: 2.579
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-324 (319/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1541988 voxels
+  Volume: 1541988.0 mm^3
+  Surface area: 259045.8 mm^2
+  Sphericity: 0.249
+  Mean intensity: -294.5 HU
+  Contrast: 2.749
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-325 (320/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1792977 voxels
+  Volume: 1792977.0 mm^3
+  Surface area: 295382.7 mm^2
+  Sphericity: 0.242
+  Mean intensity: -360.3 HU
+  Contrast: 3.999
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-326 (321/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1364426 voxels
+  Volume: 1364426.0 mm^3
+  Surface area: 282679.1 mm^2
+  Sphericity: 0.210
+  Mean intensity: -356.0 HU
+  Contrast: 3.712
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-327 (322/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1624890 voxels
+  Volume: 1624890.0 mm^3
+  Surface area: 255918.5 mm^2
+  Sphericity: 0.261
+  Mean intensity: -482.9 HU
+  Contrast: 3.729
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-328 (323/417)...
+    Found 4 segment files, combining...
+  Tumor size: 2749113 voxels
+  Volume: 2749113.0 mm^3
+  Surface area: 342247.3 mm^2
+  Sphericity: 0.277
+  Mean intensity: -513.2 HU
+  Contrast: 4.429
+  Homogeneity: 0.972
+
+==================================================
+Processing LUNG1-329 (324/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1653378 voxels
+  Volume: 1653378.0 mm^3
+  Surface area: 256461.1 mm^2
+  Sphericity: 0.264
+  Mean intensity: -422.5 HU
+  Contrast: 3.372
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-330 (325/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1785080 voxels
+  Volume: 1785080.0 mm^3
+  Surface area: 295241.8 mm^2
+  Sphericity: 0.241
+  Mean intensity: -297.1 HU
+  Contrast: 3.273
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-331 (326/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1405711 voxels
+  Volume: 1405711.0 mm^3
+  Surface area: 247642.7 mm^2
+  Sphericity: 0.245
+  Mean intensity: -228.6 HU
+  Contrast: 2.366
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-332 (327/417)...
+    Found 5 segment files, combining...
+  Tumor size: 3285255 voxels
+  Volume: 3285255.0 mm^3
+  Surface area: 407020.6 mm^2
+  Sphericity: 0.263
+  Mean intensity: -544.7 HU
+  Contrast: 6.335
+  Homogeneity: 0.971
+
+==================================================
+Processing LUNG1-333 (328/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1080274 voxels
+  Volume: 1080274.0 mm^3
+  Surface area: 276219.6 mm^2
+  Sphericity: 0.184
+  Mean intensity: -238.8 HU
+  Contrast: 3.180
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-334 (329/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1207758 voxels
+  Volume: 1207758.0 mm^3
+  Surface area: 241019.1 mm^2
+  Sphericity: 0.228
+  Mean intensity: -274.2 HU
+  Contrast: 3.190
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-335 (330/417)...
+    Found 3 segment files, combining...
+  Tumor size: 1201408 voxels
+  Volume: 1201408.0 mm^3
+  Surface area: 239612.2 mm^2
+  Sphericity: 0.228
+  Mean intensity: -164.4 HU
+  Contrast: 1.948
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-336 (331/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1760369 voxels
+  Volume: 1760369.0 mm^3
+  Surface area: 260919.2 mm^2
+  Sphericity: 0.270
+  Mean intensity: -387.0 HU
+  Contrast: 3.499
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-337 (332/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1327199 voxels
+  Volume: 1327199.0 mm^3
+  Surface area: 223130.9 mm^2
+  Sphericity: 0.262
+  Mean intensity: -290.3 HU
+  Contrast: 2.253
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-338 (333/417)...
+    Found 4 segment files, combining...
+  Tumor size: 2291093 voxels
+  Volume: 2291093.0 mm^3
+  Surface area: 333858.5 mm^2
+  Sphericity: 0.252
+  Mean intensity: -410.2 HU
+  Contrast: 3.642
+  Homogeneity: 0.974
+
+==================================================
+Processing LUNG1-339 (334/417)...
+    Found 4 segment files, combining...
+  Tumor size: 2038451 voxels
+  Volume: 2038451.0 mm^3
+  Surface area: 356296.9 mm^2
+  Sphericity: 0.218
+  Mean intensity: -237.7 HU
+  Contrast: 3.539
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-340 (335/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1687857 voxels
+  Volume: 1687857.0 mm^3
+  Surface area: 357036.4 mm^2
+  Sphericity: 0.192
+  Mean intensity: -397.1 HU
+  Contrast: 6.804
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-341 (336/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1646911 voxels
+  Volume: 1646911.0 mm^3
+  Surface area: 264203.7 mm^2
+  Sphericity: 0.255
+  Mean intensity: -293.0 HU
+  Contrast: 2.561
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-342 (337/417)...
+    Found 4 segment files, combining...
+  Tumor size: 953846 voxels
+  Volume: 953846.0 mm^3
+  Surface area: 224904.1 mm^2
+  Sphericity: 0.208
+  Mean intensity: -208.6 HU
+  Contrast: 1.978
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-343 (338/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1053533 voxels
+  Volume: 1053533.0 mm^3
+  Surface area: 264644.6 mm^2
+  Sphericity: 0.189
+  Mean intensity: -288.7 HU
+  Contrast: 3.770
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-344 (339/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1778237 voxels
+  Volume: 1778237.0 mm^3
+  Surface area: 289368.2 mm^2
+  Sphericity: 0.245
+  Mean intensity: -327.0 HU
+  Contrast: 2.865
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-345 (340/417)...
+    Found 3 segment files, combining...
+  Tumor size: 1439566 voxels
+  Volume: 1439566.0 mm^3
+  Surface area: 318924.1 mm^2
+  Sphericity: 0.193
+  Mean intensity: -345.1 HU
+  Contrast: 4.922
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-346 (341/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1498557 voxels
+  Volume: 1498557.0 mm^3
+  Surface area: 248843.4 mm^2
+  Sphericity: 0.254
+  Mean intensity: -290.9 HU
+  Contrast: 3.068
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-347 (342/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1125631 voxels
+  Volume: 1125631.0 mm^3
+  Surface area: 266474.6 mm^2
+  Sphericity: 0.196
+  Mean intensity: -432.1 HU
+  Contrast: 5.382
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-348 (343/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1770162 voxels
+  Volume: 1770162.0 mm^3
+  Surface area: 286676.6 mm^2
+  Sphericity: 0.247
+  Mean intensity: -405.2 HU
+  Contrast: 3.852
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-349 (344/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1546626 voxels
+  Volume: 1546626.0 mm^3
+  Surface area: 286609.1 mm^2
+  Sphericity: 0.226
+  Mean intensity: -140.0 HU
+  Contrast: 2.444
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-350 (345/417)...
+    Found 4 segment files, combining...
+  Tumor size: 755067 voxels
+  Volume: 755067.0 mm^3
+  Surface area: 207049.4 mm^2
+  Sphericity: 0.194
+  Mean intensity: -224.5 HU
+  Contrast: 3.170
+  Homogeneity: 0.989
+
+==================================================
+Processing LUNG1-351 (346/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1351007 voxels
+  Volume: 1351007.0 mm^3
+  Surface area: 248264.2 mm^2
+  Sphericity: 0.238
+  Mean intensity: -342.5 HU
+  Contrast: 2.770
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-352 (347/417)...
+    Found 4 segment files, combining...
+  Tumor size: 2029948 voxels
+  Volume: 2029948.0 mm^3
+  Surface area: 316802.3 mm^2
+  Sphericity: 0.245
+  Mean intensity: -389.3 HU
+  Contrast: 3.598
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-353 (348/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1811497 voxels
+  Volume: 1811497.0 mm^3
+  Surface area: 274519.4 mm^2
+  Sphericity: 0.262
+  Mean intensity: -312.4 HU
+  Contrast: 3.166
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-354 (349/417)...
+    Found 4 segment files, combining...
+  Tumor size: 833633 voxels
+  Volume: 833633.0 mm^3
+  Surface area: 126957.5 mm^2
+  Sphericity: 0.337
+  Mean intensity: -276.2 HU
+  Contrast: 1.249
+  Homogeneity: 0.992
+
+==================================================
+Processing LUNG1-355 (350/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1114922 voxels
+  Volume: 1114922.0 mm^3
+  Surface area: 242389.8 mm^2
+  Sphericity: 0.215
+  Mean intensity: -430.2 HU
+  Contrast: 3.440
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-356 (351/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1971417 voxels
+  Volume: 1971417.0 mm^3
+  Surface area: 261965.7 mm^2
+  Sphericity: 0.290
+  Mean intensity: -453.3 HU
+  Contrast: 3.814
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-357 (352/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1775320 voxels
+  Volume: 1775320.0 mm^3
+  Surface area: 271979.2 mm^2
+  Sphericity: 0.261
+  Mean intensity: -386.6 HU
+  Contrast: 2.844
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-358 (353/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1448105 voxels
+  Volume: 1448105.0 mm^3
+  Surface area: 256080.9 mm^2
+  Sphericity: 0.242
+  Mean intensity: -467.0 HU
+  Contrast: 4.723
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-359 (354/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1449166 voxels
+  Volume: 1449166.0 mm^3
+  Surface area: 239701.7 mm^2
+  Sphericity: 0.258
+  Mean intensity: -282.2 HU
+  Contrast: 3.067
+  Homogeneity: 0.989
+
+==================================================
+Processing LUNG1-360 (355/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1624847 voxels
+  Volume: 1624847.0 mm^3
+  Surface area: 267956.6 mm^2
+  Sphericity: 0.249
+  Mean intensity: -320.5 HU
+  Contrast: 2.582
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-361 (356/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2046067 voxels
+  Volume: 2046067.0 mm^3
+  Surface area: 306028.1 mm^2
+  Sphericity: 0.255
+  Mean intensity: -382.5 HU
+  Contrast: 3.643
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-362 (357/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1074442 voxels
+  Volume: 1074442.0 mm^3
+  Surface area: 173135.1 mm^2
+  Sphericity: 0.293
+  Mean intensity: -87.4 HU
+  Contrast: 1.421
+  Homogeneity: 0.990
+
+==================================================
+Processing LUNG1-363 (358/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1830753 voxels
+  Volume: 1830753.0 mm^3
+  Surface area: 350541.9 mm^2
+  Sphericity: 0.206
+  Mean intensity: -368.6 HU
+  Contrast: 6.360
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-364 (359/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1451329 voxels
+  Volume: 1451329.0 mm^3
+  Surface area: 229241.7 mm^2
+  Sphericity: 0.270
+  Mean intensity: -230.3 HU
+  Contrast: 2.500
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-365 (360/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1719421 voxels
+  Volume: 1719421.0 mm^3
+  Surface area: 273462.8 mm^2
+  Sphericity: 0.254
+  Mean intensity: -354.2 HU
+  Contrast: 3.707
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-366 (361/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1470710 voxels
+  Volume: 1470710.0 mm^3
+  Surface area: 247548.9 mm^2
+  Sphericity: 0.253
+  Mean intensity: -355.7 HU
+  Contrast: 2.510
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-367 (362/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1869518 voxels
+  Volume: 1869518.0 mm^3
+  Surface area: 291551.0 mm^2
+  Sphericity: 0.252
+  Mean intensity: -132.5 HU
+  Contrast: 2.237
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-368 (363/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2173767 voxels
+  Volume: 2173767.0 mm^3
+  Surface area: 321980.1 mm^2
+  Sphericity: 0.252
+  Mean intensity: -425.7 HU
+  Contrast: 4.270
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-369 (364/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1279093 voxels
+  Volume: 1279093.0 mm^3
+  Surface area: 222917.9 mm^2
+  Sphericity: 0.256
+  Mean intensity: -349.1 HU
+  Contrast: 2.126
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-370 (365/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2303813 voxels
+  Volume: 2303813.0 mm^3
+  Surface area: 358963.5 mm^2
+  Sphericity: 0.235
+  Mean intensity: -325.5 HU
+  Contrast: 3.617
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-371 (366/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1646138 voxels
+  Volume: 1646138.0 mm^3
+  Surface area: 234281.7 mm^2
+  Sphericity: 0.288
+  Mean intensity: -113.4 HU
+  Contrast: 1.523
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-372 (367/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2009889 voxels
+  Volume: 2009889.0 mm^3
+  Surface area: 257727.2 mm^2
+  Sphericity: 0.299
+  Mean intensity: -472.3 HU
+  Contrast: 3.153
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-373 (368/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1172497 voxels
+  Volume: 1172497.0 mm^3
+  Surface area: 269294.2 mm^2
+  Sphericity: 0.200
+  Mean intensity: -313.8 HU
+  Contrast: 3.820
+  Homogeneity: 0.981
+
+==================================================
+Processing LUNG1-374 (369/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2446365 voxels
+  Volume: 2446365.0 mm^3
+  Surface area: 426553.0 mm^2
+  Sphericity: 0.206
+  Mean intensity: -367.3 HU
+  Contrast: 5.112
+  Homogeneity: 0.973
+
+==================================================
+Processing LUNG1-375 (370/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1643597 voxels
+  Volume: 1643597.0 mm^3
+  Surface area: 260848.8 mm^2
+  Sphericity: 0.258
+  Mean intensity: -260.2 HU
+  Contrast: 2.304
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-376 (371/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1479684 voxels
+  Volume: 1479684.0 mm^3
+  Surface area: 256813.7 mm^2
+  Sphericity: 0.245
+  Mean intensity: -222.3 HU
+  Contrast: 2.492
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-377 (372/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2705042 voxels
+  Volume: 2705042.0 mm^3
+  Surface area: 359771.8 mm^2
+  Sphericity: 0.261
+  Mean intensity: -445.2 HU
+  Contrast: 4.155
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-378 (373/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2039651 voxels
+  Volume: 2039651.0 mm^3
+  Surface area: 288958.3 mm^2
+  Sphericity: 0.269
+  Mean intensity: -355.8 HU
+  Contrast: 3.331
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-379 (374/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1101019 voxels
+  Volume: 1101019.0 mm^3
+  Surface area: 190368.1 mm^2
+  Sphericity: 0.271
+  Mean intensity: -267.5 HU
+  Contrast: 1.883
+  Homogeneity: 0.989
+
+==================================================
+Processing LUNG1-380 (375/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2296415 voxels
+  Volume: 2296415.0 mm^3
+  Surface area: 307225.5 mm^2
+  Sphericity: 0.274
+  Mean intensity: -508.0 HU
+  Contrast: 4.287
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-381 (376/417)...
+    Found 5 segment files, combining...
+  Tumor size: 922262 voxels
+  Volume: 922262.0 mm^3
+  Surface area: 188809.4 mm^2
+  Sphericity: 0.243
+  Mean intensity: -195.1 HU
+  Contrast: 1.609
+  Homogeneity: 0.991
+
+==================================================
+Processing LUNG1-382 (377/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2171808 voxels
+  Volume: 2171808.0 mm^3
+  Surface area: 336901.7 mm^2
+  Sphericity: 0.241
+  Mean intensity: -514.4 HU
+  Contrast: 4.851
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-383 (378/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2497562 voxels
+  Volume: 2497562.0 mm^3
+  Surface area: 336776.2 mm^2
+  Sphericity: 0.264
+  Mean intensity: -368.1 HU
+  Contrast: 3.438
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-384 (379/417)...
+    Found 4 segment files, combining...
+  Tumor size: 1671491 voxels
+  Volume: 1671491.0 mm^3
+  Surface area: 276053.1 mm^2
+  Sphericity: 0.247
+  Mean intensity: -273.9 HU
+  Contrast: 3.120
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-385 (380/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1829943 voxels
+  Volume: 1829943.0 mm^3
+  Surface area: 303164.4 mm^2
+  Sphericity: 0.239
+  Mean intensity: -329.4 HU
+  Contrast: 3.864
+  Homogeneity: 0.976
+
+==================================================
+Processing LUNG1-386 (381/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1389937 voxels
+  Volume: 1389937.0 mm^3
+  Surface area: 241184.0 mm^2
+  Sphericity: 0.250
+  Mean intensity: -215.1 HU
+  Contrast: 2.259
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-387 (382/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1153182 voxels
+  Volume: 1153182.0 mm^3
+  Surface area: 251163.5 mm^2
+  Sphericity: 0.212
+  Mean intensity: -279.0 HU
+  Contrast: 3.456
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-388 (383/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2416040 voxels
+  Volume: 2416040.0 mm^3
+  Surface area: 329061.2 mm^2
+  Sphericity: 0.265
+  Mean intensity: -421.9 HU
+  Contrast: 4.191
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-389 (384/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1353026 voxels
+  Volume: 1353026.0 mm^3
+  Surface area: 293567.6 mm^2
+  Sphericity: 0.202
+  Mean intensity: -258.0 HU
+  Contrast: 4.760
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-390 (385/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2619048 voxels
+  Volume: 2619048.0 mm^3
+  Surface area: 349452.7 mm^2
+  Sphericity: 0.263
+  Mean intensity: -517.2 HU
+  Contrast: 4.553
+  Homogeneity: 0.974
+
+==================================================
+Processing LUNG1-391 (386/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1785904 voxels
+  Volume: 1785904.0 mm^3
+  Surface area: 300073.8 mm^2
+  Sphericity: 0.237
+  Mean intensity: -440.3 HU
+  Contrast: 4.832
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-392 (387/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1612237 voxels
+  Volume: 1612237.0 mm^3
+  Surface area: 315618.1 mm^2
+  Sphericity: 0.211
+  Mean intensity: -191.5 HU
+  Contrast: 3.296
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-393 (388/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2808680 voxels
+  Volume: 2808680.0 mm^3
+  Surface area: 399707.8 mm^2
+  Sphericity: 0.241
+  Mean intensity: -455.9 HU
+  Contrast: 4.660
+  Homogeneity: 0.974
+
+==================================================
+Processing LUNG1-394 (389/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1384888 voxels
+  Volume: 1384888.0 mm^3
+  Surface area: 312420.6 mm^2
+  Sphericity: 0.192
+  Mean intensity: -391.8 HU
+  Contrast: 4.829
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-395 (390/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1674915 voxels
+  Volume: 1674915.0 mm^3
+  Surface area: 290647.7 mm^2
+  Sphericity: 0.235
+  Mean intensity: -301.0 HU
+  Contrast: 2.991
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-396 (391/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1466092 voxels
+  Volume: 1466092.0 mm^3
+  Surface area: 249992.5 mm^2
+  Sphericity: 0.250
+  Mean intensity: -352.0 HU
+  Contrast: 3.396
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-397 (392/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1380954 voxels
+  Volume: 1380954.0 mm^3
+  Surface area: 224715.8 mm^2
+  Sphericity: 0.267
+  Mean intensity: -286.0 HU
+  Contrast: 2.231
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-398 (393/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2137101 voxels
+  Volume: 2137101.0 mm^3
+  Surface area: 328462.1 mm^2
+  Sphericity: 0.244
+  Mean intensity: -448.4 HU
+  Contrast: 4.453
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-399 (394/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1373919 voxels
+  Volume: 1373919.0 mm^3
+  Surface area: 214939.8 mm^2
+  Sphericity: 0.278
+  Mean intensity: -348.7 HU
+  Contrast: 2.276
+  Homogeneity: 0.986
+
+==================================================
+Processing LUNG1-400 (395/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1244703 voxels
+  Volume: 1244703.0 mm^3
+  Surface area: 236708.2 mm^2
+  Sphericity: 0.236
+  Mean intensity: -241.5 HU
+  Contrast: 2.149
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-401 (396/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2985757 voxels
+  Volume: 2985757.0 mm^3
+  Surface area: 380500.3 mm^2
+  Sphericity: 0.264
+  Mean intensity: -485.4 HU
+  Contrast: 4.441
+  Homogeneity: 0.971
+
+==================================================
+Processing LUNG1-402 (397/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2951165 voxels
+  Volume: 2951165.0 mm^3
+  Surface area: 378433.8 mm^2
+  Sphericity: 0.263
+  Mean intensity: -533.7 HU
+  Contrast: 5.097
+  Homogeneity: 0.973
+
+==================================================
+Processing LUNG1-403 (398/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1134872 voxels
+  Volume: 1134872.0 mm^3
+  Surface area: 195675.1 mm^2
+  Sphericity: 0.269
+  Mean intensity: -271.9 HU
+  Contrast: 1.795
+  Homogeneity: 0.987
+
+==================================================
+Processing LUNG1-404 (399/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2221725 voxels
+  Volume: 2221725.0 mm^3
+  Surface area: 309777.9 mm^2
+  Sphericity: 0.266
+  Mean intensity: -360.0 HU
+  Contrast: 4.039
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-405 (400/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1792951 voxels
+  Volume: 1792951.0 mm^3
+  Surface area: 282825.6 mm^2
+  Sphericity: 0.252
+  Mean intensity: -294.6 HU
+  Contrast: 3.462
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-406 (401/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1967802 voxels
+  Volume: 1967802.0 mm^3
+  Surface area: 341746.6 mm^2
+  Sphericity: 0.222
+  Mean intensity: -446.8 HU
+  Contrast: 5.863
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-407 (402/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1850537 voxels
+  Volume: 1850537.0 mm^3
+  Surface area: 315998.9 mm^2
+  Sphericity: 0.231
+  Mean intensity: -406.1 HU
+  Contrast: 4.098
+  Homogeneity: 0.979
+
+==================================================
+Processing LUNG1-408 (403/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1087600 voxels
+  Volume: 1087600.0 mm^3
+  Surface area: 223363.3 mm^2
+  Sphericity: 0.229
+  Mean intensity: -401.0 HU
+  Contrast: 3.032
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-409 (404/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2532930 voxels
+  Volume: 2532930.0 mm^3
+  Surface area: 361286.8 mm^2
+  Sphericity: 0.249
+  Mean intensity: -421.6 HU
+  Contrast: 4.944
+  Homogeneity: 0.973
+
+==================================================
+Processing LUNG1-410 (405/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1965218 voxels
+  Volume: 1965218.0 mm^3
+  Surface area: 317502.3 mm^2
+  Sphericity: 0.239
+  Mean intensity: -273.5 HU
+  Contrast: 2.835
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-411 (406/417)...
+    Found 5 segment files, combining...
+  Tumor size: 1847600 voxels
+  Volume: 1847600.0 mm^3
+  Surface area: 274574.6 mm^2
+  Sphericity: 0.265
+  Mean intensity: -385.7 HU
+  Contrast: 2.879
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-412 (407/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2347798 voxels
+  Volume: 2347798.0 mm^3
+  Surface area: 330929.9 mm^2
+  Sphericity: 0.258
+  Mean intensity: -468.3 HU
+  Contrast: 3.962
+  Homogeneity: 0.977
+
+==================================================
+Processing LUNG1-413 (408/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1187844 voxels
+  Volume: 1187844.0 mm^3
+  Surface area: 241335.7 mm^2
+  Sphericity: 0.225
+  Mean intensity: -357.2 HU
+  Contrast: 3.230
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-414 (409/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1610706 voxels
+  Volume: 1610706.0 mm^3
+  Surface area: 248516.3 mm^2
+  Sphericity: 0.267
+  Mean intensity: -262.8 HU
+  Contrast: 2.383
+  Homogeneity: 0.984
+
+==================================================
+Processing LUNG1-415 (410/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1671419 voxels
+  Volume: 1671419.0 mm^3
+  Surface area: 278345.0 mm^2
+  Sphericity: 0.245
+  Mean intensity: -430.9 HU
+  Contrast: 3.694
+  Homogeneity: 0.980
+
+==================================================
+Processing LUNG1-416 (411/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1827928 voxels
+  Volume: 1827928.0 mm^3
+  Surface area: 262612.5 mm^2
+  Sphericity: 0.275
+  Mean intensity: -482.5 HU
+  Contrast: 3.762
+  Homogeneity: 0.983
+
+==================================================
+Processing LUNG1-417 (412/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1822513 voxels
+  Volume: 1822513.0 mm^3
+  Surface area: 286648.0 mm^2
+  Sphericity: 0.252
+  Mean intensity: -266.8 HU
+  Contrast: 2.851
+  Homogeneity: 0.982
+
+==================================================
+Processing LUNG1-418 (413/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1288769 voxels
+  Volume: 1288769.0 mm^3
+  Surface area: 226599.7 mm^2
+  Sphericity: 0.253
+  Mean intensity: -158.9 HU
+  Contrast: 2.689
+  Homogeneity: 0.990
+
+==================================================
+Processing LUNG1-419 (414/417)...
+    Found 5 segment files, combining...
+  Tumor size: 2335492 voxels
+  Volume: 2335492.0 mm^3
+  Surface area: 331723.5 mm^2
+  Sphericity: 0.257
+  Mean intensity: -389.5 HU
+  Contrast: 3.531
+  Homogeneity: 0.975
+
+==================================================
+Processing LUNG1-420 (415/417)...
+    Found 6 segment files, combining...
+  Tumor size: 2073034 voxels
+  Volume: 2073034.0 mm^3
+  Surface area: 293008.4 mm^2
+  Sphericity: 0.268
+  Mean intensity: -387.6 HU
+  Contrast: 3.002
+  Homogeneity: 0.978
+
+==================================================
+Processing LUNG1-421 (416/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1525473 voxels
+  Volume: 1525473.0 mm^3
+  Surface area: 242160.3 mm^2
+  Sphericity: 0.265
+  Mean intensity: -428.1 HU
+  Contrast: 2.649
+  Homogeneity: 0.985
+
+==================================================
+Processing LUNG1-422 (417/417)...
+    Found 6 segment files, combining...
+  Tumor size: 1085190 voxels
+  Volume: 1085190.0 mm^3
+  Surface area: 239054.4 mm^2
+  Sphericity: 0.214
+  Mean intensity: -163.0 HU
+  Contrast: 3.026
+  Homogeneity: 0.986
+
+==================================================
+PROCESSING COMPLETE
+Successfully processed 416/417 patients
+
+Saved: /user/work/va24397/summative_AIHDS/features_shape.csv
+Saved: /user/work/va24397/summative_AIHDS/features_intensity.csv
+Saved: /user/work/va24397/summative_AIHDS/features_texture.csv
+
+Total features extracted: 15
+  - Shape features: 6
+  - Intensity features: 6
+  - Texture features: 3
+Finished feature extraction at Tue Apr 28 21:24:17 BST 2026
+Job finished at: Tue Apr 28 21:24:17 BST 2026
