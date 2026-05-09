@@ -1,6 +1,8 @@
 #############################################################################
 #                                                                           #
-# Program Name:  Neural Network Analysis                                           #
+# Program Name:  Neural Network Analysis                                    #
+#
+#  Outputs:      mlp_roc_curves.png, mlp_cal_curves_smooth.png, pfi_importance_top5_minimal_white.png
 #                                                                           #
 #############################################################################
 
@@ -8,13 +10,12 @@
 ###############################
 ##      LOAD PACKAGES       ##
 ##############################
-#library(ggplot2)
+library(ggplot2)
 library(glmnet)
 library(pROC)
 library(caret)
-#library(keras3)
-#library(tensorflow)
-#library(dplyr)
+library(dplyr)
+library(tidyr)
 
 
 ## set working directory ##
@@ -120,14 +121,13 @@ cl1_img_x_test <- as.matrix(cl1_img_test_prep$x)
 cl1_img_y_test <- cl1_img_test_prep$y
 
 
-
 #FUNCTION FOR LASSO FEATURE SELECTION WITH 5-FOLD CV
 
 lasso_feature_selection <- function(x_train, y_train, dataset_name) {
   
   cat("\nProcessing:", dataset_name, "\n")
   
-  # Run lasso CV
+  #lasso CV
   cv_lasso <- cv.glmnet(
     x = x_train,
     y = y_train,
@@ -137,20 +137,18 @@ lasso_feature_selection <- function(x_train, y_train, dataset_name) {
     nfolds = 5
   )
   
-  # Extract features with non-zero coefficients at lambda.1se
+  #features with non-zero coefficients at lambda.1se
   coef_matrix <- as.matrix(coef(cv_lasso, s = cv_lasso$lambda.1se))
   selected_features <- rownames(coef_matrix)[coef_matrix[, 1] != 0]
   selected_features <- selected_features[selected_features != "(Intercept)"]
   
-  # Get coefficients
+  #coefficients
   feature_coefs <- coef_matrix[selected_features, 1]
   
-  # Summary
   cat("  Features:", length(selected_features), "/", ncol(x_train), 
       "| Max AUC:", round(max(cv_lasso$cvm), 4), "\n")
   
   if(length(selected_features) > 0) {
-    # Show top 5
     top_idx <- order(abs(feature_coefs), decreasing = TRUE)[1:min(5, length(selected_features))]
     cat("  Top features:\n")
     for(i in top_idx) {
@@ -187,122 +185,6 @@ summary_table <- data.frame(
               cl2_rna_lasso$max_cv_auc, cl1_img_lasso$max_cv_auc))
 
 print(summary_table)
-
-
-
-
-#EVALUATE LASSO ON TEST SETS
-
-evaluate_lasso_test <- function(x_train, y_train, x_test, y_test, selected_features, dataset_name) {
-  
-  cat("\n", paste(rep("=", 50), collapse = ""), "\n")
-  cat(dataset_name, "LASSO EVALUATION ON TEST SET\n")
-  cat(paste(rep("=", 50), collapse = ""), "\n")
-  
-  available_features <- intersect(selected_features, colnames(x_test))
-  available_features <- intersect(available_features, colnames(x_train))
-  
-  if(length(available_features) == 0) {
-    cat("ERROR: No common features found!\n")
-    return(NULL)
-  }
-  
-  x_train_subset <- x_train[, available_features, drop = FALSE]
-  x_test_subset <- x_test[, available_features, drop = FALSE]
-  
-  cat("Features used:", length(available_features), "\n")
-  cat("Test set size:", nrow(x_test_subset), "samples\n")
-  
-  cv_lasso <- cv.glmnet(
-    x = x_train_subset,
-    y = y_train,
-    family = "binomial",
-    alpha = 1,
-    type.measure = "auc",
-    nfolds = min(5, nrow(x_train_subset))
-  )
-  
-  test_pred <- predict(cv_lasso, newx = x_test_subset, s = cv_lasso$lambda.1se, type = "response")
-  
-  test_pred <- as.numeric(test_pred)
-  
-  test_auc <- auc(roc(y_test, test_pred, quiet = TRUE))
-  
-  roc_obj <- roc(y_test, test_pred, quiet = TRUE)
-  optimal_threshold <- coords(roc_obj, "best", ret = "threshold", transpose = FALSE)[1]
-  optimal_threshold <- as.numeric(optimal_threshold)
-  
-  predicted_class <- ifelse(test_pred > optimal_threshold, 1, 0)
-  
-  accuracy <- mean(predicted_class == y_test)
-  
-  tp <- sum(predicted_class == 1 & y_test == 1)
-  tn <- sum(predicted_class == 0 & y_test == 0)
-  fp <- sum(predicted_class == 1 & y_test == 0)
-  fn <- sum(predicted_class == 0 & y_test == 1)
-  
-  sensitivity <- ifelse((tp + fn) > 0, tp / (tp + fn), NA)
-  specificity <- ifelse((tn + fp) > 0, tn / (tn + fp), NA)
-  precision <- ifelse((tp + fp) > 0, tp / (tp + fp), NA)
-  f1 <- ifelse((precision + sensitivity) > 0, 2 * precision * sensitivity / (precision + sensitivity), NA)
-  
-  cat("\nResults (using optimal threshold =", round(optimal_threshold, 4), "):\n")
-  cat("Test AUC:", round(test_auc, 4), "\n")
-  cat("Accuracy:", round(accuracy, 4), "\n")
-  cat("Sensitivity:", round(sensitivity, 4), "\n")
-  cat("Specificity:", round(specificity, 4), "\n")
-  cat("Precision:", round(precision, 4), "\n")
-  cat("F1 Score:", round(f1, 4), "\n")
-  
-  cat("\nConfusion Matrix:\n")
-  cat("            Predicted\n")
-  cat("Actual    0    1\n")
-  cat("    0    ", tn, "  ", fp, "\n")
-  cat("    1    ", fn, "  ", tp, "\n")
-  
-  return(list(
-    test_auc = test_auc,
-    predictions = test_pred,
-    predicted_class = predicted_class,
-    optimal_threshold = optimal_threshold,
-    accuracy = accuracy,
-    sensitivity = sensitivity,
-    specificity = specificity,
-    precision = precision,
-    f1 = f1,
-    features_used = available_features
-  ))
-}
-
-# Run for all datasets
-cl1_eval <- evaluate_lasso_test(cl1_x_train, cl1_y_train, cl1_x_test, cl1_y_test, 
-                                         cl1_lasso$selected_features, "CL1")
-
-cl2_eval <- evaluate_lasso_test(cl2_x_train, cl2_y_train, cl2_x_test, cl2_y_test, 
-                                         cl2_lasso$selected_features, "CL2")
-
-cl2_rna_eval <- evaluate_lasso_test(cl2_rna_x_train, cl2_rna_y_train, 
-                                             cl2_rna_x_test, cl2_rna_y_test, 
-                                             cl2_rna_lasso$selected_features, "CL2_RNA")
-
-cl1_img_eval <- evaluate_lasso_test(cl1_img_x_train, cl1_img_y_train, 
-                                             cl1_img_x_test, cl1_img_y_test, 
-                                             cl1_img_lasso$selected_features, "CL1_IMG")
-
-# Compare all results
-comparison_results <- data.frame(
-  Dataset = c("CL1", "CL2", "CL2_RNA", "CL1_IMG"),
-  AUC = c(cl1_eval$test_auc, cl2_eval$test_auc, cl2_rna_eval$test_auc, cl1_img_eval$test_auc),
-  Accuracy = c(cl1_eval$accuracy, cl2_eval$accuracy, cl2_rna_eval$accuracy, cl1_img_eval$accuracy),
-  Sensitivity = c(cl1_eval$sensitivity, cl2_eval$sensitivity, cl2_rna_eval$sensitivity, cl1_img_eval$sensitivity),
-  Specificity = c(cl1_eval$specificity, cl2_eval$specificity, cl2_rna_eval$specificity, cl1_img_eval$specificity),
-  Features_Used = c(length(cl1_eval$features_used), length(cl2_eval$features_used),
-                    length(cl2_rna_eval$features_used), length(cl1_img_eval$features_used))
-)
-
-print(paste(rep("=", 60), collapse = ""))
-print(comparison_results)
-
 
 
 #CREATE REDUCED DATASETS WITH FEATURES OF INTEREST
@@ -354,12 +236,10 @@ library(nnet)
 
 set.seed(123)
 
-# Improved version with small fixes
 tune_mlp_r <- function(x_train, y_train, n_folds = 4, n_trials = 20) {
   
   set.seed(123)
   
-  # Convert to matrix if needed
   x_train <- as.matrix(x_train)
   
   folds <- createFolds(y_train, k = n_folds, list = TRUE)
@@ -368,33 +248,27 @@ tune_mlp_r <- function(x_train, y_train, n_folds = 4, n_trials = 20) {
   best_params <- NULL
   results <- data.frame()
   
-  cat("Starting PURE R MLP tuning (nnet)...\n")
-  cat("Using", n_folds, "fold CV\n")
-  cat("Samples:", nrow(x_train), " Features:", ncol(x_train), "\n\n")
-  
   for(i in 1:n_trials) {
     
     # Random search space (adjusted for your small dataset)
     params <- list(
-      size = sample(c(1, 2, 3, 4, 5, 6), 1),     # Smaller max for your 4 features
-      decay = 10^runif(1, -4, -1),                # L2 regularization
+      size = sample(c(1, 2, 3, 4, 5, 6), 1), 
+      decay = 10^runif(1, -4, -1),             
       maxit = sample(c(200, 300, 400, 500), 1)
     )
     
     fold_aucs <- c()
     
-    # Cross validation
+    #ross validation
     for(fold in 1:n_folds) {
       
       val_idx <- folds[[fold]]
       train_idx <- setdiff(seq_len(nrow(x_train)), val_idx)
       
-      # Scale inside fold (critical for neural nets)
       scale_params <- preProcess(x_train[train_idx, ], method = c("center", "scale"))
       x_train_fold <- predict(scale_params, x_train[train_idx, ])
       x_val_fold <- predict(scale_params, x_train[val_idx, ])
       
-      # Train model
       model <- nnet(
         x = as.matrix(x_train_fold),
         y = y_train[train_idx],
@@ -402,13 +276,13 @@ tune_mlp_r <- function(x_train, y_train, n_folds = 4, n_trials = 20) {
         decay = params$decay,
         maxit = params$maxit,
         trace = FALSE,
-        linout = FALSE  # For classification
+        linout = FALSE 
       )
       
-      # Predict on validation fold
+      #predict on validation fold
       pred <- predict(model, as.matrix(x_val_fold), type = "raw")
       
-      # Calculate AUC
+      #AUC
       auc_val <- roc(y_train[val_idx], as.vector(pred), quiet = TRUE)$auc
       fold_aucs <- c(fold_aucs, auc_val)
     }
@@ -423,7 +297,6 @@ tune_mlp_r <- function(x_train, y_train, n_folds = 4, n_trials = 20) {
       mean_auc = round(mean_auc, 4)
     ))
     
-    # Update best
     if(mean_auc > best_auc) {
       best_auc <- mean_auc
       best_params <- params
@@ -434,9 +307,6 @@ tune_mlp_r <- function(x_train, y_train, n_folds = 4, n_trials = 20) {
       cat(sprintf("Trial %d/%d -> Best so far: %.4f\n", i, n_trials, best_auc))
     }
   }
-  
-  # Train final model on ALL training data
-  cat("\nTraining final model on full training set...\n")
   
   scale_params <- preProcess(x_train, method = c("center", "scale"))
   x_train_scaled <- as.matrix(predict(scale_params, x_train))
@@ -465,26 +335,46 @@ cl2_tuning <- tune_mlp_r(cl2_reduced$x_train_reduced,cl2_y_train,n_folds = 4,n_t
 cl2_rna_tuning <- tune_mlp_r(cl2_rna_reduced$x_train_reduced,cl2_rna_y_train,n_folds = 4,n_trials = 10)
 cl1_img_tuning <- tune_mlp_r(cl1_img_reduced$x_train_reduced,cl1_img_y_train,n_folds = 4,n_trials = 10)
 
+summary_table <- data.frame(
+  Dataset = c("A: Clinical", "B: Clinical", "B: Clinical + Genomics", "A: Clinical + Imaging"),
+  Hidden_Neurons = c(cl1_tuning$best_params$size,
+                     cl2_tuning$best_params$size,
+                     cl2_rna_tuning$best_params$size,
+                     cl1_img_tuning$best_params$size),
+  Weight_Decay = c(round(cl1_tuning$best_params$decay, 6),
+                   round(cl2_tuning$best_params$decay, 6),
+                   round(cl2_rna_tuning$best_params$decay, 6),
+                   round(cl1_img_tuning$best_params$decay, 6)),
+  Max_Iterations = c(cl1_tuning$best_params$maxit,
+                     cl2_tuning$best_params$maxit,
+                     cl2_rna_tuning$best_params$maxit,
+                     cl1_img_tuning$best_params$maxit),
+  Best_CV_AUC = c(round(cl1_tuning$best_cv_auc, 4),
+                  round(cl2_tuning$best_cv_auc, 4),
+                  round(cl2_rna_tuning$best_cv_auc, 4),
+                  round(cl1_img_tuning$best_cv_auc, 4))
+)
+
+print(summary_table)
 
 
 #EVALUATE MODEL ON THE TEST SET USING MLP
 
 evaluate_final_nnet <- function(tuning_result, x_test, y_test, dataset_name) {
   
-  # Scale test set using training parameters
+  #Scale test set using training parameters
   x_test_scaled <- as.matrix(predict(tuning_result$scale_params, x_test))
   
-  # Predict and convert to vector
   predictions <- as.numeric(predict(tuning_result$final_model, x_test_scaled, type = "raw"))
   
-  # AUC-ROC
+  #AUC-ROC
   roc_obj <- roc(y_test, predictions, quiet = TRUE)
   test_auc <- auc(roc_obj)
   
-  # Brier score
+  #Brier score
   brier_score <- mean((predictions - y_test)^2)
   
-  # Optimal threshold and classification metrics
+  #Optimal threshold and classification metrics
   opt_thresh <- as.numeric(coords(roc_obj, "best", ret = "threshold", transpose = FALSE)[1])
   pred_class <- ifelse(predictions > opt_thresh, 1, 0)
   
@@ -499,9 +389,6 @@ evaluate_final_nnet <- function(tuning_result, x_test, y_test, dataset_name) {
   specificity <- ifelse((tn + fp) > 0, tn / (tn + fp), NA)
   precision <- ifelse((tp + fp) > 0, tp / (tp + fp), NA)
   
-  cat("\n", paste(rep("=", 60), collapse = ""), "\n")
-  cat(dataset_name, "FINAL MODEL TEST PERFORMANCE\n")
-  cat(paste(rep("=", 60), collapse = ""), "\n")
   cat("AUC-ROC:", round(test_auc, 4), "\n")
   cat("Brier Score:", round(brier_score, 4), "\n")
   cat("Accuracy:", round(accuracy, 4), "\n")
@@ -527,7 +414,6 @@ evaluate_final_nnet <- function(tuning_result, x_test, y_test, dataset_name) {
   ))
 }
 
-# Run evaluations
 cl1_eval <- evaluate_final_nnet(cl1_tuning, 
                                 cl1_reduced$x_test_reduced, 
                                 cl1_y_test, 
@@ -548,71 +434,78 @@ cl1_img_eval <- evaluate_final_nnet(cl1_img_tuning,
                                     cl1_img_y_test, 
                                     "CL1_IMG")
 
+comparison_results <- data.frame(
+  Dataset = c("CL1", "CL2", "CL2_RNA", "CL1_IMG"),
+  Features_After_Lasso = c(ncol(cl1_reduced$x_train_reduced),
+                           ncol(cl2_reduced$x_train_reduced),
+                           ncol(cl2_rna_reduced$x_train_reduced),
+                           ncol(cl1_img_reduced$x_train_reduced)),
+  Best_CV_AUC = c(cl1_tuning$best_cv_auc, 
+                  cl2_tuning$best_cv_auc,
+                  cl2_rna_tuning$best_cv_auc, 
+                  cl1_img_tuning$best_cv_auc),
+  Test_AUC = c(cl1_eval$test_auc, 
+               cl2_eval$test_auc, 
+               cl2_rna_eval$test_auc, 
+               cl1_img_eval$test_auc),
+  Test_Accuracy = c(cl1_eval$accuracy, 
+                    cl2_eval$accuracy, 
+                    cl2_rna_eval$accuracy, 
+                    cl1_img_eval$accuracy),
+  Test_Sensitivity = c(cl1_eval$sensitivity, 
+                       cl2_eval$sensitivity, 
+                       cl2_rna_eval$sensitivity, 
+                       cl1_img_eval$sensitivity),
+  Test_Specificity = c(cl1_eval$specificity, 
+                       cl2_eval$specificity, 
+                       cl2_rna_eval$specificity, 
+                       cl1_img_eval$specificity),
+  Test_Precision = c(cl1_eval$precision, 
+                     cl2_eval$precision, 
+                     cl2_rna_eval$precision, 
+                     cl1_img_eval$precision)
+)
+
+print(comparison_results)
+
+comparison_results_rounded <- comparison_results
+numeric_cols <- sapply(comparison_results_rounded, is.numeric)
+comparison_results_rounded[numeric_cols] <- lapply(
+  comparison_results_rounded[numeric_cols], 
+  function(x) round(x, 4)
+)
+
+print(comparison_results_rounded)
+
+
 
 #ROC curves
-plot(cl1_eval$roc_obj,col = "#2E86AB",lwd = 2,
-     main = "Neural Network Comparison - ROC Curves",
+png("Output/mlp_roc_curves.png", width = 8, height = 8, units = "in", res = 300)
+plot(1 - cl1_eval$specificity, cl1_eval$sensitivity, 
+     type = "n",
+     xlim = c(0, 1), ylim = c(0, 1),
+     main = "Figure 3: ROC Curves for Neural Network Models",
      xlab = "1 - Specificity (False Positive Rate)",
-     ylab = "Sensitivity (True Positive Rate)")
-lines(cl2_eval$roc_obj,col = "#A23B72",lwd = 2)
-lines(cl2_rna_eval$roc_obj,col = "red",lwd = 2)
-lines(cl1_img_eval$roc_obj,col = "blue",lwd = 2)
-legend("bottomright",legend = c(
-    paste("Clinical Model 1 (AUC =",round(cl1_eval$test_auc, 3), ")"),
-    paste("Clinical Model 2 (AUC =",round(cl2_eval$test_auc, 3), ")"),
-    paste("Clinical & RNA Model 3 (AUC =",round(cl2_rna_eval$test_auc, 3), ")"),
-    paste("Clinical & Image Model 4 (AUC =",round(cl1_img_eval$test_auc, 3), ")")),
-  col = c("#2E86AB", "#A23B72", "red", "blue"),lwd = 2,cex = 0.8,bg = "white",box.col = "gray80")
-grid()
-
-dev.copy(png, "Output/NN_Comparison_ROC_curves2.png")
+     ylab = "Sensitivity (True Positive Rate)",
+     cex.main = 1.8, cex.lab = 1.5, cex.axis = 1.3)
+abline(a = 0, b = 1, lty = 2, col = "gray50", lwd = 1.5)
+grid(col = "lightgray", lty = 1)
+lines(1 - cl1_eval$roc_obj$specificities, cl1_eval$roc_obj$sensitivities, col = "#2E86AB", lwd = 2)
+lines(1 - cl2_eval$roc_obj$specificities, cl2_eval$roc_obj$sensitivities, col = "#A23B72", lwd = 2)
+lines(1 - cl2_rna_eval$roc_obj$specificities, cl2_rna_eval$roc_obj$sensitivities, col = "red", lwd = 2)
+lines(1 - cl1_img_eval$roc_obj$specificities, cl1_img_eval$roc_obj$sensitivities, col = "blue", lwd = 2)
+legend("bottomright", 
+       legend = c(paste0("A: Clinical (AUC = ", sprintf("%.3f", cl1_eval$test_auc), ")"),
+                  paste0("B: Clinical (AUC = ", sprintf("%.3f", cl2_eval$test_auc), ")"),
+                  paste0("B: Clinical + Genomics (AUC = ", sprintf("%.3f", cl2_rna_eval$test_auc), ")"),
+                  paste0("A: Clinical + Imaging (AUC = ", sprintf("%.3f", cl1_img_eval$test_auc), ")")),
+       col = c("#2E86AB", "#A23B72", "red", "blue"),lwd = 3, cex = 1.1, pt.cex = 1.4, 
+       bg = "white", box.col = "gray50", box.lwd = 1.5, inset = c(0.02, 0.02))
 dev.off()
 
+########CALIBRATION CURVES
 
-library(ggplot2)
-library(scales)
-
-# Create dataframe for ggplot
-roc_df <- rbind(
-  data.frame(specificity = cl1_eval$roc_obj$specificities,
-    sensitivity = cl1_eval$roc_obj$sensitivities,Model = "Clinical Model 1"),
-  data.frame(specificity = cl2_eval$roc_obj$specificities,
-    sensitivity = cl2_eval$roc_obj$sensitivities,Model = "Clinical Model 2"),
-  data.frame(specificity = cl2_rna_eval$roc_obj$specificities,
-    sensitivity = cl2_rna_eval$roc_obj$sensitivities,Model = "Clinical & RNA Model 3"),
-  data.frame(specificity = cl1_img_eval$roc_obj$specificities,
-    sensitivity = cl1_img_eval$roc_obj$sensitivities,Model = "Clinical & Image Model 4"))
-
-# Plot ROC curves
-ggplot(roc_df,aes(x = 1 - specificity,y = sensitivity,color = Model)) +
-  geom_line(linewidth = 1.2) + geom_abline(linetype = "dashed", color = "gray50", alpha = 0.7) +
-  scale_color_manual(
-    values = c(
-      "Clinical Model 1" = "#2E86AB",
-      "Clinical Model 2" = alpha("#A23B72", 0.6),
-      "Clinical & RNA Model 3" = "red",
-      "Clinical & Image Model 4" = alpha("blue", 0.4)),
-    labels = c(paste0("Clinical Model 1 (AUC = ", round(cl1_eval$test_auc, 3), ")"),
-      paste0("Clinical Model 2 (AUC = ", round(cl2_eval$test_auc, 3), ")"),
-      paste0("Clinical & RNA Model 3 (AUC = ", round(cl2_rna_eval$test_auc, 3), ")"),
-      paste0("Clinical & Image Model 4 (AUC = ", round(cl1_img_eval$test_auc, 3), ")"))) +
-  labs(x = "1 - Specificity (False Positive Rate)",y = "Sensitivity (True Positive Rate)",
-    title = "ROC Curves for Neural Network Models",color = "Model") +
-  theme_minimal() +theme(legend.position = c(0.75, 0.25), legend.background = element_rect(
-    fill = "white", color = "gray80", linewidth = 0.5),
-    plot.title = element_text(hjust = 0.5, size = 14, face = "bold"),
-    axis.title = element_text(size = 12),
-    axis.text = element_text(size = 10),
-    legend.title = element_text(size = 11),
-    legend.text = element_text(size = 10)) +
-  coord_equal()
-
-
-# ============================================
-# CALIBRATION CURVES
-# ============================================
-
-# Function to calculate calibration data
+#function to calculate calibration data
 get_calibration_data <- function(predictions, y_test, n_bins = 10) {
   bins <- seq(0, 1, length.out = n_bins + 1)
   bin_means <- numeric(n_bins)
@@ -636,13 +529,11 @@ get_calibration_data <- function(predictions, y_test, n_bins = 10) {
   ))
 }
 
-# Get calibration data for each dataset
 cal_cl1 <- get_calibration_data(cl1_eval$predictions, cl1_eval$y_test)
 cal_cl2 <- get_calibration_data(cl2_eval$predictions, cl2_eval$y_test)
 cal_cl2_rna <- get_calibration_data(cl2_rna_eval$predictions, cl2_rna_eval$y_test)
 cal_cl1_img <- get_calibration_data(cl1_img_eval$predictions, cl1_img_eval$y_test)
 
-# Plot calibration curves
 plot(0, 0, type = "n", 
      xlim = c(0, 1), ylim = c(0, 1),
      main = "Neural Network Comparison - Calibration Curves",
@@ -650,7 +541,6 @@ plot(0, 0, type = "n",
      ylab = "Observed Proportion")
 abline(0, 1, col = "gray", lwd = 2, lty = 2)
 
-# Add lines
 lines(cal_cl1$bin_mean, cal_cl1$observed, type = "b", col = "blue", lwd = 2, pch = 16)
 lines(cal_cl2$bin_mean, cal_cl2$observed, type = "b", col = "red", lwd = 2, pch = 16)
 lines(cal_cl2_rna$bin_mean, cal_cl2_rna$observed, type = "b", col = "green", lwd = 2, pch = 16)
@@ -667,13 +557,67 @@ legend("bottomright",
        cex = 0.7)
 grid()
 
-# Save
 dev.copy(png, "NN_Comparison_Calibration.png")
 dev.off()
 
-# ============================================
-# SUMMARY TABLE
-# ============================================
+
+df_cl1 <- data.frame(
+  pred = as.numeric(predict(cl1_tuning$final_model, 
+                            as.matrix(predict(cl1_tuning$scale_params, cl1_reduced$x_test_reduced)), 
+                            type = "raw")),actual = cl1_y_test,Model = "A: Clinical")
+
+df_cl2 <- data.frame(
+  pred = as.numeric(predict(cl2_tuning$final_model, 
+                            as.matrix(predict(cl2_tuning$scale_params, cl2_reduced$x_test_reduced)), 
+                            type = "raw")),actual = cl2_y_test,Model = "B: Clinical")
+
+df_cl2_rna <- data.frame(
+  pred = as.numeric(predict(cl2_rna_tuning$final_model, 
+                            as.matrix(predict(cl2_rna_tuning$scale_params, cl2_rna_reduced$x_test_reduced)), 
+                            type = "raw")),actual = cl2_rna_y_test,Model = "B: Clinical + Genomics")
+
+df_cl1_img <- data.frame(
+  pred = as.numeric(predict(cl1_img_tuning$final_model, 
+                            as.matrix(predict(cl1_img_tuning$scale_params, cl1_img_reduced$x_test_reduced)), 
+                            type = "raw")),actual = cl1_img_y_test,Model = "A: Clinical + Imaging")
+
+combined_df <- rbind(df_cl1, df_cl2, df_cl2_rna, df_cl1_img)
+
+png("Output/mlp_cal_curves_smooth.png", width = 10, height = 8, units = "in", res = 300)
+plot(0, 0, type = "n", 
+     xlim = c(0, 0.8), ylim = c(0, 1),
+     main = "Figure 4: Calibration Curves for Neural Network Models",
+     xlab = "Predicted Probability of Death",
+     ylab = "Observed Proportion of Death",
+     cex.main = 1.8, cex.lab = 1.5, cex.axis = 1.3)
+abline(a = 0, b = 1, lty = 2, col = "gray50", lwd = 2)
+grid(col = "lightgray", lty = 1)
+add_smooth_curve <- function(pred, actual, color, model_name) {
+  valid_idx <- complete.cases(pred, actual)
+  pred <- pred[valid_idx]
+  actual <- actual[valid_idx]
+  loess_fit <- loess(actual ~ pred, degree = 1, span = 1.2)
+  pred_sorted <- sort(pred)
+  fit_smooth <- predict(loess_fit, newdata = data.frame(pred = pred_sorted), se = TRUE)
+  lines(pred_sorted, fit_smooth$fit, col = color, lwd = 3)
+  polygon(c(pred_sorted, rev(pred_sorted)), 
+          c(fit_smooth$fit + 1.96 * fit_smooth$se, 
+            rev(fit_smooth$fit - 1.96 * fit_smooth$se)),
+          col = adjustcolor(color, alpha.f = 0.15), border = NA)
+}
+add_smooth_curve(df_cl1$pred, df_cl1$actual, "#2E86AB", "A: Clinical")
+add_smooth_curve(df_cl2$pred, df_cl2$actual, "#A23B72", "B: Clinical")
+add_smooth_curve(df_cl2_rna$pred, df_cl2_rna$actual, "#D62828", "B: Clinical + Genomics")
+add_smooth_curve(df_cl1_img$pred, df_cl1_img$actual, "#003F88", "A: Clinical + Imaging")
+legend("bottomright",
+       legend = c("A: Clinical", "B: Clinical", 
+                  "B: Clinical + Genomics", "A: Clinical + Imaging"),
+       col = c("#2E86AB", "#A23B72", "#D62828", "#003F88"),
+       lwd = 3, cex = 1.1, bg = "white", box.col = "gray50")
+dev.off()
+
+
+########SUMMARY TABLE
 
 summary_nn <- data.frame(
   Dataset = c("CL1", "CL2", "CL2_RNA", "CL1_IMG"),
@@ -691,94 +635,50 @@ summary_nn <- data.frame(
 print(summary_nn)
 
 
-# ============================================
-# BAR PLOT COMPARISON
-# ============================================
 
-library(ggplot2)
-library(tidyr)
-library(dplyr)
-
-# Reshape for plotting
-summary_long <- summary_nn %>%
-  select(Dataset, AUC, Brier, Accuracy) %>%
-  pivot_longer(cols = c(AUC, Brier, Accuracy), 
-               names_to = "Metric", 
-               values_to = "Value")
-
-ggplot(summary_long, aes(x = Dataset, y = Value, fill = Metric)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  labs(title = "Neural Network Performance Comparison",
-       y = "Score") +
-  theme_minimal() +
-  scale_fill_manual(values = c("AUC" = "steelblue", 
-                               "Brier" = "orange", 
-                               "Accuracy" = "green")) +
-  coord_cartesian(ylim = c(0, 1))
-
-ggsave("Output/NN_Performance_Barplot.png", width = 10, height = 6)
+##conduct PFI (Permutation Feature Importance)
 
 
-## conduct PFI (Permutation Feature Importance)
-
-
-# Manual PFI implementation (no extra packages)
 pfi <- function(x_train, y_train, x_test, y_test, final_model, scale_params, dataset_name) {
   
-  # Scale test data
   x_test_scaled <- as.matrix(predict(scale_params, x_test))
   
-  # Get baseline predictions and AUC
   pred_baseline <- as.numeric(predict(final_model, x_test_scaled, type = "raw"))
   auc_baseline <- roc(y_test, pred_baseline, quiet = TRUE)$auc
   
-  # Calculate importance for each feature
   n_features <- ncol(x_test_scaled)
   feature_names <- colnames(x_test_scaled)
   importance_scores <- numeric(n_features)
   
-  cat("\n", paste(rep("=", 50), collapse = ""), "\n")
-  cat(dataset_name, "- Permutation Feature Importance\n")
-  cat(paste(rep("=", 50), collapse = ""), "\n")
   cat("Baseline AUC:", round(auc_baseline, 4), "\n\n")
   
   for(i in 1:n_features) {
-    # Permute feature i multiple times for stability
     auc_permuted <- numeric(5)
     
     for(rep in 1:5) {
       x_permuted <- x_test_scaled
-      x_permuted[, i] <- sample(x_permuted[, i])  # Shuffle feature i
+      x_permuted[, i] <- sample(x_permuted[, i])  
       pred_permuted <- as.numeric(predict(final_model, x_permuted, type = "raw"))
       auc_permuted[rep] <- roc(y_test, pred_permuted, quiet = TRUE)$auc
     }
     
-    # Importance = drop in AUC (baseline - permuted)
     importance_scores[i] <- auc_baseline - mean(auc_permuted)
     
     cat(sprintf("%30s: AUC drop = %.4f\n", 
                 substr(feature_names[i], 1, 30), 
                 importance_scores[i]))
   }
-  
-  # Create data frame
   importance_df <- data.frame(
     Feature = feature_names,
     Importance = importance_scores
   ) %>%
     arrange(desc(Importance))
   
-  # Print top features
-  cat("\n", paste(rep("-", 30), collapse = ""), "\n")
-  cat("TOP 5 MOST IMPORTANT FEATURES\n")
-  cat(paste(rep("-", 30), collapse = ""), "\n")
   print(head(importance_df, 5))
   
   return(importance_df)
 }
 
-# Apply to your models
-# Run PFI for all datasets
 cl1_importance <- pfi(cl1_reduced$x_train_reduced, cl1_y_train,
                              cl1_reduced$x_test_reduced, cl1_y_test,
                              cl1_tuning$final_model, cl1_tuning$scale_params,
@@ -803,64 +703,27 @@ importance_results <- list(
   CL1 = cl1_importance,
   CL2 = cl2_importance,
   CL2_RNA = cl2_rna_importance,
-  CL1_IMG = cl1_img_importance
-)
+  CL1_IMG = cl1_img_importance)
 
 
-# Create a comparison summary
 importance_summary <- function(imp_df, dataset_name) {
   imp_df %>%
     slice_head(n = 5) %>%
-    mutate(Dataset = dataset_name)
-}
+    mutate(Dataset = dataset_name)}
 
-# Combine top features from all datasets
 top_features <- bind_rows(
   importance_summary(cl1_importance, "CL1"),
   importance_summary(cl2_importance, "CL2"),
   importance_summary(cl2_rna_importance, "CL2_RNA"),
-  importance_summary(cl1_img_importance, "CL1_IMG")
-)
+  importance_summary(cl1_img_importance, "CL1_IMG"))
 
 print(top_features)
 
-# Professional horizontal bar chart for report
-plot_pfi_report <- function(importance_df, dataset_name, top_n = 10) {
-  
-  # Take top N features
-  plot_df <- head(importance_df, top_n)
-  
-  # Calculate % of max importance for context
-  plot_df$Relative_Importance <- (plot_df$Importance / max(plot_df$Importance)) * 100
-  
-  ggplot(plot_df, aes(x = reorder(Feature, Importance), y = Importance)) +
-    geom_bar(stat = "identity", fill = "steelblue", alpha = 0.8) +
-    geom_text(aes(label = round(Importance, 3), hjust = -0.2), size = 3) +
-    coord_flip() +
-    labs(title = paste("Feature Importance -", dataset_name),
-         subtitle = "Permutation Feature Importance (Higher = More Important)",
-         x = "Feature", 
-         y = "Loss in AUC (Permutation Importance)") +
-    theme_minimal() +
-    theme(panel.grid.major.y = element_blank(),
-          plot.title = element_text(size = 14, face = "bold"),
-          plot.subtitle = element_text(size = 10, color = "gray50"),
-          axis.text.y = element_text(size = 10))
-}
-
-# Generate for all datasets
-plot_pfi_report(cl1_importance, "CL1", top_n = 4)  # Only 4 features total
-plot_pfi_report(cl2_rna_importance, "CL2_RNA", top_n = 10)
-
-
-
-# Combine all importance data for faceted plot
 all_importance <- bind_rows(
   cl1_importance %>% head(5) %>% mutate(Dataset = "CL1"),
   cl2_importance %>% head(5) %>% mutate(Dataset = "CL2"),
   cl2_rna_importance %>% head(5) %>% mutate(Dataset = "CL2_RNA"),
-  cl1_img_importance %>% head(5) %>% mutate(Dataset = "CL1_IMG")
-)
+  cl1_img_importance %>% head(5) %>% mutate(Dataset = "CL1_IMG"))
 
 ggplot(all_importance, aes(x = reorder(Feature, Importance), y = Importance, fill = Dataset)) +
   geom_bar(stat = "identity") +
@@ -876,3 +739,190 @@ ggplot(all_importance, aes(x = reorder(Feature, Importance), y = Importance, fil
         plot.title = element_text(size = 14, face = "bold"))
 
 ggsave("Combined_PFI_Comparison.png", width = 12, height = 8)
+
+
+clean_feature_names <- function(feature_names, max_width = 25) {
+  cleaned <- feature_names %>%
+    gsub("_\\d+$", "", .) %>%
+    gsub("gender_num", "Gender", .) %>%
+    gsub("hist_num", "Histology", .) %>%
+    gsub("ethnic_num", "Ethnicity", .) %>%
+    gsub("XGG_num", "XGG", .) %>%
+    gsub("path_t_num", "Path T Stage", .) %>%
+    gsub("path_m_num", "Path M Stage", .) %>%
+    gsub("path_n_num", "Path N Stage", .) %>%
+    gsub("lymph_num", "Lymph Nodes", .) %>%
+    gsub("egfr_num", "EGFR Status", .) %>%
+    gsub("kras_num", "KRAS Status", .) %>%
+    gsub("smoke_num", "Smoking Status", .) %>%
+    gsub("T_stage", "T Stage", .) %>%
+    gsub("N_stage", "N Stage", .) %>%
+    gsub("M_stage", "M Stage", .) %>%
+    gsub("overall_stage", "Overall Stage", .) %>%
+    gsub("tl_", "Tumor Load ", .) %>%
+    gsub("Age", "Age", .) %>%
+    gsub("pleural", "Pleural Involvement", .) %>%
+    gsub("adj_trt", "Adjuvant Treatment", .) %>%
+    gsub("Chemotherapy", "Chemotherapy", .) %>%
+    gsub("Radiation", "Radiation", .) %>%
+    gsub("Recurrence", "Recurrence", .) %>%
+    gsub("weight", "Weight", .) %>%
+    gsub("pack_yrs", "Pack Years", .) %>%
+    gsub("quit_smoke_yr", "Quit Smoking Years", .)
+  
+  wrapped <- str_wrap(cleaned, width = max_width)
+  
+  return(wrapped)
+}
+
+pfi <- function(x_train, y_train, x_test, y_test, final_model, scale_params, dataset_name) {
+  
+  x_test_scaled <- as.matrix(predict(scale_params, x_test))
+  
+  pred_baseline <- as.numeric(predict(final_model, x_test_scaled, type = "raw"))
+  auc_baseline <- roc(y_test, pred_baseline, quiet = TRUE)$auc
+  
+  n_features <- ncol(x_test_scaled)
+  feature_names <- colnames(x_test_scaled)
+  importance_scores <- numeric(n_features)
+  
+  cat("Baseline AUC:", round(auc_baseline, 4), "\n")
+  cat("Test set size:", nrow(x_test_scaled), "samples\n")
+  cat("Features:", n_features, "\n\n")
+  
+  for(i in 1:n_features) {
+    auc_permuted <- numeric(10)  
+    
+    for(rep in 1:10) {
+      x_permuted <- x_test_scaled
+      x_permuted[, i] <- sample(x_permuted[, i])
+      pred_permuted <- as.numeric(predict(final_model, x_permuted, type = "raw"))
+      auc_permuted[rep] <- roc(y_test, pred_permuted, quiet = TRUE)$auc
+    }
+    
+    importance_scores[i] <- auc_baseline - mean(auc_permuted)
+    sd_importance <- sd(auc_baseline - auc_permuted)
+    
+    if(i <= 10 || importance_scores[i] > 0.01) {
+      cat(sprintf("  %-35s: AUC drop = %.4f (SD: %.4f)\n", 
+                  substr(feature_names[i], 1, 35), 
+                  importance_scores[i],
+                  sd_importance))
+    }
+  }
+  
+  importance_df <- data.frame(
+    Feature = feature_names,
+    Importance = importance_scores,
+    Feature_Cleaned = clean_feature_names(feature_names, max_width = 30)
+  ) %>%
+    arrange(desc(Importance))
+  
+  top10 <- head(importance_df, 10)
+  for(i in 1:nrow(top10)) {
+    cat(sprintf("%2d. %-40s: %.4f\n", 
+                i, 
+                top10$Feature_Cleaned[i], 
+                top10$Importance[i]))
+  }
+  
+  return(importance_df)
+}
+
+cl1_importance <- pfi(cl1_reduced$x_train_reduced, cl1_y_train,
+                      cl1_reduced$x_test_reduced, cl1_y_test,
+                      cl1_tuning$final_model, cl1_tuning$scale_params,
+                      "A: Clinical")
+
+cl2_importance <- pfi(cl2_reduced$x_train_reduced, cl2_y_train,
+                      cl2_reduced$x_test_reduced, cl2_y_test,
+                      cl2_tuning$final_model, cl2_tuning$scale_params,
+                      "B: Clinical")
+
+cl2_rna_importance <- pfi(cl2_rna_reduced$x_train_reduced, cl2_rna_y_train,
+                          cl2_rna_reduced$x_test_reduced, cl2_rna_y_test,
+                          cl2_rna_tuning$final_model, cl2_rna_tuning$scale_params,
+                          "B: Clinical + Genomics")
+
+cl1_img_importance <- pfi(cl1_img_reduced$x_train_reduced, cl1_img_y_train,
+                          cl1_img_reduced$x_test_reduced, cl1_img_y_test,
+                          cl1_img_tuning$final_model, cl1_img_tuning$scale_params,
+                          "A: Clinical + Imaging")
+
+all_importance <- bind_rows(
+  cl1_importance %>% 
+    head(10) %>% 
+    mutate(Dataset = "A: Clinical",
+           Dataset_Label = "A: Clinical (n=4 features)"),
+  cl2_importance %>% 
+    head(10) %>% 
+    mutate(Dataset = "B: Clinical",
+           Dataset_Label = paste0("B: Clinical (n=", nrow(cl2_importance), " features)")),
+  cl2_rna_importance %>% 
+    head(10) %>% 
+    mutate(Dataset = "B: Clinical + Genomics",
+           Dataset_Label = paste0("B: Clinical + Genomics (n=", nrow(cl2_rna_importance), " features)")),
+  cl1_img_importance %>% 
+    head(10) %>% 
+    mutate(Dataset = "A: Clinical + Imaging",
+           Dataset_Label = paste0("A: Clinical + Imaging (n=", nrow(cl1_img_importance), " features)"))
+)
+
+
+all_importance_top5 <- all_importance %>%
+  group_by(Dataset) %>%
+  arrange(desc(Importance)) %>%
+  slice_head(n = 5) %>% 
+  ungroup() %>%
+  group_by(Dataset) %>%
+  mutate(Significant = Importance > (max(Importance) * 0.1))
+
+
+plot3_top5_minimal_white <- ggplot(all_importance_top5, 
+                                   aes(x = reorder(Feature_Cleaned, Importance), 
+                                       y = Importance, 
+                                       fill = Significant)) +
+  geom_bar(stat = "identity", alpha = 0.85, width = 0.7) +
+  geom_text(aes(label = sprintf("%.3f", Importance)), 
+            hjust = -0.2, size = 3.5, color = "black") +
+  scale_fill_manual(values = c("TRUE" = "coral3", "FALSE" = "steelblue"),
+                    labels = c("TRUE" = "Important", "FALSE" = "Less Important")) +
+  scale_y_continuous(expand = expansion(mult = c(0.01, 0.15))) +
+  geom_hline(yintercept = 0, linetype = "solid", color = "black", linewidth = 0.5) +
+  facet_wrap(~Dataset_Label, scales = "free_y", ncol = 2) +
+  coord_flip(clip = "off") +
+  labs(title = "Figure 5: Top 5 Features by Model Type",
+       subtitle = "Permutation Feature Importance: Higher AUC Drop Indicates Greater Importance",
+       x = "", 
+       y = "AUC Drop (Importance Score)",
+       fill = "Significance") +
+  theme_minimal(base_size = 12) +
+  theme(
+    legend.position = "bottom",
+    legend.title = element_text(face = "bold", size = 10),
+    legend.text = element_text(size = 9),
+    strip.text = element_text(face = "bold", size = 11),
+    plot.title = element_text(size = 16, face = "bold", hjust = 0.5, margin = margin(b = 5)),
+    plot.subtitle = element_text(size = 11, hjust = 0.5, color = "gray30", margin = margin(b = 10)),
+    axis.text.y = element_text(size = 10, hjust = 1),
+    axis.text.x = element_text(size = 9),
+    axis.title.x = element_text(margin = margin(t = 10)),
+    panel.grid.major.y = element_line(color = "gray90", linewidth = 0.3),  # Keep horizontal grid
+    panel.grid.major.x = element_blank(),  # Remove vertical grid
+    panel.grid.minor = element_blank(),
+    panel.spacing = unit(1.2, "lines"),
+    plot.background = element_rect(fill = "white", color = NA),
+    panel.background = element_rect(fill = "white", color = NA),
+    plot.margin = margin(10, 20, 10, 10)
+  )
+
+print(plot3_top5_minimal_white)
+
+ggsave("Output/pfi_importance_top5_minimal_white.png", 
+       plot3_top5_minimal_white, 
+       width = 12, 
+       height = 8, 
+       dpi = 300,
+       bg = "white")
+
+
