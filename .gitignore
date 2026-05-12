@@ -9,15 +9,11 @@ data/
 
 # Keep placeholders so other collaborators know this directory exists
 !data/.keep  
-!data/raw/.keep 
-!data/clean/.keep
-
-# Keep directory descriptive documentation 
-!data/raw/README.md
-!data/clean/README.md
+!data/Raw/.keep 
+!data/Derived/.keep
 
 ### Ignore any results produced ###
-results/
+Output/
 
 ### Ignore Logs produced ###
 logs/
