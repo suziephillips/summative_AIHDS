@@ -2,16 +2,17 @@
 #                                                                           #
 # Program Name:  Data processing                                            #
 #                                                                           #
-# Outputs:  cl1_m_train_imputed.csv, cl1_m_test_imputed.csv                 #
-#           cl2_m_train_imputed.csv, cl2_m_test_imputed.csv                 #
-#           cl2_rna_m_train_imputed.csv, cl2_rna_m_test_imputed.csv         #
-#                                                                           #
+# Outputs:      cl1_train_imputed.csv, cl1_test_imputed.csv, 
+#               cl2_train_imputed.csv, cl2_test_imputed.csv,
+#               cl2_rna_train_imputed.csv, cl2_rna_test_imputed.csv,
+#               cl1_m_indices.rds
+#
 #                                                                           #
 #############################################################################
 
 #install.packages("")
 
-###############################
+##############################
 ##      LOAD PACKAGES       ##
 ##############################
 library(tidyverse)
@@ -224,8 +225,8 @@ cl2e$weight_z <- as.numeric(scale(cl2d$weight))
 cl2e$pack_yrs_z <- as.numeric(scale(cl2d$pack_yrs))
 
 #output clean clinical data (no missing imputation conducted)
-write.csv(cl1c, "Data/Derived/clinical1_clean.csv")
-write.csv(cl2e, "Data/Derived/clinical2_clean.csv")
+#write.csv(cl1c, "Data/Derived/clinical1_clean.csv")
+#write.csv(cl2e, "Data/Derived/clinical2_clean.csv")
 
 
 ######## Clean RNA Genetic data ##########
@@ -267,13 +268,13 @@ rna4 <- rna4[, c("ID", setdiff(names(rna4), "ID"))]
 rna4$ID <- gsub("\\.", "-", rna4$ID)
 
 #Output RNA data
-write.csv(rna4, "Data/Derived/RNA_clean.csv")
+#write.csv(rna4, "Data/Derived/RNA_clean.csv")
 
 #merge RNA and clinical2_clean data by ID to combine the data
 cl2e_rna4 <- merge(cl2e, rna4, by = "ID", all.x = TRUE)
 
 #output combined dataset
-write.csv(cl2e_rna4, "Data/Derived/clinical1_RNA_clean.csv")
+#write.csv(cl2e_rna4, "Data/Derived/clinical1_RNA_clean.csv")
 
 
 #merge RNA (non scaled) and clinical2_clean data by ID to combine the data for missing imputation
@@ -352,39 +353,39 @@ cat("Proportion of events in test:",
 # cl2_final - clinical 2 WITH missing approaches applied # 
 #####################################################
 
+# Generate indices once from cl2_final
 set.seed(123)
 cl2_m_indices <- createDataPartition(cl2_final$status_3y, p = 0.8, list = FALSE)
 
+# Split cl2_final
 cl2_m_train <- cl2_final[cl2_m_indices, ]
 cl2_m_test <- cl2_final[-cl2_m_indices, ]
 
-#Verify proportions
+# Verify proportions
 cat("Train set size:", nrow(cl2_m_train), "\n")
 cat("Test set size:", nrow(cl2_m_test), "\n")
 cat("Proportion of events in train:", 
     mean(cl2_m_train$status_3y == 1, na.rm = TRUE), "\n")
 cat("Proportion of events in test:", 
     mean(cl2_m_test$status_3y == 1, na.rm = TRUE), "\n")
-#happy
+# happy
 
 ##########################################################################
 # cl2_rna_final - clinical2 and genetic data WITH missing approaches applied # 
 ##########################################################################
 
-set.seed(123)
-cl2_rna_m_indices <- createDataPartition(cl2_rna_final$status_3y, p = 0.8, list = FALSE)
+#use the same indices generated from cl2_final for the same split
+cl2_rna_m_train <- cl2_rna_final[cl2_m_indices, ]
+cl2_rna_m_test <- cl2_rna_final[-cl2_m_indices, ]
 
-cl2_rna_m_train <- cl2_rna_final[cl2_rna_m_indices, ]
-cl2_rna_m_test <- cl2_rna_final[-cl2_rna_m_indices, ]
-
-#Verify proportions
+# Verify proportions
 cat("Train set size:", nrow(cl2_rna_m_train), "\n")
 cat("Test set size:", nrow(cl2_rna_m_test), "\n")
 cat("Proportion of events in train:", 
     mean(cl2_rna_m_train$status_3y == 1, na.rm = TRUE), "\n")
 cat("Proportion of events in test:", 
     mean(cl2_rna_m_test$status_3y == 1, na.rm = TRUE), "\n")
-#happy
+# happy
 
 #save split datasets
 write.csv(cl1_m_train, "Data/Derived/cl1_m_train.csv")
@@ -394,6 +395,8 @@ write.csv(cl2_m_test, "Data/Derived/cl2_m_test.csv")
 write.csv(cl2_rna_m_train, "Data/Derived/cl2_rna_m_train.csv")
 write.csv(cl2_rna_m_test, "Data/Derived/cl2_rna_m_test.csv")
 
+#save indices list for cl1 so the image data is split the same
+saveRDS(cl2_m_indices, "Data/Derived/cl1_split_indices.rds")
 
 
 ####Now, apply K-NN (k=3) to the missingness approach datasets: cl1_m, cl2_m, cl2_rna_m

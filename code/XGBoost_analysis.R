@@ -2,8 +2,6 @@
 #                                                                           #
 # Program Name:  XGBoost Analysis                                           #
 #                                                                           #
-#  Outputs:  xgboost_roc_curves.png, xgboost_cal_curves_smooth.png          #
-#                                                                           #
 #############################################################################
 
 
@@ -40,17 +38,16 @@ cl1_img_test <- read.csv("Data/Derived/cl1_img_test_imputed")
 #when doing NN data will need to be scaled and normalised.
 
 #remove 'X' columns from all datasets
-#remove non standardised continuous variables
 #remove site_num from cl2 because the factor only includes one level in training set
 #remove vary rare variation path_n_num
-cl1_train <- cl1_train |> select(-c(X,age))
-cl1_test <- cl1_test |> select(-c(X,age))
-cl2_train <- cl2_train |> select(-c(X,Age,weight,pack_yrs,site_num,path_m_num))
-cl2_test <- cl2_test |> select(-c(X,Age,weight,pack_yrs,site_num,path_m_num))
-cl2_rna_train <- cl2_rna_train |> select(-c(X,Age,weight,pack_yrs,site_num,path_m_num))
-cl2_rna_test <- cl2_rna_test |> select(-c(X,Age,weight,pack_yrs,site_num,path_m_num))
-cl1_img_train <- cl1_img_train |> select(-c(X,age))
-cl1_img_test <- cl1_img_test |> select(-c(X,age))
+cl1_train <- cl1_train |> select(-c(X))
+cl1_test <- cl1_test |> select(-c(X))
+cl2_train <- cl2_train |> select(-c(X,site_num,path_m_num))
+cl2_test <- cl2_test |> select(-c(X,site_num,path_m_num))
+cl2_rna_train <- cl2_rna_train |> select(-c(X,site_num,path_m_num))
+cl2_rna_test <- cl2_rna_test |> select(-c(X,site_num,path_m_num))
+cl1_img_train <- cl1_img_train |> select(-c(X))
+cl1_img_test <- cl1_img_test |> select(-c(X))
 
 #Remove ID column from all train and test sets
 cl1_train_clean <- cl1_train[, !names(cl1_train) %in% "ID"]
@@ -468,6 +465,7 @@ create_cal_df <- function(pred, actual, model_name, n_bins = 10) {
     )
 }
 
+# Combine all models
 cal_combined <- bind_rows(
   create_cal_df(predictions_prob_cl1, actual_cl1, "Clinical Model 1"),
   create_cal_df(predictions_prob_cl2, actual_cl2, "Clinical Model 2"),
@@ -491,6 +489,7 @@ create_calibration_data_base <- function(pred, actual, n_bins = 5) {
   return(list(mean_pred = mean_pred, observed = observed, se = se))
 }
 
+# Calculate for each model
 cal1 <- create_calibration_data_base(predictions_prob_cl1, actual_cl1, n_bins = 5)
 cal2 <- create_calibration_data_base(predictions_prob_cl2, actual_cl2, n_bins = 5)
 cal2_rna <- create_calibration_data_base(predictions_prob_cl2_rna, actual_cl2_rna, n_bins = 5)
@@ -508,11 +507,13 @@ plot(0, 0, type = "n",
 abline(a = 0, b = 1, lty = 2, col = "gray50", lwd = 2)
 grid(col = "lightgray", lty = 1)
 
+# Lines only - no points
 lines(cal1$mean_pred, cal1$observed, col = "#2E86AB", lwd = 3)
 lines(cal2$mean_pred, cal2$observed, col = "#A23B72", lwd = 3)
 lines(cal2_rna$mean_pred, cal2_rna$observed, col = "#D62828", lwd = 3)
 lines(cal1_img$mean_pred, cal1_img$observed, col = "#003F88", lwd = 3)
 
+# Add small points for better readability
 points(cal1$mean_pred, cal1$observed, col = "#2E86AB", pch = 19, cex = 1.5)
 points(cal2$mean_pred, cal2$observed, col = "#A23B72", pch = 19, cex = 1.5)
 points(cal2_rna$mean_pred, cal2_rna$observed, col = "#D62828", pch = 19, cex = 1.5)
@@ -559,7 +560,7 @@ legend("bottomright",
 dev.off()
 
 
-#loess smoothing instead of binning
+# Use loess smoothing instead of binning
 png("Output/xgboost_cal_curves_smooth.png", width = 10, height = 8, units = "in", res = 300)
 
 plot(0, 0, type = "n", 
@@ -572,6 +573,7 @@ plot(0, 0, type = "n",
 abline(a = 0, b = 1, lty = 2, col = "gray50", lwd = 2)
 grid(col = "lightgray", lty = 1)
 
+# Function to add loess smoothed calibration curve
 add_smooth_curve <- function(pred, actual, color) {
   loess_fit <- loess(actual ~ pred, degree = 1, span = 1.2)
   pred_sorted <- sort(pred)
@@ -598,6 +600,8 @@ legend("bottomright",
 
 dev.off()
 
+
+# Calculate calibration slope and intercept for each model
 calculate_calibration_metrics <- function(pred, actual) {
   cal_model <- lm(actual ~ pred)
   slope <- coef(cal_model)[2]
@@ -620,13 +624,15 @@ print(metrics_cl1_img)
 
 ##### perfomance metrics
 
-#Function to calculate metrics at optimal threshold
+# Function to calculate metrics at optimal threshold
 calculate_metrics_at_optimal_threshold <- function(actual, predicted_prob, model_name) {
   
+  # Calculate ROC and find optimal threshold (Youden's J)
   roc_obj <- roc(actual, predicted_prob)
   optimal_coords <- coords(roc_obj, "best", ret = c("threshold", "specificity", "sensitivity"))
   optimal_threshold <- optimal_coords$threshold
   
+  # Apply optimal threshold
   actual_factor <- factor(actual, levels = c(0, 1), labels = c("Alive", "Died"))
   predicted_class <- factor(ifelse(predicted_prob > optimal_threshold, "Died", "Alive"),
                             levels = c("Alive", "Died"))
@@ -634,6 +640,7 @@ calculate_metrics_at_optimal_threshold <- function(actual, predicted_prob, model
   # Calculate confusion matrix
   cm <- confusionMatrix(predicted_class, actual_factor, positive = "Died")
   
+  # Return metrics
   data.frame(
     Model = model_name,
     Optimal_Threshold = round(optimal_threshold, 3),
@@ -647,11 +654,13 @@ calculate_metrics_at_optimal_threshold <- function(actual, predicted_prob, model
   )
 }
 
+# Calculate for all models
 metrics_optimal_cl1 <- calculate_metrics_at_optimal_threshold(actual_cl1, predictions_prob_cl1, "A: Clinical")
 metrics_optimal_cl2 <- calculate_metrics_at_optimal_threshold(actual_cl2, predictions_prob_cl2, "B: Clinical")
 metrics_optimal_cl2_rna <- calculate_metrics_at_optimal_threshold(actual_cl2_rna, predictions_prob_cl2_rna, "B: Clinical + Genomics")
 metrics_optimal_cl1_img <- calculate_metrics_at_optimal_threshold(actual_cl1_img, predictions_prob_cl1_img, "A: Clinical + Imaging")
 
+# Combine all
 all_metrics_optimal <- rbind(metrics_optimal_cl1, metrics_optimal_cl2, 
                              metrics_optimal_cl2_rna, metrics_optimal_cl1_img)
 
@@ -924,6 +933,112 @@ print(test_results[, c("Model", "Version", "AUC_Report")])
 
 
 
+plot_cl1 <- ggroc(list(
+  Original = roc_cl1_original,Weighted = roc_cl1_weighted), size = 1.2, alpha = 0.8) +
+  geom_segment(aes(x = 1, xend = 0, y = 0, yend = 1),
+               linetype = "dashed", color = "gray50") +
+  scale_color_manual(
+    values = c("Original" = "#2E86AB",
+               "Weighted" = "#A23B72"),
+    labels = c(
+      paste0("Original (AUC = ", round(auc(roc_cl1_original), 3), ")"),
+      paste0("Weighted (AUC = ", round(auc(roc_cl1_weighted), 3), ")"))) +
+  labs(
+    x = "1 - Specificity",
+    y = "Sensitivity",
+    title = "Clinical Model 1: Original vs Weighted XGBoost",
+    color = "Model") +
+  theme_minimal() +
+  theme(
+    legend.position = c(0.8, 0.2),
+    legend.background = element_rect(
+      fill = "white",
+      linetype = "solid",
+      color = "gray80"),
+    plot.title = element_text(hjust = 0.5, face = "bold"))
+
+plot_cl2 <- ggroc(list(
+  Original = roc_cl2_original,Weighted = roc_cl2_weighted),size = 1.2, alpha = 0.8) +
+  geom_segment(aes(x = 1, xend = 0, y = 0, yend = 1),
+               linetype = "dashed", color = "gray50") +
+  scale_color_manual(
+    values = c("Original" = "#2E86AB",
+               "Weighted" = "#A23B72"),
+    labels = c(
+      paste0("Original (AUC = ", round(auc(roc_cl2_original), 3), ")"),
+      paste0("Weighted (AUC = ", round(auc(roc_cl2_weighted), 3), ")"))) +
+  labs(
+    x = "1 - Specificity",
+    y = "Sensitivity",
+    title = "Clinical Model 2: Original vs Weighted XGBoost",
+    color = "Model") +
+  theme_minimal() +
+  theme(
+    legend.position = c(0.8, 0.2),
+    legend.background = element_rect(
+      fill = "white",
+      linetype = "solid",
+      color = "gray80"),
+    plot.title = element_text(hjust = 0.5, face = "bold"))
+
+plot_cl2_rna <- ggroc(list(
+  Original = roc_cl2_rna_original,Weighted = roc_cl2_rna_weighted),size = 1.2, alpha = 0.8) +
+  geom_segment(aes(x = 1, xend = 0, y = 0, yend = 1),
+               linetype = "dashed", color = "gray50") +
+  scale_color_manual(
+    values = c("Original" = "#2E86AB",
+               "Weighted" = "#A23B72"),
+    labels = c(
+      paste0("Original (AUC = ", round(auc(roc_cl2_rna_original), 3), ")"),
+      paste0("Weighted (AUC = ", round(auc(roc_cl2_rna_weighted), 3), ")"))) +
+  labs(
+    x = "1 - Specificity",
+    y = "Sensitivity",
+    title = "Clinical Model 2: Original vs Weighted XGBoost",
+    color = "Model") +
+  theme_minimal() +
+  theme(
+    legend.position = c(0.8, 0.2),
+    legend.background = element_rect(
+      fill = "white",
+      linetype = "solid",
+      color = "gray80"),
+    plot.title = element_text(hjust = 0.5, face = "bold"))
+
+
+plot_cl1_img <- ggroc(list(
+  Original = roc_cl1_img_original,Weighted = roc_cl1_img_weighted), size = 1.2, alpha = 0.8) +
+  geom_segment(aes(x = 1, xend = 0, y = 0, yend = 1),
+               linetype = "dashed", color = "gray50") +
+  scale_color_manual(
+    values = c("Original" = "#2E86AB",
+               "Weighted" = "#A23B72"),
+    labels = c(
+      paste0("Original (AUC = ", round(auc(roc_cl1_img_original), 3), ")"),
+      paste0("Weighted (AUC = ", round(auc(roc_cl1_img_weighted), 3), ")"))) +
+  labs(
+    x = "1 - Specificity",
+    y = "Sensitivity",
+    title = "Clinical & Image Model 4: Original vs Weighted XGBoost",
+    color = "Model") +
+  theme_minimal() +
+  theme(
+    legend.position = c(0.8, 0.2),
+    legend.background = element_rect(
+      fill = "white",
+      linetype = "solid",
+      color = "gray80"),
+    plot.title = element_text(hjust = 0.5, face = "bold"))
+
+#grid.arrange(plot_cl1, plot_cl2, ncol = 2)
+
+#ggsave("Output/cl1_xgb_oversampling_AUG.png", plot = plot_cl1)
+#ggsave("Output/cl2_xgb_oversampling_AUG.png", plot = plot_cl2)
+#ggsave("Output/cl2_rna_xgb_oversampling_AUG.png", plot = plot_cl2_rna)
+#ggsave("Output/cl1_img_xgb_oversampling_AUG.png", plot = plot_cl1_img)
+
+#maybe just use AUC in a table?
+
 ###### Approach 2: Random sampling
 
 
@@ -1184,3 +1299,122 @@ cat("With upsampling - ROC:", max(cl2_rna_best_upsampled$results$ROC), "\n")
 cat("With upsampling - ROC:", max(cl1_img_best_upsampled$results$ROC), "\n")
 
 
+
+plot_cl1 <- ggroc(list(
+  Original = roc_cl1_original,Weighted = roc_cl1_upsampled), size = 1.2, alpha = 0.8) +
+  geom_segment(aes(x = 1, xend = 0, y = 0, yend = 1),
+               linetype = "dashed", color = "gray50") +
+  scale_color_manual(
+    values = c("Original" = "#2E86AB",
+               "Weighted" = "#A23B72"),
+    labels = c(
+      paste0("Original (AUC = ", round(auc(roc_cl1_original), 3), ")"),
+      paste0("Weighted (AUC = ", round(auc(roc_cl1_upsampled), 3), ")"))) +
+  labs(
+    x = "1 - Specificity",
+    y = "Sensitivity",
+    title = "Clinical Model 1: Original vs Upsampled XGBoost",
+    color = "Model") +
+  theme_minimal() +
+  theme(
+    legend.position = c(0.8, 0.2),
+    legend.background = element_rect(
+      fill = "white",
+      linetype = "solid",
+      color = "gray80"),
+    plot.title = element_text(hjust = 0.5, face = "bold"))
+
+plot_cl2 <- ggroc(list(
+  Original = roc_cl2_original,Weighted = roc_cl2_upsampled), size = 1.2, alpha = 0.8) +
+  geom_segment(aes(x = 1, xend = 0, y = 0, yend = 1),
+               linetype = "dashed", color = "gray50") +
+  scale_color_manual(
+    values = c("Original" = "#2E86AB",
+               "Weighted" = "#A23B72"),
+    labels = c(
+      paste0("Original (AUC = ", round(auc(roc_cl2_original), 3), ")"),
+      paste0("Weighted (AUC = ", round(auc(roc_cl2_upsampled), 3), ")"))) +
+  labs(
+    x = "1 - Specificity",
+    y = "Sensitivity",
+    title = "Clinical Model 2: Original vs Upsampled XGBoost",
+    color = "Model") +
+  theme_minimal() +
+  theme(
+    legend.position = c(0.8, 0.2),
+    legend.background = element_rect(
+      fill = "white",
+      linetype = "solid",
+      color = "gray80"),
+    plot.title = element_text(hjust = 0.5, face = "bold"))
+
+plot_cl2_rna <- ggroc(list(
+  Original = roc_cl2_rna_original,Weighted = roc_cl2_rna_upsampled), size = 1.2, alpha = 0.8) +
+  geom_segment(aes(x = 1, xend = 0, y = 0, yend = 1),
+               linetype = "dashed", color = "gray50") +
+  scale_color_manual(
+    values = c("Original" = "#2E86AB",
+               "Weighted" = "#A23B72"),
+    labels = c(
+      paste0("Original (AUC = ", round(auc(roc_cl2_rna_original), 3), ")"),
+      paste0("Weighted (AUC = ", round(auc(roc_cl2_rna_upsampled), 3), ")"))) +
+  labs(
+    x = "1 - Specificity",
+    y = "Sensitivity",
+    title = "Clinical & RNA Model 3: Original vs Upsampled XGBoost",
+    color = "Model") +
+  theme_minimal() +
+  theme(
+    legend.position = c(0.8, 0.2),
+    legend.background = element_rect(
+      fill = "white",
+      linetype = "solid",
+      color = "gray80"),
+    plot.title = element_text(hjust = 0.5, face = "bold"))
+
+plot_cl1_img <- ggroc(list(
+  Original = roc_cl1_img_original,Weighted = roc_cl1_img_upsampled), size = 1.2, alpha = 0.8) +
+  geom_segment(aes(x = 1, xend = 0, y = 0, yend = 1),
+               linetype = "dashed", color = "gray50") +
+  scale_color_manual(
+    values = c("Original" = "#2E86AB",
+               "Weighted" = "#A23B72"),
+    labels = c(
+      paste0("Original (AUC = ", round(auc(roc_cl1_img_original), 3), ")"),
+      paste0("Weighted (AUC = ", round(auc(roc_cl1_img_upsampled), 3), ")"))) +
+  labs(
+    x = "1 - Specificity",
+    y = "Sensitivity",
+    title = "Clinical & Image Model 4: Original vs Upsampled XGBoost",
+    color = "Model") +
+  theme_minimal() +
+  theme(
+    legend.position = c(0.8, 0.2),
+    legend.background = element_rect(
+      fill = "white",
+      linetype = "solid",
+      color = "gray80"),
+    plot.title = element_text(hjust = 0.5, face = "bold"))
+
+#grid.arrange(plot_cl1, plot_cl2, ncol = 2)
+
+ggsave("Output/cl1_xgb_upsampling_AUG.png", plot = plot_cl1)
+ggsave("Output/cl2_xgb_upsampling_AUG.png", plot = plot_cl2)
+ggsave("Output/cl2_rna_xgb_upsampling_AUG.png", plot = plot_cl2_rna)
+ggsave("Output/cl1_img_xgb_upsampling_AUG.png", plot = plot_cl1_img)
+
+
+roc_test_cl1 <- roc.test(roc_cl1_original, roc_cl1_upsampled, method = "delong")
+roc_test_cl2 <- roc.test(roc_cl2_original, roc_cl2_upsampled, method = "delong")
+roc_test_cl2_rna <- roc.test(roc_cl2_rna_original, roc_cl2_rna_upsampled, method = "delong")
+roc_test_cl1_img <- roc.test(roc_cl1_img_original, roc_cl1_img_upsampled, method = "delong")
+
+cat("CL1: p-value =", roc_test_cl1$p.value, 
+    ifelse(roc_test_cl1$p.value < 0.05, " - Significant difference", " - No significant difference"), "\n")
+cat("CL2: p-value =", roc_test_cl2$p.value,
+    ifelse(roc_test_cl2$p.value < 0.05, " - Significant difference", " - No significant difference"), "\n")
+
+cat("CL2: p-value =", roc_test_cl2_rna$p.value,
+    ifelse(roc_test_cl2_rna$p.value < 0.05, " - Significant difference", " - No significant difference"), "\n")
+cat("CL1: p-value =", roc_test_cl1_img$p.value, 
+    ifelse(roc_test_cl1_img$p.value < 0.05, " - Significant difference", " - No significant difference"), "\n")

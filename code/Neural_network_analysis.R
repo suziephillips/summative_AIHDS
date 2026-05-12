@@ -1,8 +1,6 @@
 #############################################################################
 #                                                                           #
-# Program Name:  Neural Network Analysis                                    #
-#
-#  Outputs:      mlp_roc_curves.png, mlp_cal_curves_smooth.png, pfi_importance_top5_minimal_white.png
+# Program Name:  Neural Network Analysis                                           #
 #                                                                           #
 #############################################################################
 
@@ -14,8 +12,9 @@ library(ggplot2)
 library(glmnet)
 library(pROC)
 library(caret)
-library(dplyr)
-library(tidyr)
+#library(keras3)
+#library(tensorflow)
+#library(dplyr)
 
 
 ## set working directory ##
@@ -30,8 +29,8 @@ cl2_train <- read.csv("Data/Derived/cl2_m_train_imputed.csv")
 cl2_test <- read.csv("Data/Derived/cl2_m_test_imputed.csv")
 cl2_rna_train <- read.csv("Data/Derived/cl2_rna_m_train_imputed.csv")
 cl2_rna_test <- read.csv("Data/Derived/cl2_rna_m_test_imputed.csv")
-cl1_img_train <- read.csv("Data/Derived/cl1_img_scl_train_imputed")
-cl1_img_test <- read.csv("Data/Derived/cl1_img_scl_test_imputed")
+cl1_img_train <- read.csv("Data/Derived/cl1_img_train_imputed")
+cl1_img_test <- read.csv("Data/Derived/cl1_img_test_imputed")
 
 
 #remove site_num for cl2 datasets - no predictive ability as all VA
@@ -125,9 +124,7 @@ cl1_img_y_test <- cl1_img_test_prep$y
 
 lasso_feature_selection <- function(x_train, y_train, dataset_name) {
   
-  cat("\nProcessing:", dataset_name, "\n")
-  
-  #lasso CV
+  # Run lasso CV
   cv_lasso <- cv.glmnet(
     x = x_train,
     y = y_train,
@@ -137,7 +134,6 @@ lasso_feature_selection <- function(x_train, y_train, dataset_name) {
     nfolds = 5
   )
   
-  #features with non-zero coefficients at lambda.1se
   coef_matrix <- as.matrix(coef(cv_lasso, s = cv_lasso$lambda.1se))
   selected_features <- rownames(coef_matrix)[coef_matrix[, 1] != 0]
   selected_features <- selected_features[selected_features != "(Intercept)"]
@@ -250,16 +246,15 @@ tune_mlp_r <- function(x_train, y_train, n_folds = 4, n_trials = 20) {
   
   for(i in 1:n_trials) {
     
-    # Random search space (adjusted for your small dataset)
     params <- list(
-      size = sample(c(1, 2, 3, 4, 5, 6), 1), 
-      decay = 10^runif(1, -4, -1),             
+      size = sample(c(1, 2, 3, 4, 5, 6), 1),
+      decay = 10^runif(1, -4, -1),
       maxit = sample(c(200, 300, 400, 500), 1)
     )
     
     fold_aucs <- c()
     
-    #ross validation
+    #Cross validation
     for(fold in 1:n_folds) {
       
       val_idx <- folds[[fold]]
@@ -279,7 +274,6 @@ tune_mlp_r <- function(x_train, y_train, n_folds = 4, n_trials = 20) {
         linout = FALSE 
       )
       
-      #predict on validation fold
       pred <- predict(model, as.matrix(x_val_fold), type = "raw")
       
       #AUC
@@ -360,21 +354,44 @@ print(summary_table)
 
 #EVALUATE MODEL ON THE TEST SET USING MLP
 
-evaluate_final_nnet <- function(tuning_result, x_test, y_test, dataset_name) {
+evaluate_final_nnet <- function(tuning_result, x_test, y_test, dataset_name, n_bootstrap = 1000, conf_level = 0.95) {
   
-  #Scale test set using training parameters
   x_test_scaled <- as.matrix(predict(tuning_result$scale_params, x_test))
   
   predictions <- as.numeric(predict(tuning_result$final_model, x_test_scaled, type = "raw"))
   
-  #AUC-ROC
   roc_obj <- roc(y_test, predictions, quiet = TRUE)
   test_auc <- auc(roc_obj)
   
-  #Brier score
+  n <- length(y_test)
+  boot_aucs <- numeric(n_bootstrap)
+  
+  set.seed(123) 
+  for (i in 1:n_bootstrap) {
+    boot_indices <- sample(1:n, n, replace = TRUE)
+    
+    boot_y <- y_test[boot_indices]
+    boot_pred <- predictions[boot_indices]
+    
+    boot_roc <- tryCatch({
+      roc(boot_y, boot_pred, quiet = TRUE)
+    }, error = function(e) NULL)
+    
+    if (!is.null(boot_roc)) {
+      boot_aucs[i] <- as.numeric(auc(boot_roc))
+    } else {
+      boot_aucs[i] <- NA
+    }
+  }
+  
+  boot_aucs <- boot_aucs[!is.na(boot_aucs)]
+  
+  alpha <- 1 - conf_level
+  ci_lower <- quantile(boot_aucs, alpha/2)
+  ci_upper <- quantile(boot_aucs, 1 - alpha/2)
+  
   brier_score <- mean((predictions - y_test)^2)
   
-  #Optimal threshold and classification metrics
   opt_thresh <- as.numeric(coords(roc_obj, "best", ret = "threshold", transpose = FALSE)[1])
   pred_class <- ifelse(predictions > opt_thresh, 1, 0)
   
@@ -389,18 +406,21 @@ evaluate_final_nnet <- function(tuning_result, x_test, y_test, dataset_name) {
   specificity <- ifelse((tn + fp) > 0, tn / (tn + fp), NA)
   precision <- ifelse((tp + fp) > 0, tp / (tp + fp), NA)
   
-  cat("AUC-ROC:", round(test_auc, 4), "\n")
+  cat("AUC-ROC:", round(test_auc, 3), 
+      " (95% CI:", round(ci_lower, 3), "-", round(ci_upper, 3), ")\n")
   cat("Brier Score:", round(brier_score, 4), "\n")
-  cat("Accuracy:", round(accuracy, 4), "\n")
-  cat("Sensitivity:", round(sensitivity, 4), "\n")
-  cat("Specificity:", round(specificity, 4), "\n")
-  cat("Precision:", round(precision, 4), "\n")
-  cat("Optimal threshold:", round(opt_thresh, 4), "\n")
+  cat("Accuracy:", round(accuracy, 3), "\n")
+  cat("Sensitivity:", round(sensitivity, 3), "\n")
+  cat("Specificity:", round(specificity, 3), "\n")
+  cat("Precision:", round(precision, 3), "\n")
+  cat("Optimal threshold:", round(opt_thresh, 3), "\n")
+  cat("95% CI based on", length(boot_aucs), "bootstrap replicates\n\n")
   
-
   return(list(
     dataset = dataset_name,
     test_auc = test_auc,
+    auc_ci_lower = ci_lower,
+    auc_ci_upper = ci_upper,
     brier_score = brier_score,
     predictions = predictions,
     predicted_class = pred_class,
@@ -410,7 +430,8 @@ evaluate_final_nnet <- function(tuning_result, x_test, y_test, dataset_name) {
     precision = precision,
     optimal_threshold = opt_thresh,
     roc_obj = roc_obj,
-    y_test = y_test
+    y_test = y_test,
+    boot_aucs = boot_aucs
   ))
 }
 
@@ -448,6 +469,14 @@ comparison_results <- data.frame(
                cl2_eval$test_auc, 
                cl2_rna_eval$test_auc, 
                cl1_img_eval$test_auc),
+  Test_AUC_CI_Lower = c(cl1_eval$auc_ci_lower,
+                        cl2_eval$auc_ci_lower,
+                        cl2_rna_eval$auc_ci_lower,
+                        cl1_img_eval$auc_ci_lower),
+  Test_AUC_CI_Upper = c(cl1_eval$auc_ci_upper,
+                        cl2_eval$auc_ci_upper,
+                        cl2_rna_eval$auc_ci_upper,
+                        cl1_img_eval$auc_ci_upper),
   Test_Accuracy = c(cl1_eval$accuracy, 
                     cl2_eval$accuracy, 
                     cl2_rna_eval$accuracy, 
@@ -467,6 +496,16 @@ comparison_results <- data.frame(
 )
 
 print(comparison_results)
+
+comparison_results_formatted <- comparison_results %>%
+  mutate(Test_AUC_with_CI = paste0(round(Test_AUC, 3), 
+                                   " (", 
+                                   round(Test_AUC_CI_Lower, 3), 
+                                   "-", 
+                                   round(Test_AUC_CI_Upper, 3), 
+                                   ")"))
+
+print(comparison_results_formatted[, c("Dataset", "Features_After_Lasso", "Best_CV_AUC", "Test_AUC_with_CI", "Test_Accuracy")])
 
 comparison_results_rounded <- comparison_results
 numeric_cols <- sapply(comparison_results_rounded, is.numeric)
@@ -529,11 +568,13 @@ get_calibration_data <- function(predictions, y_test, n_bins = 10) {
   ))
 }
 
+# Get calibration data for each dataset
 cal_cl1 <- get_calibration_data(cl1_eval$predictions, cl1_eval$y_test)
 cal_cl2 <- get_calibration_data(cl2_eval$predictions, cl2_eval$y_test)
 cal_cl2_rna <- get_calibration_data(cl2_rna_eval$predictions, cl2_rna_eval$y_test)
 cal_cl1_img <- get_calibration_data(cl1_img_eval$predictions, cl1_img_eval$y_test)
 
+# Plot calibration curves
 plot(0, 0, type = "n", 
      xlim = c(0, 1), ylim = c(0, 1),
      main = "Neural Network Comparison - Calibration Curves",
@@ -541,6 +582,7 @@ plot(0, 0, type = "n",
      ylab = "Observed Proportion")
 abline(0, 1, col = "gray", lwd = 2, lty = 2)
 
+# Add lines
 lines(cal_cl1$bin_mean, cal_cl1$observed, type = "b", col = "blue", lwd = 2, pch = 16)
 lines(cal_cl2$bin_mean, cal_cl2$observed, type = "b", col = "red", lwd = 2, pch = 16)
 lines(cal_cl2_rna$bin_mean, cal_cl2_rna$observed, type = "b", col = "green", lwd = 2, pch = 16)
@@ -557,10 +599,13 @@ legend("bottomright",
        cex = 0.7)
 grid()
 
+# Save
 dev.copy(png, "NN_Comparison_Calibration.png")
 dev.off()
 
 
+
+# Create data frames for each model
 df_cl1 <- data.frame(
   pred = as.numeric(predict(cl1_tuning$final_model, 
                             as.matrix(predict(cl1_tuning$scale_params, cl1_reduced$x_test_reduced)), 
@@ -636,7 +681,7 @@ print(summary_nn)
 
 
 
-##conduct PFI (Permutation Feature Importance)
+## conduct PFI (Permutation Feature Importance)
 
 
 pfi <- function(x_train, y_train, x_test, y_test, final_model, scale_params, dataset_name) {
@@ -650,6 +695,7 @@ pfi <- function(x_train, y_train, x_test, y_test, final_model, scale_params, dat
   feature_names <- colnames(x_test_scaled)
   importance_scores <- numeric(n_features)
   
+  cat(dataset_name, "- Permutation Feature Importance\n")
   cat("Baseline AUC:", round(auc_baseline, 4), "\n\n")
   
   for(i in 1:n_features) {
@@ -740,6 +786,9 @@ ggplot(all_importance, aes(x = reorder(Feature, Importance), y = Importance, fil
 
 ggsave("Combined_PFI_Comparison.png", width = 12, height = 8)
 
+library(stringr)
+library(dplyr)
+library(tidyr) 
 
 clean_feature_names <- function(feature_names, max_width = 25) {
   cleaned <- feature_names %>%
@@ -786,6 +835,7 @@ pfi <- function(x_train, y_train, x_test, y_test, final_model, scale_params, dat
   feature_names <- colnames(x_test_scaled)
   importance_scores <- numeric(n_features)
   
+  cat(dataset_name, "- Permutation Feature Importance\n")
   cat("Baseline AUC:", round(auc_baseline, 4), "\n")
   cat("Test set size:", nrow(x_test_scaled), "samples\n")
   cat("Features:", n_features, "\n\n")
@@ -818,6 +868,10 @@ pfi <- function(x_train, y_train, x_test, y_test, final_model, scale_params, dat
   ) %>%
     arrange(desc(Importance))
   
+  cat("\n", paste(rep("-", 60), collapse = ""), "\n")
+  cat("TOP 10 MOST IMPORTANT FEATURES\n")
+  cat(paste(rep("-", 60), collapse = ""), "\n")
+  
   top10 <- head(importance_df, 10)
   for(i in 1:nrow(top10)) {
     cat(sprintf("%2d. %-40s: %.4f\n", 
@@ -828,7 +882,6 @@ pfi <- function(x_train, y_train, x_test, y_test, final_model, scale_params, dat
   
   return(importance_df)
 }
-
 cl1_importance <- pfi(cl1_reduced$x_train_reduced, cl1_y_train,
                       cl1_reduced$x_test_reduced, cl1_y_test,
                       cl1_tuning$final_model, cl1_tuning$scale_params,
@@ -877,51 +930,65 @@ all_importance_top5 <- all_importance %>%
   group_by(Dataset) %>%
   mutate(Significant = Importance > (max(Importance) * 0.1))
 
+all_importance_top5 <- all_importance_top5 %>%
+  mutate(Feature_Cleaned = case_when(
+    Feature == "hist_numOther, Type II: Moderately to poorly differentiated" ~ "Histology: Other",
+    Feature_Cleaned == "Histologysquamous cell carcinoma"  ~ "Histology: Squamous Cell",
+    Feature_Cleaned == "Histologyadenocarcinoma"  ~ "Histology: Adenocarcinoma",
+    Feature_Cleaned == "Histologylarge cell"  ~ "Histology: Large cell",
+    Feature_Cleaned == "Genderfemale" ~ "Gender: Female",
+    Feature_Cleaned == "Gendermale" ~ "Gender: Male",
+    Feature_Cleaned == "EthnicityAfrican-American" ~ "Ethnicity: African-American",
+    TRUE ~ Feature_Cleaned
+    ))
 
-plot3_top5_minimal_white <- ggplot(all_importance_top5, 
-                                   aes(x = reorder(Feature_Cleaned, Importance), 
-                                       y = Importance, 
-                                       fill = Significant)) +
+
+plot3_top5 <- ggplot(all_importance_top5, 
+                     aes(x = reorder(Feature_Cleaned, Importance), 
+                         y = Importance, 
+                         fill = Significant)) +
   geom_bar(stat = "identity", alpha = 0.85, width = 0.7) +
   geom_text(aes(label = sprintf("%.3f", Importance)), 
-            hjust = -0.2, size = 3.5, color = "black") +
+            hjust = -0.2, size = 8, color = "black") +
   scale_fill_manual(values = c("TRUE" = "coral3", "FALSE" = "steelblue"),
                     labels = c("TRUE" = "Important", "FALSE" = "Less Important")) +
   scale_y_continuous(expand = expansion(mult = c(0.01, 0.15))) +
   geom_hline(yintercept = 0, linetype = "solid", color = "black", linewidth = 0.5) +
   facet_wrap(~Dataset_Label, scales = "free_y", ncol = 2) +
   coord_flip(clip = "off") +
-  labs(title = "Figure 5: Top 5 Features by Model Type",
-       subtitle = "Permutation Feature Importance: Higher AUC Drop Indicates Greater Importance",
+  labs(title = "Figure 5: Permutation Feature Importance",
+       subtitle = "Top 5 Features by Feature Set",
        x = "", 
        y = "AUC Drop (Importance Score)",
        fill = "Significance") +
-  theme_minimal(base_size = 12) +
+  theme_minimal(base_size = 20) +  
   theme(
     legend.position = "bottom",
-    legend.title = element_text(face = "bold", size = 10),
-    legend.text = element_text(size = 9),
-    strip.text = element_text(face = "bold", size = 11),
-    plot.title = element_text(size = 16, face = "bold", hjust = 0.5, margin = margin(b = 5)),
-    plot.subtitle = element_text(size = 11, hjust = 0.5, color = "gray30", margin = margin(b = 10)),
-    axis.text.y = element_text(size = 10, hjust = 1),
-    axis.text.x = element_text(size = 9),
-    axis.title.x = element_text(margin = margin(t = 10)),
-    panel.grid.major.y = element_line(color = "gray90", linewidth = 0.3),  # Keep horizontal grid
-    panel.grid.major.x = element_blank(),  # Remove vertical grid
+    legend.title = element_text(face = "bold", size = 18),  
+    legend.text = element_text(size = 16),  
+    legend.key.size = unit(1.2, "cm"),  
+    strip.text = element_text(face = "bold", size = 20),  
+    plot.title = element_text(size = 28, face = "bold", hjust = 0.5, margin = margin(b = 10)),  
+    plot.subtitle = element_text(size = 18, hjust = 0.5, color = "gray30", margin = margin(b = 15)),  
+    axis.text.y = element_text(size = 18, hjust = 1),  
+    axis.text.x = element_text(size = 16),  
+    axis.title.x = element_text(size = 20, margin = margin(t = 15)),  
+    axis.title.y = element_text(size = 20), 
+    panel.grid.major.y = element_line(color = "gray90", linewidth = 0.5),
+    panel.grid.major.x = element_blank(), 
     panel.grid.minor = element_blank(),
-    panel.spacing = unit(1.2, "lines"),
+    panel.spacing = unit(1.5, "lines"),
     plot.background = element_rect(fill = "white", color = NA),
     panel.background = element_rect(fill = "white", color = NA),
-    plot.margin = margin(10, 20, 10, 10)
+    plot.margin = margin(15, 30, 15, 15)
   )
 
-print(plot3_top5_minimal_white)
+print(plot3_top5)
 
-ggsave("Output/pfi_importance_top5_minimal_white.png", 
-       plot3_top5_minimal_white, 
-       width = 12, 
-       height = 8, 
+ggsave("Output/pfi_importance_top5.png", 
+       plot3_top5, 
+       width = 16,  
+       height = 10,  
        dpi = 300,
        bg = "white")
 

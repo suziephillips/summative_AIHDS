@@ -2,9 +2,8 @@
 #                                                                           #
 # Program Name:  Data processing - images                                   #
 #                                                                           #
-# Outputs:      cl1_img_train_imputed, cl1_img_test_imputed                 #
-#               cl1_img_scl_train_imputed, cl1_img_scl_test_imputed         #
-#                                                                           #
+# Outputs:      cl1_img_train_imputed.csv, cl1_img_test_imputed.csv
+#
 #                                                                           #
 #############################################################################
 
@@ -108,61 +107,24 @@ boxplot(img$max_diameter) #4 outliers
 boxplot(img$sphericity)
 
 
-#normalise features
-#z-score
-img_z <- img_log |>
-  mutate(across(c(log_volume, surface_area, log_max_diameter, sphericity, 
-                  log_compactness, elongation, mean_intensity, log_std_intensity,
-                  skewness, kurtosis, entropy, contrast, dissimilarity, homogeneity),
-                ~ as.numeric(scale(.)))) |>
-  select(-c(energy,volume,compactness,std_intensity,max_diameter))
-
-
-#check correlation between features
-numeric_cols <- img_z |>
-  select(-patient_id)
-
-#correlation matrix
-cor_matrix <- cor(numeric_cols)
-
-#check the matrix
-round(cor_matrix, 2)
-
-#find correlated variables and identify which to remove
-high_cor <- findCorrelation(cor_matrix, cutoff = 0.85, verbose = TRUE)
-
-columns_to_remove <- colnames(cor_matrix)[high_cor]
-print(columns_to_remove)
-
-img_z_nocor <- img_z |>
-  select(-c(dissimilarity,homogeneity,mean_intensity,log_compactness))
-
-#merge image data onto clinical 1 data
-cl1_img_scaled <- img_z_nocor |>
-  left_join(
-    cl1_clean |> select(-c(surv,cens,surv_3y,cens_3y,X)), #drop other target vars
-    by = c("patient_id" = "ID")) |>
-  rename(ID=patient_id) |> 
-  filter(!is.na(status_3y)) #remove any patients with missing target (1pt)
-
-write.csv(cl1_img_scaled, "Data/Derived/cl1_img_scaled.csv") # currently includes missingness in features
-
 
 ########### Split data into Train and Test ###########
 
 #need to split all data (all splits need to be the same), stratified by the target:
-#cl1_img, cl1_img_scaled
+#cl1_img
 
 
 #####################################################
 # cl1_img - clinical 1 with images - no scaling or processing # 
 #####################################################
 
-set.seed(123)
-cl1_img_indices <- createDataPartition(cl1_img$status_3y, p = 0.8, list = FALSE)
+cl1_m_indices <- readRDS("cl1_split_indices.rds")
 
-cl1_img_train <- cl1_img[cl1_img_indices, ]
-cl1_img_test <- cl1_img[-cl1_img_indices, ]
+train_ids <- cl1_final$ID[cl1_m_indices]
+test_ids <- cl1_final$ID[-cl1_m_indices]
+
+cl1_img_train <- cl1_img[cl1_img$ID %in% train_ids, ]
+cl1_img_test <- cl1_img[cl1_img$ID %in% test_ids, ]
 
 #Verify proportions
 cat("Train set size:", nrow(cl1_img_train), "\n")
@@ -172,32 +134,6 @@ cat("Proportion of events in train:",
 cat("Proportion of events in test:", 
     mean(cl1_img_test$status_3y == 1, na.rm = TRUE), "\n")
 #happy
-
-
-#####################################################
-# cl1_img_scaled - clinical 1 with images - WITH scaling or processing # 
-#####################################################
-
-set.seed(123)
-cl1_img_scaled_indices <- createDataPartition(cl1_img_scaled$status_3y, p = 0.8, list = FALSE)
-
-cl1_img_scaled_train <- cl1_img[cl1_img_scaled_indices, ]
-cl1_img_scaled_test <- cl1_img[-cl1_img_scaled_indices, ]
-
-#Verify proportions
-cat("Train set size:", nrow(cl1_img_scaled_train), "\n")
-cat("Test set size:", nrow(cl1_img_scaled_test), "\n")
-cat("Proportion of events in train:", 
-    mean(cl1_img_scaled_train$status_3y == 1, na.rm = TRUE), "\n")
-cat("Proportion of events in test:", 
-    mean(cl1_img_scaled_test$status_3y == 1, na.rm = TRUE), "\n")
-#happy
-
-#save split datasets
-write.csv(cl1_img_train, "Data/Derived/cl1_img_train.csv")
-write.csv(cl1_img_test, "Data/Derived/cl1_img_test.csv")
-write.csv(cl1_img_scaled_train, "Data/Derived/cl1_img_scaled_train.csv")
-write.csv(cl1_img_scaled_test, "Data/Derived/cl1_img_scaled_test.csv")
 
 
 ####Now, apply K-NN (k=3) to the missingness approach datasets
@@ -214,21 +150,9 @@ cl1_img_test_imputed_pre <- kNN(cl1_img_test[, !names(cl1_img_test) %in% c("stat
 cl1_img_test_imputed_clean <- cl1_img_test_imputed_pre[, !grepl("_imp$", names(cl1_img_test_imputed_pre))]
 cl1_img_test_imputed <- cbind(cl1_img_test_imputed_clean,status_3y = cl1_img_test[, "status_3y"])
 
-set.seed(123)
-#Impute clinical 1 and image data scaled
-cl1_img_scl_train_imputed_pre <- kNN(cl1_img_scaled_train[, !names(cl1_img_scaled_train) %in% c("status_3y")], k = 3)
-cl1_img_scl_train_imputed_clean <- cl1_img_scl_train_imputed_pre[, !grepl("_imp$", names(cl1_img_scl_train_imputed_pre))]
-cl1_img_scl_train_imputed <- cbind(cl1_img_scl_train_imputed_clean,status_3y = cl1_img_scaled_train[, "status_3y"])
-
-cl1_img_scl_test_imputed_pre <- kNN(cl1_img_scaled_test[, !names(cl1_img_scaled_test) %in% c("status_3y")], k = 3)
-cl1_img_scl_test_imputed_clean <- cl1_img_scl_test_imputed_pre[, !grepl("_imp$", names(cl1_img_scl_test_imputed_pre))]
-cl1_img_scl_test_imputed <- cbind(cl1_img_scl_test_imputed_clean,status_3y = cl1_img_scaled_test[, "status_3y"])
 
 
 #save imputed datasets
 write.csv(cl1_img_train_imputed, "Data/Derived/cl1_img_train_imputed")
 write.csv(cl1_img_test_imputed, "Data/Derived/cl1_img_test_imputed")
-write.csv(cl1_img_scl_train_imputed, "Data/Derived/cl1_img_scl_train_imputed")
-write.csv(cl1_img_scl_test_imputed, "Data/Derived/cl1_img_scl_test_imputed")
-
 
