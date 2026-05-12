@@ -27,7 +27,7 @@
 "26","LUNG1-095","female",60.7,"adenocarcinoma",1,0,0,1,1
 "27","LUNG1-097","male",75.5,"squamous cell carcinoma",2,0,0,1,1
 "28","LUNG1-099","male",87,"squamous cell carcinoma",3,0,0,2,1
-"29","LUNG1-100","female",67.4,"large cell",1,0,0,1,0
+"29","LUNG1-100","female",67.4,"squamous cell carcinoma",1,0,0,1,0
 "30","LUNG1-103","male",59.3,"large cell",2,2,0,3,1
 "31","LUNG1-108","male",58.6,"large cell",2,3,0,4,0
 "32","LUNG1-114","female",79.7,"adenocarcinoma",1,2,0,3,0
@@ -63,7 +63,7 @@
 "62","LUNG1-282","male",68.7,"large cell",1,3,0,4,0
 "63","LUNG1-288","male",62.3,"adenocarcinoma",1,3,0,4,1
 "64","LUNG1-304","male",55.4,"large cell",3,0,0,2,0
-"65","LUNG1-305","female",67.4,"adenocarcinoma",1,0,0,1,1
+"65","LUNG1-305","female",67.4,"large cell",1,0,0,1,1
 "66","LUNG1-314","male",76.8,"adenocarcinoma",3,3,0,4,1
 "67","LUNG1-324","male",76.8,"large cell",4,0,0,4,0
 "68","LUNG1-327","male",54.7,"large cell",4,0,0,4,1
